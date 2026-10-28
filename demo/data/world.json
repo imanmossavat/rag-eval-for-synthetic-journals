@@ -1,0 +1,43 @@
+{
+  "narrator": {"name": "Noor", "city": "Utrecht"},
+  "people": [
+    {"id": "P1", "name": "Femke", "relation": "sister", "intro_day": 2},
+    {"id": "P2", "name": "Tomasz", "relation": "colleague", "intro_day": 4},
+    {"id": "P3", "name": "Ines", "relation": "neighbour", "intro_day": 5},
+    {"id": "P4", "name": "Kofi", "relation": "roommate", "intro_day": 7}
+  ],
+  "facts": [
+    {"id": "F1", "subject": "ME", "attribute": "dog's name", "value": "Pickle", "day": 3},
+    {"id": "F2", "subject": "P1", "attribute": "dog's name", "value": "Biscotti", "day": 9},
+    {"id": "F3", "subject": "ME", "attribute": "favourite cafe", "value": "Koffie Kantoor", "day": 6},
+    {"id": "F4", "subject": "P2", "attribute": "favourite cafe", "value": "Bar Bolle", "day": 12},
+    {"id": "F5", "subject": "P3", "attribute": "car", "value": "Fiat Panda", "day": 10},
+    {"id": "F6", "subject": "P4", "attribute": "car", "value": "Volvo Amazon", "day": 15},
+    {"id": "F7", "subject": "P1", "attribute": "favourite band", "value": "Golden Earring", "day": 18},
+    {"id": "F8", "subject": "P4", "attribute": "home town", "value": "Paramaribo", "day": 20}
+  ],
+  "changes": [
+    {"id": "C1", "attribute": "workplace", "history": [
+      {"value": "Bakkerij Vos", "day": 2},
+      {"value": "Openbare Bibliotheek", "day": 14},
+      {"value": "Museum Speelklok", "day": 25}
+    ]},
+    {"id": "C2", "attribute": "phone", "history": [
+      {"value": "Fairphone 4", "day": 3},
+      {"value": "Pixel 8", "day": 19}
+    ]},
+    {"id": "C3", "attribute": "running shoes", "history": [
+      {"value": "Asics Novablast", "day": 5},
+      {"value": "Hoka Clifton", "day": 22}
+    ]}
+  ],
+  "habits": [
+    {"id": "H1", "activity": "go bouldering", "keyword": "bouldering", "days": [2, 6, 9, 13, 17, 23, 27]},
+    {"id": "H2", "activity": "go swimming", "keyword": "swimming", "days": [8, 16, 29]}
+  ],
+  "never_mentioned": [
+    {"subject": "P2", "attribute": "dog's name"},
+    {"subject": "P3", "attribute": "favourite cafe"},
+    {"subject": "P1", "attribute": "car"}
+  ]
+}

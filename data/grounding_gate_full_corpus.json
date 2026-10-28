@@ -1,0 +1,237 @@
+{
+  "model": "gemma3:27b",
+  "results": [
+    {
+      "question_id": "q_0000",
+      "reasoning_type": "single_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Ben fixed the faucet again.",
+      "explanation": "The proposed answer is a direct quote from the provided notes."
+    },
+    {
+      "question_id": "q_0001",
+      "reasoning_type": "single_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "dentist said something like 'you should've come sooner'",
+      "explanation": "The proposed answer is a direct quote from the cited notes."
+    },
+    {
+      "question_id": "q_0002",
+      "reasoning_type": "single_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Mochi shed again, but I cleaned the fur off the couch before it got worse.",
+      "explanation": "The proposed answer is directly stated in the notes as Mochi shedding fur on the couch."
+    },
+    {
+      "question_id": "q_0003",
+      "reasoning_type": "single_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Ben said we should go more often",
+      "explanation": "The proposed answer is a direct quote from the cited notes."
+    },
+    {
+      "question_id": "q_0004",
+      "reasoning_type": "single_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "finally cleaned the couch today...Ben noticed and said good job.",
+      "explanation": "The proposed answer is directly stated in the notes."
+    },
+    {
+      "question_id": "q_0005",
+      "reasoning_type": "single_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "cleaned it quick this time.",
+      "explanation": "The proposed answer is directly supported by the note stating the user cleaned the spill 'quick this time'."
+    },
+    {
+      "question_id": "q_0006",
+      "reasoning_type": "multi_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Luna came over with Mochi again—shedding all over the couch like always. ...the couch is already a mess from that coffee spill last week, now covered in fur.",
+      "explanation": "The notes explicitly state both the coffee spill and Mochi's fur are on the couch, and Luna brought Mochi who sheds fur."
+    },
+    {
+      "question_id": "q_0007",
+      "reasoning_type": "multi_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "The usual thing with the faucet still hasn't fixed itself either. Just glad the app stopped sending those reminders for now.",
+      "explanation": "The notes state the faucet issue has been ongoing and that the app was repeatedly sending lease renewal reminders, matching the proposed answer."
+    },
+    {
+      "question_id": "q_0008",
+      "reasoning_type": "multi_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Tried to start The Art of War again but got sucked into TikTok for 45 mins. Again. Like last time with Ethan's reminders.",
+      "explanation": "The notes confirm the user struggled with both TikTok and Ethan’s reminders while trying to read the book, and that getting lost in TikTok led them to consider pausing it."
+    },
+    {
+      "question_id": "q_0009",
+      "reasoning_type": "multi_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Ben's like 'you should clean it' but Alex is glued to their phone.",
+      "explanation": "The proposed answer is a direct quote from the cited notes."
+    },
+    {
+      "question_id": "q_0010",
+      "reasoning_type": "multi_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Ben fixed the faucet again. Same as before, just a band-aid.",
+      "explanation": "The answer accurately reflects Ben's statement about the leaky faucet and lease renewal reminders as described in the provided notes."
+    },
+    {
+      "question_id": "q_0011",
+      "reasoning_type": "multi_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "MacBook froze again while trying to work on the project.",
+      "explanation": "The proposed answer accurately reflects that the user attempted to use a MacBook and an old laptop, both of which froze during work, as stated in the provided notes."
+    },
+    {
+      "question_id": "q_0012",
+      "reasoning_type": "temporal_reasoning",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Luna came over with Mochi again—shedding all over the couch like always...now covered in fur.",
+      "explanation": "The notes confirm that during both visits, Mochi shed fur on the couch and specifically mention cleaning fur off the pillows during the last visit."
+    },
+    {
+      "question_id": "q_0013",
+      "reasoning_type": "temporal_reasoning",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Tried to start The Art of War again but got sucked into TikTok for 45 mins...tried to work on The Art of War but got lost in TikTok again. 30 mins gone like that.",
+      "explanation": "The notes explicitly state a 45-minute TikTok distraction on January 1st and a 30-minute distraction on January 9th, supporting the claim that the duration decreased."
+    },
+    {
+      "question_id": "q_0014",
+      "reasoning_type": "temporal_reasoning",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "The first mention on January 1st had no engagement, while the last mention on January 8th had 3 new followers.",
+      "explanation": "The notes confirm that the January 1st post received 'no engagement' and the January 8th post resulted in '3 new followers', directly supporting the answer."
+    },
+    {
+      "question_id": "q_0015",
+      "reasoning_type": "temporal_reasoning",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "6:30 PM dental checkup—skipped again for TikTok. ... finally got the dental checkup today.",
+      "explanation": "The proposed answer accurately reflects the progression of skipping the appointment and then eventually completing it, as stated in the provided notes."
+    },
+    {
+      "question_id": "q_0016",
+      "reasoning_type": "temporal_reasoning",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Ben's faucet fix still going on, but why can't I just...",
+      "explanation": "The proposed answer accurately reflects the progression of the faucet issue as described in the notes, from initially being 'still going on' to Ben claiming a proper fix while only leaving a sponge."
+    },
+    {
+      "question_id": "q_0017",
+      "reasoning_type": "conflict_resolution",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "the $850 is now half of that, but honestly didn't expect anything back.",
+      "explanation": "The notes state the $850 balance is now half and has not been paid, which directly supports the proposed answer."
+    },
+    {
+      "question_id": "q_0018",
+      "reasoning_type": "conflict_resolution",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Like last time they just let me have it free",
+      "explanation": "The first note explicitly states that a refill was previously offered for free at The Blue Mitten."
+    },
+    {
+      "question_id": "q_0019",
+      "reasoning_type": "conflict_resolution",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "finally got the dental checkup today.",
+      "explanation": "The proposed answer accurately states that note_202401131351 indicates the appointment was completed 'today', which is more recent than the unspecified time frame of 'months' mentioned in n_001."
+    },
+    {
+      "question_id": "q_0020",
+      "reasoning_type": "conflict_resolution",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "\"Sunday at St. Mary's again, but Ben said it was too crowded so we skipped the usual free parking. Ended up paying $3 in that awful lot.\"; \"free parking still, but he keeps making it one.\"",
+      "explanation": "The answer accurately reflects Ben’s behavior regarding parking as described in both notes: initially avoiding free parking and later continuing to complain about it despite its availability."
+    },
+    {
+      "question_id": "q_0021",
+      "reasoning_type": "conflict_resolution",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "tried to clean the couch coffee stain again but just made it bigger, same as last time with Ben's leaky faucet fix.",
+      "explanation": "The proposed answer accurately reflects the comparison made in the notes between worsening the coffee stain and Ben’s unsuccessful faucet repair."
+    },
+    {
+      "question_id": "q_0022",
+      "reasoning_type": "conflict_resolution",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "finally got the dental checkup today.",
+      "explanation": "The proposed answer accurately identifies the contradiction between the first note stating the author had the checkup and the second stating Alex skipped it."
+    },
+    {
+      "question_id": "q_0023",
+      "reasoning_type": "unanswerable",
+      "verdict": "DEFECT",
+      "defect_type": "mislabeled_unanswerable",
+      "quote": "finally cleaned the couch today, got rid of the stain from Ben's coffee spill and Mochi's fur...",
+      "explanation": "The notes explicitly state the stain was 'from Ben's coffee spill'."
+    },
+    {
+      "question_id": "q_0024",
+      "reasoning_type": "unanswerable",
+      "verdict": "DEFECT",
+      "defect_type": "mislabeled_unanswerable",
+      "quote": "posted the small business design thing again, got five new followers but no idea if they'll stick around — maybe should post more often like last time? the usual thing",
+      "explanation": "The notes explicitly state that the user gained five new followers after reposting."
+    },
+    {
+      "question_id": "q_0025",
+      "reasoning_type": "unanswerable",
+      "verdict": "DEFECT",
+      "defect_type": "mislabeled_unanswerable",
+      "quote": "the stain's getting bigger, not sure when I'll actually tackle it.",
+      "explanation": "The notes explicitly state the coffee stain is growing in size."
+    },
+    {
+      "question_id": "q_0027",
+      "reasoning_type": "unanswerable",
+      "verdict": "DEFECT",
+      "defect_type": "mislabeled_unanswerable",
+      "quote": "Tried to work on the old laptop again this morning.",
+      "explanation": "The notes directly state what the user attempted to do with the old laptop."
+    },
+    {
+      "question_id": "q_0028",
+      "reasoning_type": "unanswerable",
+      "verdict": "DEFECT",
+      "defect_type": "mislabeled_unanswerable",
+      "quote": "also, the usual thing with the app not opening for rent again.",
+      "explanation": "The notes directly state that the app did not open for rent 'again', indicating a recurring issue."
+    },
+    {
+      "question_id": "q_0029",
+      "reasoning_type": "unanswerable",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": null,
+      "explanation": "The notes state Alex is considering rescheduling their checkup 'tomorrow' or 'next week', but do not provide a specific date."
+    }
+  ]
+}

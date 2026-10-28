@@ -1,0 +1,53 @@
+{
+  "model": "gemma3:27b",
+  "results": [
+    {
+      "question_id": "q_0003",
+      "reasoning_type": "single_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Ben said we should go more often",
+      "explanation": "The proposed answer is a direct quote from the cited notes."
+    },
+    {
+      "question_id": "q_0018",
+      "reasoning_type": "conflict_resolution",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Like last time they just let me have it free",
+      "explanation": "The first note explicitly states the refill was free 'last time'."
+    },
+    {
+      "question_id": "q_0024",
+      "reasoning_type": "unanswerable",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "got five new followers",
+      "explanation": "The notes explicitly state the user gained five new followers."
+    },
+    {
+      "question_id": "q_0025",
+      "reasoning_type": "unanswerable",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "the stain's getting bigger, ugh. should've cleaned it like the last time but just grabbed a pillow instead.",
+      "explanation": "The notes directly state that the coffee stain is getting bigger and that the person grabbed a pillow instead of cleaning it."
+    },
+    {
+      "question_id": "q_0027",
+      "reasoning_type": "unanswerable",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Tried to work on the old laptop again this morning.",
+      "explanation": "The proposed answer is directly stated in the cited notes."
+    },
+    {
+      "question_id": "q_0028",
+      "reasoning_type": "unanswerable",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "also, the usual thing with the app not opening for rent again.",
+      "explanation": "The notes state 'the usual thing with the app not opening for rent again' but do not specify *why* it isn’t opening, supporting the claim that the reason is not stated."
+    }
+  ]
+}

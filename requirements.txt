@@ -1,0 +1,4 @@
+requests
+networkx
+anthropic  # only needed when BACKEND = "anthropic" in config.py
+pytest

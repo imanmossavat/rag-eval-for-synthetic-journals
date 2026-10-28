@@ -1,0 +1,616 @@
+<title>Does It Remember?</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column of short numbered chapters (the order is the method, so the numbers carry meaning);
+   tables and charts break wider than the text. Orange marks "the answer key" everywhere: gold notes, expected answers. */
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --ink: #15171c;
+  --ink-2: #4a4f5a;
+  --ink-3: #6f7581;
+  --rule: rgba(21, 23, 28, 0.10);
+  --key: #c84b16;
+  --key-soft: rgba(200, 75, 22, 0.10);
+  --good: #0f7f2f;
+  --warn: #a86f00;
+  --bad: #c43535;
+  --cell: 15, 127, 47;
+  --display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "Literata", Georgia, "Times New Roman", serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111318; --surface: #1a1d23; --ink: #eceef2; --ink-2: #b7bcc6; --ink-3: #8f95a1;
+    --rule: rgba(255, 255, 255, 0.10); --key: #f07a45; --key-soft: rgba(240, 122, 69, 0.14);
+    --good: #3fc463; --warn: #f0b429; --bad: #ef6b6b; --cell: 63, 196, 99; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111318; --surface: #1a1d23; --ink: #eceef2; --ink-2: #b7bcc6; --ink-3: #8f95a1;
+  --rule: rgba(255, 255, 255, 0.10); --key: #f07a45; --key-soft: rgba(240, 122, 69, 0.14);
+  --good: #3fc463; --warn: #f0b429; --bad: #ef6b6b; --cell: 63, 196, 99; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+}
+.col { max-width: 40rem; margin-inline: auto; width: 100%; }
+.wide { max-width: 64rem; margin-inline: auto; width: 100%; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.12; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.2rem); letter-spacing: -0.01em; }
+h3 { font-size: 1.1rem; }
+p { margin: 0; }
+strong { font-weight: 600; }
+.kicker { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.lede { font-size: 1.2rem; color: var(--ink-2); }
+.key { color: var(--key); font-weight: 600; }
+code, .mono { font-family: var(--mono); font-size: 0.85em; }
+
+header.hero { padding-block: 4rem 1rem; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.5rem; align-items: center; }
+.hero-grid > * { min-width: 0; }
+
+section.chapter { padding-block: 3.5rem 0; display: grid; gap: 1.25rem; }
+.stack { display: grid; gap: 1rem; }
+.stack > * { min-width: 0; }
+
+.note { border-left: 3px solid var(--key); padding: 0.25rem 0 0.25rem 1rem; color: var(--ink-2); }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 1.1rem 1.2rem; display: grid; gap: 0.5rem; align-content: start; min-width: 0; }
+.card p { color: var(--ink-2); font-size: 0.97rem; }
+.card h3 { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+.grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+
+.big { display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: center; padding: 1.25rem; background: var(--surface);
+  border: 1px solid var(--rule); border-radius: 8px; }
+.big .n { font-family: var(--display); font-weight: 700; font-size: clamp(2.6rem, 7vw, 3.6rem); line-height: 1; color: var(--key);
+  font-variant-numeric: tabular-nums; white-space: nowrap; }
+.big .n small { font-size: 0.45em; color: var(--ink-3); }
+.big p { color: var(--ink-2); }
+
+.tag { display: inline-flex; align-items: center; gap: 0.4em; font-family: var(--mono); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
+.tag::before { content: ""; width: 0.6em; height: 0.6em; border-radius: 50%; background: currentColor; }
+.tag.good { color: var(--good); } .tag.warn { color: var(--warn); } .tag.bad { color: var(--bad); } .tag.key { color: var(--key); }
+
+/* The "test card": one question as the answer key sees it */
+.testcard { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+.testcard .head { display: flex; justify-content: space-between; gap: 1rem; padding: 0.7rem 1rem; border-bottom: 1px solid var(--rule);
+  font-family: var(--mono); font-size: 0.75rem; color: var(--ink-3); }
+.testcard .body { padding: 1rem; display: grid; gap: 0.9rem; }
+.testcard .q { font-family: var(--display); font-size: 1.35rem; font-weight: 700; line-height: 1.25; }
+.testcard dl { display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 1rem; margin: 0; font-size: 0.95rem; }
+.testcard dt { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); padding-top: 0.2rem; }
+.testcard dd { margin: 0; color: var(--ink-2); min-width: 0; }
+.diary { font-size: 0.92rem; color: var(--ink-2); border-left: 2px solid var(--rule); padding-left: 0.8rem; }
+.diary b { color: var(--ink); font-family: var(--mono); font-size: 0.75rem; font-weight: 600; display: block; }
+mark { background: var(--key-soft); color: var(--key); padding: 0 0.15em; border-radius: 2px; font-weight: 600; }
+del { color: var(--bad); text-decoration-thickness: 2px; }
+
+.diagram { overflow-x: auto; }
+.diagram svg { display: block; width: 100%; min-width: 600px; height: auto; }
+.diagram text { font-family: var(--mono); font-size: 13px; fill: var(--ink-2); }
+.diagram .lbl { font-family: var(--display); font-size: 16px; fill: var(--ink); font-weight: 700; }
+.diagram .keytext { fill: var(--key); font-weight: 600; }
+
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
+th, td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-3); font-weight: 600; }
+tr:last-child td { border-bottom: none; }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Results heatmap */
+.heat td.cell { text-align: center; font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 600; cursor: default; white-space: nowrap; }
+.heat td.cell.na { color: var(--ink-3); font-weight: 400; }
+.heat th.combo { text-align: center; white-space: nowrap; }
+.heat th.combo span { display: block; font-size: 0.68rem; color: var(--ink-3); font-weight: 400; text-transform: none; letter-spacing: 0; }
+.heat tr.total td { font-weight: 700; border-top: 2px solid var(--rule); }
+.heat td.cell:focus-visible { outline: 2px solid var(--key); outline-offset: -2px; }
+
+.chart { position: relative; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 1rem 1rem 0.5rem; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { font-family: var(--mono); font-size: 11px; fill: var(--ink-3); }
+.chart .axis-title { fill: var(--ink-2); }
+.chart .val { font-size: 11px; font-weight: 600; fill: var(--ink); }
+.chart .grid { stroke: var(--rule); stroke-width: 1; }
+.legend { display: flex; flex-wrap: wrap; gap: 1rem; font-family: var(--mono); font-size: 0.75rem; color: var(--ink-2); padding-bottom: 0.5rem; }
+.legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.legend i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+.tip { position: absolute; z-index: 5; pointer-events: none; background: var(--ink); color: var(--bg); font-family: var(--mono); font-size: 0.72rem;
+  padding: 0.5rem 0.65rem; border-radius: 4px; line-height: 1.5; max-width: 22rem; white-space: normal; }
+.tip .ok { color: var(--bg); } .tip .no { opacity: 0.7; }
+
+details { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 0.8rem 1rem; }
+details summary { cursor: pointer; font-family: var(--display); font-weight: 700; }
+details[open] summary { margin-bottom: 0.8rem; }
+.answers td { font-size: 0.85rem; }
+.answers td.r { white-space: nowrap; }
+.answers .ok { color: var(--good); } .answers .no { color: var(--bad); }
+
+ul.plain { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.5rem; }
+ol.plain { margin: 0; padding-left: 1.3rem; display: grid; gap: 0.6rem; }
+pre { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 1rem; overflow-x: auto;
+  font-family: var(--mono); font-size: 0.82rem; line-height: 1.55; color: var(--ink-2); }
+footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); font-size: 0.75rem; line-height: 1.6; display: grid; gap: 0.6rem; }
+
+@media (max-width: 760px) {
+  .hero-grid, .grid2, .grid3 { grid-template-columns: 1fr; }
+  .grid4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px) {
+  .grid4 { grid-template-columns: 1fr; }
+  .big { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+:focus-visible { outline: 2px solid var(--key); outline-offset: 2px; }
+</style>
+
+<header class="hero wide">
+  <div class="hero-grid">
+    <div class="stack" style="gap:1.25rem">
+      <span class="kicker">synthetic data · testing RAG and chatbot memory</span>
+      <h1>Does your chatbot actually remember?</h1>
+      <p class="lede">A chatbot that answers from your notes can sound right and still be wrong. The usual test is to ask it a few
+        questions and read the replies. This page shows a better way. Write the facts yourself first, so every test question
+        has a known answer and a known proof.</p>
+      <p>We built one fictional person’s diary for a month, asked 26 questions at five levels of difficulty, and ran four
+        small chatbots on it. The chatbots differ only in how they remember. Every answer was scored by plain code, with no AI judge.</p>
+    </div>
+    <figure class="testcard" style="margin:0" aria-label="Example test question with its answer key">
+      <div class="head"><span>question Q15</span><span>level 3 · two-hop</span></div>
+      <div class="body">
+        <p class="q">“What is my sister’s dog’s name?”</p>
+        <dl>
+          <dt>answer</dt><dd><span class="key">Biscotti</span></dd>
+          <dt>proof</dt><dd>2 notes, both needed</dd>
+          <dt>trap</dt><dd>the writer’s own dog, Pickle</dd>
+        </dl>
+        <div class="diary"><b>N002 · 3 March</b>Femke came over… My <mark>sister</mark> still laughs exactly like Mum…</div>
+        <div class="diary"><b>N027 · 10 March</b><mark>Femke</mark> brought <mark>Biscotti</mark> along to the market. Her dog’s name suits him…</div>
+      </div>
+    </figure>
+  </div>
+</header>
+
+<main>
+
+<section class="chapter col">
+  <span class="kicker">1 · the problem</span>
+  <h2>Real data can’t tell you three things</h2>
+  <div class="grid3" style="margin-inline:0">
+    <div class="card"><h3>The right answer</h3><p>Nobody wrote an answer key for your documents, so a person has to judge every reply. Or another AI does, which brings its own errors.</p></div>
+    <div class="card"><h3>How hard a question is</h3><p>Easy look-ups and tricky multi-step questions come mixed together. You can’t turn the difficulty up one step at a time.</p></div>
+    <div class="card"><h3>Where it went wrong</h3><p>You don’t know which notes <em>should</em> have been found, so you can’t tell “search missed it” from “the model misread it.”</p></div>
+  </div>
+  <p>Those two failures need opposite fixes. A search miss is fixed in the retrieval step; a misreading is fixed in the model or the prompt.
+    If you can’t tell them apart, you change the wrong thing.</p>
+</section>
+
+<section class="chapter wide">
+  <div class="col stack">
+    <span class="kicker">2 · the idea</span>
+    <h2>Facts first, text last</h2>
+    <p>Flip the usual order. First write down the hidden facts. Then turn each fact into a diary note. Then build the questions
+      from the facts, with plain code. The <span class="key">answer key</span> exists before a single sentence of text does, so
+      nobody has to work it out from the text afterwards.</p>
+  </div>
+  <div class="diagram" role="img" aria-label="Pipeline: hidden facts, checked by code, become diary notes, checked by code; questions are built from the facts by code, with their answers and proof notes.">
+    <svg viewBox="0 0 900 230">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/></marker></defs>
+      <g fill="var(--surface)" stroke="var(--rule)" stroke-width="1.5">
+        <rect x="10" y="20" width="250" height="130" rx="8"/>
+        <rect x="325" y="20" width="250" height="130" rx="8"/>
+        <rect x="640" y="20" width="250" height="130" rx="8"/>
+      </g>
+      <text x="30" y="52" class="lbl">1  Hidden facts</text>
+      <text x="30" y="78">people, facts, changes,</text>
+      <text x="30" y="96">habits, and things that are</text>
+      <text x="30" y="114">never said</text>
+      <text x="30" y="138" class="keytext">world.json · 60 lines</text>
+      <text x="345" y="52" class="lbl">2  Diary notes</text>
+      <text x="345" y="78">one note per fact, plus</text>
+      <text x="345" y="96">30 filler notes (the haystack)</text>
+      <text x="345" y="114">each one checked by code</text>
+      <text x="345" y="138" class="keytext">notes.json · 59 notes</text>
+      <text x="660" y="52" class="lbl">3  Questions</text>
+      <text x="660" y="78">built from the facts by</text>
+      <text x="660" y="96">templates: answer + the notes</text>
+      <text x="660" y="114">that prove it</text>
+      <text x="660" y="138" class="keytext">questions.json · 26</text>
+      <g stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#ah)">
+        <line x1="262" y1="85" x2="321" y2="85"/><line x1="577" y1="85" x2="636" y2="85"/>
+      </g>
+      <path d="M135 152 C 135 205, 765 205, 765 156" fill="none" stroke="var(--key)" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+      <text x="450" y="218" text-anchor="middle" class="keytext">the answer key comes straight from step 1, never from the text</text>
+    </svg>
+  </div>
+  <div class="col">
+    <p class="note">Why bother? The project this demo came out of did it the usual way. One AI call wrote each question <em>and</em> its answer
+      from finished text. About 17 to 20% of those answers turned out to be wrong, and nobody noticed for weeks. An AI checker
+      added later was right only 4 times out of 6.</p>
+  </div>
+</section>
+
+<section class="chapter col">
+  <span class="kicker">3 · the month</span>
+  <h2>Noor’s March, written down before the diary exists</h2>
+  <p>Noor lives in Utrecht. The hidden facts for her month fit in a small file. The table shows the parts, with an example of each.
+    Everything is fictional, so no model can know the answers from its training. It has to read the notes.</p>
+  <div class="tablewrap">
+    <table>
+      <tr><th style="width:24%">part</th><th>example</th><th style="width:14%">how many</th></tr>
+      <tr><td>people</td><td>Femke is her <em>sister</em>, Tomasz her <em>colleague</em>, Ines her <em>neighbour</em>, Kofi her <em>roommate</em></td><td class="num">4</td></tr>
+      <tr><td>stable facts</td><td>Noor’s dog is Pickle. Femke’s dog is Biscotti.</td><td class="num">8</td></tr>
+      <tr><td>things that change</td><td>workplace: Bakkerij Vos → Openbare Bibliotheek → Museum Speelklok</td><td class="num">3</td></tr>
+      <tr><td>habits</td><td>went bouldering on 7 days, swimming on 3</td><td class="num">2</td></tr>
+      <tr><td>never mentioned</td><td>Femke’s car. Asked about, never written anywhere.</td><td class="num">3</td></tr>
+    </table>
+  </div>
+  <p>The facts are built in pairs on purpose. Two people have dogs, two have favourite cafés, two have cars. Each fact is the other one’s
+    <strong>look-alike</strong>: a note that looks like the answer but isn’t.</p>
+</section>
+
+<section class="chapter wide">
+  <div class="col stack">
+    <span class="kicker">4 · writing the notes</span>
+    <h2>Every note gets a plan, and code checks it</h2>
+    <p>Each fact becomes a plan: what the note must say, which exact words it must contain, and which words it must <em>not</em> contain.
+      The forbidden list is every other name, relation, value and habit word, so a note can’t leak an answer that belongs elsewhere.
+      A big model writes the note; a few lines of code check it.</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <span class="kicker">the plan for note N027</span>
+      <p><strong>Say:</strong> Femke’s dog’s name is Biscotti.</p>
+      <p><strong>Must contain:</strong> <span class="mono">Femke</span>, <span class="mono">Biscotti</span></p>
+      <p><strong>Must not contain:</strong> <span class="mono">sister</span>, <span class="mono">Pickle</span>, <span class="mono">Kofi</span>, <span class="mono">bouldering</span>, … 19 more</p>
+      <p class="note" style="font-size:0.92rem">Leaving out “sister” is what makes the question two-hop. To answer “my sister’s dog” you need this note <em>and</em> the note that says Femke is the sister.</p>
+    </div>
+    <div class="card">
+      <span class="kicker">first draft · rejected by the checker</span>
+      <p class="diary" style="border:none;padding:0">…He tried to eat a whole herring from the fish stall and got very offended when he wasn’t allowed.
+        Biscotti and <del>Pickle</del> sniffed each other for ages and then decided they were best friends.</p>
+      <p><span class="tag bad">fail</span> contains forbidden “Pickle”</p>
+      <p>The draft named the writer’s own dog, the look-alike answer, in the note about Femke’s dog. The fix was one word: “my dog”.
+        This slip was mine, made while writing the demo data by hand, and the checker caught it.</p>
+    </div>
+  </div>
+  <div class="col">
+    <div class="big">
+      <div class="n">59<small> notes</small></div>
+      <p>29 carry a fact (one fact each) and 30 are filler about weather, cooking or a TV series. The filler contains no names and no
+        answers. It is the haystack that search has to dig through.</p>
+    </div>
+  </div>
+</section>
+
+<section class="chapter wide">
+  <div class="col stack">
+    <span class="kicker">5 · the questions</span>
+    <h2>Five levels, each a known memory skill</h2>
+    <p>Templates turn the facts into questions. The levels follow the skills that published long-memory tests measure
+      (LongMemEval, LoCoMo, BABILong). The <span class="key">proof</span> column is the number of notes a bot needs to see to answer.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <tr><th>level</th><th>type</th><th>example</th><th>what the bot must do</th><th>proof</th><th>n</th></tr>
+      <tr><td class="num">L1</td><td>single fact</td><td>What is Femke’s dog’s name? → <span class="key">Biscotti</span></td><td>find one note</td><td class="num">1</td><td class="num">8</td></tr>
+      <tr><td class="num">L2</td><td>current state</td><td>What is my workplace now? → <span class="key">Museum Speelklok</span></td><td>pick the newest of three</td><td class="num">1</td><td class="num">3</td></tr>
+      <tr><td class="num">L3</td><td>previous state</td><td>What was my phone before Pixel 8? → <span class="key">Fairphone 4</span></td><td>find an older state, not the newest</td><td class="num">2</td><td class="num">3</td></tr>
+      <tr><td class="num">L3</td><td>two-hop</td><td>What is my sister’s dog’s name? → <span class="key">Biscotti</span></td><td>join two notes through a name</td><td class="num">2</td><td class="num">6</td></tr>
+      <tr><td class="num">L4</td><td>count</td><td>How many times did I go bouldering? → <span class="key">7</span></td><td>find <em>every</em> matching note</td><td class="num">7</td><td class="num">2</td></tr>
+      <tr><td class="num">L4</td><td>history</td><td>List every workplace I’ve had, in order.</td><td>find and order every state</td><td class="num">3</td><td class="num">1</td></tr>
+      <tr><td class="num">L5</td><td>unanswerable</td><td>What is Femke’s car? → <span class="key">I don’t know</span></td><td>notice it isn’t there</td><td class="num">0</td><td class="num">3</td></tr>
+    </table>
+  </div>
+  <div class="col stack">
+    <p><strong>The same fact at two difficulties.</strong> “What is Femke’s dog’s name?” and “What is my sister’s dog’s name?” have the same answer.
+      Only the path differs. If the first passes and the second fails, the problem is the join, not the fact.</p>
+    <p><strong>Traps built in on purpose:</strong> look-alike values (two dogs, two cars), stale values (the old phone is still in the diary),
+      a count bigger than the number of notes search returns (7 bouldering trips, 5 slots), and unanswerable questions about a thing
+      someone <em>else</em> has (Femke’s car, when two other people’s cars are in the notes).</p>
+  </div>
+</section>
+
+<section class="chapter wide">
+  <div class="col stack">
+    <span class="kicker">6 · the chatbots</span>
+    <h2>Four ways to remember, one prompt</h2>
+    <p>All four bots get the same instruction: answer from the memory only, short answer, or say exactly “I don’t know”.
+      What changes is the memory the model is shown when a question arrives. Each bot is about 20 lines of Python.</p>
+  </div>
+  <div class="grid4">
+    <div class="card"><h3>Full context</h3><p>Every note, in date order, pasted into the prompt. No search at all.</p><p class="mono" style="font-size:0.75rem">shows 2,804 words</p><p>Like “just paste it all in”. Only works while everything fits.</p></div>
+    <div class="card"><h3>Vector search</h3><p>Standard RAG. Notes become vectors, and the 5 most similar to the question are shown.</p><p class="mono" style="font-size:0.75rem">shows ~260 words</p><p>The usual LlamaIndex or LangChain setup.</p></div>
+    <div class="card"><h3>Rolling summary</h3><p>One summary, rewritten after every note, asked to stay under 250 words.</p><p class="mono" style="font-size:0.75rem">shows 395 words</p><p>Like the “memory” in many chat apps.</p></div>
+    <div class="card"><h3>Fact list</h3><p>After every note, the model writes down its facts as short dated lines. All lines are kept.</p><p class="mono" style="font-size:0.75rem">shows 2,748 words</p><p>The simplest version of Mem0-style memory.</p></div>
+  </div>
+  <div class="col stack">
+    <p>Two local models answer, from the same family: <strong>qwen3:4b</strong> (small, 2.5 GB) and <strong>qwen3:30b</strong> (large, 18 GB).
+      Both run on a laptop through Ollama, with randomness switched off. The large one is a “mixture of experts”: it holds 30 billion
+      parameters but uses only about 3 billion for each word it writes.</p>
+    <p class="note">The summary and fact-list memories have to be built one note at a time, and that took about an hour each on the small model.
+      To keep the demo short we ran those two on the small model only. Full context and vector search ran on both.</p>
+  </div>
+</section>
+
+<section class="chapter col">
+  <span class="kicker">7 · scoring without a judge</span>
+  <h2>Two questions per answer</h2>
+  <p>Because every answer is a short exact string (a name, a brand, a number), a plain text match grades it. No AI judge is needed,
+    so the score is the same every time you run it.</p>
+  <h3>Did search fetch the right notes? <span class="kicker" style="font-size:0.7rem">vector search only</span></h3>
+  <div class="tablewrap">
+    <table>
+      <tr><th style="width:26%">measure</th><th>what it means</th></tr>
+      <tr><td>precision@5</td><td>Of the 5 notes fetched, the share that are proof. Low means junk crowds the prompt. With one proof note it can never beat 0.20.</td></tr>
+      <tr><td>recall@5</td><td>Of the proof notes, the share that were fetched. Low means the evidence never reached the model, and no prompt can fix that.</td></tr>
+      <tr><td>hit@5</td><td>At least one proof note was fetched. Often reported as “context recall”.</td></tr>
+      <tr><td>all@5</td><td><span class="key">Every</span> proof note was fetched. This is what two-hop, count and history questions actually need.</td></tr>
+      <tr><td>MRR</td><td>1 ÷ the position of the first proof note, averaged. 1.0 means the top result is always a proof note.</td></tr>
+    </table>
+  </div>
+  <h3>Was the answer right, and if not, why?</h3>
+  <p>Each answer gets one label. The two kinds of “I don’t know” are the most useful split on this page:</p>
+  <div class="grid2" style="margin-inline:0">
+    <div class="card"><span class="tag warn">reading failure</span><p>Said “I don’t know”, but the answer <em>was</em> in what the model was shown. Fix the model or the prompt.</p></div>
+    <div class="card"><span class="tag bad">memory failure</span><p>Said “I don’t know”, and the answer was <em>not</em> in what it was shown. Fix search or memory, because a better model can’t help.</p></div>
+  </div>
+  <p>The other labels: <span class="tag good">correct</span>, <span class="tag warn">partial</span> (a list missing items),
+    <span class="tag bad">trap worked</span> (named a look-alike or out-of-date value), <span class="tag bad">wrong</span>,
+    <span class="tag bad">made it up</span> (answered an unanswerable question), and <span class="tag bad">rambled</span> (ignored the short-answer format).</p>
+  <p class="note">“Rambled” exists because one reply ran to about 13,000 words of the model thinking out loud. It mentioned nearly every
+    name in the diary, so a simple text match would have marked it correct.</p>
+</section>
+
+<section class="chapter wide">
+  <div class="col stack">
+    <span class="kicker">8 · results</span>
+    <h2>Right answers, by question type</h2>
+    <p>Each cell shows right answers out of questions for that type. Hover or tap a cell to see every question and the bot’s exact reply.</p>
+  </div>
+  <div class="tablewrap" id="heatwrap" style="position:relative">
+    <table class="heat" id="heat"></table>
+  </div>
+  <p class="col" style="font-family:var(--mono);font-size:0.78rem;color:var(--ink-3)">“—” means not run (see chapter 6). 26 questions, one run each, randomness off.</p>
+</section>
+
+<section class="chapter col">
+  <span class="kicker">9 · finding one</span>
+  <h2>At this size, the whole diary beats any memory</h2>
+  <div class="big">
+    <div class="n">26<small> / 26</small></div>
+    <p>The large model with the full diary in its prompt got every question right. The small model got 24, with two misses we can
+      name: it gave the <em>previous</em> workplace when asked for the current one, and it left the bakery out of the workplace history.</p>
+  </div>
+  <p>The two memories that compress did much worse on the same small model: <strong>11 of 26</strong> for the rolling summary,
+    <strong>18 of 26</strong> for the fact list. With 59 short notes, the whole diary fits in the prompt easily, so compressing it only throws things away.</p>
+  <p class="note">This flips when the diary outgrows the model’s window. Then full context isn’t possible at all, and the other three designs
+    are the only options. The demo’s <span class="mono">--filler</span> setting adds haystack notes to show where that happens.</p>
+</section>
+
+<section class="chapter wide">
+  <div class="col stack">
+    <span class="kicker">10 · finding two</span>
+    <h2>Search always found something, but not everything</h2>
+    <p>By the common measure, search looks perfect: for every question it fetched at least one proof note (hit@5 = 1.00).
+      The stricter measure tells a different story. Questions that need several notes often got only some of them.</p>
+  </div>
+  <div class="chart" id="ret">
+    <div class="legend">
+      <span><i style="background:var(--ink-3);opacity:0.55"></i>hit@5: at least one proof note</span>
+      <span><i style="background:var(--key)"></i>all@5: every proof note</span>
+    </div>
+  </div>
+  <div class="col stack">
+    <p><strong>Counting broke exactly as designed.</strong> Noor went bouldering 7 times. Search hands over 5 notes. Both models answered
+      <span class="key">5</span>: they counted correctly what they were shown. The swimming count (3 trips) was right, because 3 fits in 5 slots.</p>
+    <p><strong>Two-hop broke on the link.</strong> For “What is my roommate’s car?” search found the note about Kofi’s Volvo
+      but not the note saying Kofi is the roommate. Both models said “I don’t know”, which is honest. The text check counts this as
+      “the answer was in memory” because the word <em>Volvo</em> was there, but the link wasn’t. A string being present isn’t the same as the
+      fact being usable.</p>
+    <p><strong>Right without proof.</strong> Three times a model answered a two-hop question correctly although search never fetched the note naming
+      the relation (“my colleague’s café” for both models, “my roommate’s home town” for the large one). The guess was good, but a guess isn’t retrieval. Only all@5 shows that these correct answers rest on missing evidence.</p>
+  </div>
+</section>
+
+<section class="chapter wide">
+  <div class="col stack">
+    <span class="kicker">11 · finding three</span>
+    <h2>Compressed memory loses meaning, not just words</h2>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <span class="kicker">rolling summary · 4b · 11 / 26</span>
+      <p class="diary" style="border:none;padding:0">“…<mark>Femke brought stroopwafels and Biscotti.</mark> Counted flour sacks with Tomasz… Museum Speelklok <mark>visit</mark> (March 26)…”</p>
+      <p>Asked to stay under 250 words, it wrote 395, and it still lost what mattered. “Biscotti” survived but became something Femke
+        brought, not her dog. The new job became a museum <em>visit</em>, so “What is my workplace now?” got the answer “shop”.
+        The words sister, colleague, neighbour and roommate do not appear once, so 5 of 6 two-hop questions failed.</p>
+    </div>
+    <div class="card">
+      <span class="kicker">fact list · 4b · 18 / 26</span>
+      <p class="diary" style="border:none;padding:0">“2026-03-15 | First day at the Openbare Bibliotheek<br>2026-03-26 | Started at Museum Speelklok<br>…348 lines…”</p>
+      <p>The list kept almost everything, and it was nearly as long as the diary itself (2,748 words against 2,804). Yet the small model did worse with it
+        than with the raw notes. Asked for the current workplace, it picked the older line. Nothing in a flat list marks a fact as out of date,
+        and 348 short lines are harder to read than 59 stories. Twice the stale-value or look-alike trap worked.</p>
+    </div>
+  </div>
+  <div class="col">
+    <p class="note">These two designs are the simplest versions of real products. The project behind this demo tried both for real
+      and had the same trouble: the fact extractor (Mem0) dropped the content that mattered, and the rolling summary kept shrinking
+      to the latest turn.</p>
+  </div>
+</section>
+
+<section class="chapter col">
+  <span class="kicker">12 · finding four</span>
+  <h2>A bigger model fixes reading, not retrieval</h2>
+  <div class="grid2" style="margin-inline:0">
+    <div class="big" style="grid-template-columns:1fr"><div class="n">24 → 26</div><p>full context, small → large. The two reading mistakes disappear.</p></div>
+    <div class="big" style="grid-template-columns:1fr"><div class="n">22 → 23</div><p>vector search, small → large. The count is still 5, the history is still incomplete, and the roommate’s car is still unknown.</p></div>
+  </div>
+  <p>A model can’t read a note it was never shown. When the evidence is missing from the prompt, a better model has nothing to work with.
+    This is why the reading-failure vs memory-failure split matters: it tells you whether to spend money on a bigger model or on better search.</p>
+</section>
+
+<section class="chapter col">
+  <span class="kicker">13 · finding five</span>
+  <h2>No bot made up an answer</h2>
+  <p>All 18 attempts at the three unanswerable questions (3 questions × 6 bot-and-model pairs) correctly said “I don’t know”, including the traps about Femke’s car
+    with two other cars in the notes. Here the abstention traps did <em>not</em> fire. Our answering prompt pushes hard for “I don’t know”.
+    That has a cost: 20 of the wrong answers on this page were refusals of questions that <em>could</em> be answered.</p>
+</section>
+
+<section class="chapter col">
+  <span class="kicker">14 · lessons</span>
+  <h2>Five things to take home</h2>
+  <ol class="plain">
+    <li><strong>Write the facts before the text.</strong> An answer key worked out from finished text needs checking forever. One written first is exact.</li>
+    <li><strong>Score per question type, never as one number.</strong> One average hides the structure you built. 22 of 26 sounds fine until you see that counting fails every time.</li>
+    <li><strong>Measure “all the proof”, not “some proof”.</strong> Hit@5 was a perfect 1.00 while multi-note questions were missing half their evidence.</li>
+    <li><strong>Split every failure into reading vs memory.</strong> They point at opposite fixes: a better model, or better search.</li>
+    <li><strong>Build traps on purpose.</strong> Look-alikes, stale values and counts larger than K showed each design’s weak spot within 26 questions.</li>
+  </ol>
+</section>
+
+<section class="chapter col">
+  <span class="kicker">15 · limits</span>
+  <h2>What this demo does not show</h2>
+  <ul class="plain">
+    <li>26 questions and one run each. A difference of one or two answers between bots is within luck. The patterns that repeat (counting, two-hop links, the summary’s losses) are the findings.</li>
+    <li>The diary is small. Full context wins here because everything fits; with thousands of notes the ranking changes.</li>
+    <li>The summary and fact-list bots ran on the small model only.</li>
+    <li>The diary was written by the same AI that designed the test (Claude, in a Claude Code session), with code checking every note. Notes from a different writer could be harder or easier.</li>
+    <li>Short factual answers only. Open questions like “how did I feel this month?” need a different kind of scoring.</li>
+  </ul>
+</section>
+
+<section class="chapter col">
+  <span class="kicker">16 · try it</span>
+  <h2>Run it, then turn one dial</h2>
+  <pre>cd synthetic-journal-generator
+.venv/bin/python -m pytest -q tests/test_demo.py    # checks the answer key, no AI needed
+.venv/bin/python demo/evaluate.py                    # 2 models × 4 bots × 26 questions
+.venv/bin/python demo/evaluate.py --models qwen3:4b --bots vector_rag --k 10</pre>
+  <p>New data without an API key: <span class="mono">generate.py --step prompts</span> writes ready-to-paste prompts for a normal Claude chat,
+    and the <span class="mono">plan → check → questions</span> steps turn the replies into a checked test set.</p>
+  <div class="grid2" style="margin-inline:0">
+    <div class="card"><h3>More haystack</h3><p>Set <span class="mono">--filler 300</span>. Which design breaks first as the diary grows?</p></div>
+    <div class="card"><h3>More slots</h3><p>Set <span class="mono">--k 10</span>. Does counting get fixed, and what happens to precision?</p></div>
+    <div class="card"><h3>Restate the past</h3><p>Let later notes mention the old value (“my old Fairphone”). Does “previous state” get easier?</p></div>
+    <div class="card"><h3>A second Femke</h3><p>Add a look-alike <em>person</em>. What happens to two-hop questions?</p></div>
+  </div>
+</section>
+
+<section class="chapter wide">
+  <details class="col" style="max-width:none">
+    <summary>Every question and every reply</summary>
+    <div class="tablewrap" style="border:none"><table class="answers" id="answers"></table></div>
+  </details>
+</section>
+
+</main>
+
+<footer class="col">
+  <p>Every number on this page comes from one recorded run: synthetic-journal-generator/demo/runs/20261025_171940 (report.md, scored.jsonl).
+    Data: demo/data/. Code: demo/generate.py, chatbots.py, evaluate.py. Models: qwen3:4b, qwen3:30b and nomic-embed-text via Ollama.</p>
+  <p>Figures about the earlier pipeline (the 17–20% wrong answer key, the 4-in-6 checker) come from that project’s internal reports.
+    The memory-design history comes from the REFLECT project’s docs/ideas/memory/.</p>
+</footer>
+
+<script>
+(function () {
+  const D = {"q":[["Q01","single_fact","What is my dog's name?","Pickle"],["Q02","single_fact","What is Femke's dog's name?","Biscotti"],["Q03","single_fact","What is my favourite cafe?","Koffie Kantoor"],["Q04","single_fact","What is Tomasz's favourite cafe?","Bar Bolle"],["Q05","single_fact","What is Ines's car?","Fiat Panda"],["Q06","single_fact","What is Kofi's car?","Volvo Amazon"],["Q07","single_fact","What is Femke's favourite band?","Golden Earring"],["Q08","single_fact","What is Kofi's home town?","Paramaribo"],["Q09","current_state","What is my workplace now?","Museum Speelklok"],["Q10","previous_state","What was my workplace before Museum Speelklok?","Openbare Bibliotheek"],["Q11","current_state","What is my phone now?","Pixel 8"],["Q12","previous_state","What was my phone before Pixel 8?","Fairphone 4"],["Q13","current_state","What are my running shoes now?","Hoka Clifton"],["Q14","previous_state","What were my running shoes before Hoka Clifton?","Asics Novablast"],["Q15","two_hop","What is my sister's dog's name?","Biscotti"],["Q16","two_hop","What is my colleague's favourite cafe?","Bar Bolle"],["Q17","two_hop","What is my neighbour's car?","Fiat Panda"],["Q18","two_hop","What is my roommate's car?","Volvo Amazon"],["Q19","two_hop","What is my sister's favourite band?","Golden Earring"],["Q20","two_hop","What is my roommate's home town?","Paramaribo"],["Q21","count","How many times did I go bouldering this month?","7"],["Q22","count","How many times did I go swimming this month?","3"],["Q23","history","List every workplace I have had this month, in order.","Bakkerij Vos, Openbare Bibliotheek, Museum Speelklok"],["Q24","unanswerable","What is Tomasz's dog's name?","I don't know"],["Q25","unanswerable","What is Ines's favourite cafe?","I don't know"],["Q26","unanswerable","What is Femke's car?","I don't know"]],"r":{"qwen3:4b|full_context":{"Q01":["CORRECT","Pickle"],"Q02":["CORRECT","Biscotti"],"Q03":["CORRECT","Koffie Kantoor"],"Q04":["CORRECT","Bar Bolle"],"Q05":["CORRECT","old yellow Fiat Panda"],"Q06":["CORRECT","Volvo Amazon"],"Q07":["CORRECT","Golden Earring"],"Q08":["CORRECT","Paramaribo"],"Q09":["WRONG_DISTRACTOR","Openbare Bibliotheek"],"Q10":["CORRECT","Openbare Bibliotheek"],"Q11":["CORRECT","Pixel 8"],"Q12":["CORRECT","Fairphone 4"],"Q13":["CORRECT","Hoka Clifton"],"Q14":["CORRECT","Asics Novablast"],"Q15":["CORRECT","Biscotti"],"Q16":["CORRECT","Bar Bolle"],"Q17":["CORRECT","old yellow Fiat Panda"],"Q18":["CORRECT","Volvo Amazon"],"Q19":["CORRECT","Golden Earring"],"Q20":["CORRECT","Paramaribo"],"Q21":["CORRECT","7"],"Q22":["CORRECT","3"],"Q23":["PARTIAL","Openbare Bibliotheek, Museum Speelklok"],"Q24":["CORRECT_IDK","I don't know"],"Q25":["CORRECT_IDK","I don't know"],"Q26":["CORRECT_IDK","I don't know"]},"qwen3:4b|vector_rag":{"Q01":["CORRECT","Pickle"],"Q02":["CORRECT","Biscotti"],"Q03":["CORRECT","Koffie Kantoor"],"Q04":["CORRECT","Bar Bolle"],"Q05":["CORRECT","Fiat Panda"],"Q06":["CORRECT","Volvo Amazon"],"Q07":["CORRECT","Golden Earring"],"Q08":["CORRECT","Paramaribo"],"Q09":["CORRECT","Museum Speelklok"],"Q10":["CORRECT","Openbare Bibliotheek"],"Q11":["CORRECT","Pixel 8"],"Q12":["CORRECT","Fairphone 4"],"Q13":["CORRECT","Hoka Clifton"],"Q14":["CORRECT","Asics Novablast"],"Q15":["CORRECT","Biscotti"],"Q16":["CORRECT","Bar Bolle"],"Q17":["CORRECT","Fiat Panda"],"Q18":["IDK_BUT_IN_MEMORY","I don't know"],"Q19":["CORRECT","Golden Earring"],"Q20":["IDK_BUT_IN_MEMORY","I don't know"],"Q21":["WRONG_OTHER","5"],"Q22":["CORRECT","3"],"Q23":["IDK_NOT_IN_MEMORY","I don't know"],"Q24":["CORRECT_IDK","I don't know"],"Q25":["CORRECT_IDK","I don't know"],"Q26":["CORRECT_IDK","I don't know"]},"qwen3:4b|summary":{"Q01":["IDK_NOT_IN_MEMORY","I don't know"],"Q02":["IDK_BUT_IN_MEMORY","I don't know"],"Q03":["IDK_NOT_IN_MEMORY","I don't know"],"Q04":["IDK_BUT_IN_MEMORY","I don't know"],"Q05":["IDK_NOT_IN_MEMORY","I don't know"],"Q06":["CORRECT","Volvo Amazon"],"Q07":["CORRECT","Golden Earring"],"Q08":["CORRECT","Paramaribo"],"Q09":["WRONG_OTHER","shop"],"Q10":["CORRECT","Openbare Bibliotheek"],"Q11":["CORRECT","Pixel 8"],"Q12":["CORRECT","Fairphone 4"],"Q13":["CORRECT","Hoka Clifton"],"Q14":["IDK_NOT_IN_MEMORY","I don't know"],"Q15":["IDK_BUT_IN_MEMORY","I don't know"],"Q16":["IDK_BUT_IN_MEMORY","I don't know"],"Q17":["IDK_NOT_IN_MEMORY","I don't know"],"Q18":["CORRECT","Volvo Amazon"],"Q19":["IDK_BUT_IN_MEMORY","I don't know"],"Q20":["IDK_BUT_IN_MEMORY","I don't know"],"Q21":["WRONG_OTHER","5"],"Q22":["WRONG_OTHER","2"],"Q23":["IDK_BUT_IN_MEMORY","I don't know"],"Q24":["CORRECT_IDK","I don't know"],"Q25":["CORRECT_IDK","I don't know"],"Q26":["CORRECT_IDK","I don't know"]},"qwen3:4b|facts":{"Q01":["CORRECT","Pickle"],"Q02":["IDK_BUT_IN_MEMORY","I don't know"],"Q03":["IDK_BUT_IN_MEMORY","I don't know"],"Q04":["CORRECT","Bar Bolle"],"Q05":["CORRECT","Fiat Panda"],"Q06":["IDK_BUT_IN_MEMORY","I don't know"],"Q07":["CORRECT","Golden Earring"],"Q08":["CORRECT","Paramaribo"],"Q09":["WRONG_DISTRACTOR","Openbare Bibliotheek"],"Q10":["CORRECT","Openbare Bibliotheek"],"Q11":["CORRECT","Pixel 8"],"Q12":["CORRECT","Fairphone 4"],"Q13":["CORRECT","Hoka Clifton"],"Q14":["CORRECT","Asics Novablast"],"Q15":["RAMBLED","Let me carefully review the journal entries to f…"],"Q16":["CORRECT","Bar Bolle"],"Q17":["IDK_BUT_IN_MEMORY","I don't know"],"Q18":["WRONG_DISTRACTOR","Fiat Panda"],"Q19":["CORRECT","Golden Earring"],"Q20":["CORRECT","Paramaribo"],"Q21":["CORRECT","7"],"Q22":["CORRECT","3"],"Q23":["PARTIAL","delivery company, Openbare Bibliotheek, Museum S…"],"Q24":["CORRECT_IDK","I don't know"],"Q25":["CORRECT_IDK","I don't know"],"Q26":["CORRECT_IDK","I don't know"]},"qwen3:30b|full_context":{"Q01":["CORRECT","Pickle"],"Q02":["CORRECT","Biscotti"],"Q03":["CORRECT","Koffie Kantoor"],"Q04":["CORRECT","Bar Bolle"],"Q05":["CORRECT","Fiat Panda"],"Q06":["CORRECT","Volvo Amazon"],"Q07":["CORRECT","Golden Earring"],"Q08":["CORRECT","Paramaribo"],"Q09":["CORRECT","Museum Speelklok"],"Q10":["CORRECT","Openbare Bibliotheek"],"Q11":["CORRECT","Pixel 8"],"Q12":["CORRECT","Fairphone 4"],"Q13":["CORRECT","Hoka Clifton"],"Q14":["CORRECT","Asics Novablast"],"Q15":["CORRECT","Biscotti"],"Q16":["CORRECT","Bar Bolle"],"Q17":["CORRECT","Fiat Panda"],"Q18":["CORRECT","Volvo Amazon"],"Q19":["CORRECT","Golden Earring"],"Q20":["CORRECT","Paramaribo"],"Q21":["CORRECT","7"],"Q22":["CORRECT","3"],"Q23":["CORRECT","Bakkerij Vos, Openbare Bibliotheek, Museum Speelklok"],"Q24":["CORRECT_IDK","I don't know"],"Q25":["CORRECT_IDK","I don't know"],"Q26":["CORRECT_IDK","I don't know"]},"qwen3:30b|vector_rag":{"Q01":["CORRECT","Pickle"],"Q02":["CORRECT","Biscotti"],"Q03":["CORRECT","Koffie Kantoor"],"Q04":["CORRECT","Bar Bolle"],"Q05":["CORRECT","Fiat Panda"],"Q06":["CORRECT","Volvo Amazon"],"Q07":["CORRECT","Golden Earring"],"Q08":["CORRECT","Paramaribo"],"Q09":["CORRECT","Museum Speelklok"],"Q10":["CORRECT","Openbare Bibliotheek"],"Q11":["CORRECT","Pixel 8"],"Q12":["CORRECT","Fairphone 4"],"Q13":["CORRECT","Hoka Clifton"],"Q14":["CORRECT","Asics Novablast"],"Q15":["CORRECT","Biscotti"],"Q16":["CORRECT","Bar Bolle"],"Q17":["CORRECT","Fiat Panda"],"Q18":["IDK_BUT_IN_MEMORY","I don't know"],"Q19":["CORRECT","Golden Earring"],"Q20":["CORRECT","Paramaribo"],"Q21":["WRONG_OTHER","5"],"Q22":["CORRECT","3"],"Q23":["PARTIAL","Openbare Bibliotheek"],"Q24":["CORRECT_IDK","I don't know"],"Q25":["CORRECT_IDK","I don't know"],"Q26":["CORRECT_IDK","I don't know"]}}};
+
+  const TYPES = [["single_fact", "L1 single fact"], ["current_state", "L2 current state"], ["previous_state", "L3 previous state"],
+    ["two_hop", "L3 two-hop"], ["count", "L4 count"], ["history", "L4 history"], ["unanswerable", "L5 unanswerable"]];
+  const COMBOS = [["qwen3:4b|full_context", "Full context", "small"], ["qwen3:4b|vector_rag", "Vector search", "small"],
+    ["qwen3:4b|summary", "Summary", "small"], ["qwen3:4b|facts", "Fact list", "small"],
+    ["qwen3:30b|full_context", "Full context", "large"], ["qwen3:30b|vector_rag", "Vector search", "large"],
+    ["qwen3:30b|summary", "Summary", "large"], ["qwen3:30b|facts", "Fact list", "large"]];
+  const RIGHT = new Set(["CORRECT", "CORRECT_IDK"]);
+  const PLAIN = { CORRECT: "correct", CORRECT_IDK: "correctly declined", PARTIAL: "partial", WRONG_DISTRACTOR: "trap worked",
+    WRONG_OTHER: "wrong", IDK_BUT_IN_MEMORY: "reading failure", IDK_NOT_IN_MEMORY: "memory failure", HALLUCINATED: "made it up", RAMBLED: "rambled" };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  // Heatmap
+  const heat = document.getElementById("heat"), wrap = document.getElementById("heatwrap");
+  let html = "<tr><th>question type</th><th>n</th>" + COMBOS.map(c => `<th class="combo">${c[1]}<span>${c[2]} model</span></th>`).join("") + "</tr>";
+  const rowsFor = t => D.q.filter(q => !t || q[1] === t);
+  [...TYPES, [null, "all"]].forEach(([t, name]) => {
+    const qs = rowsFor(t);
+    html += `<tr class="${t ? "" : "total"}"><td>${name}</td><td class="num">${qs.length}</td>`;
+    COMBOS.forEach(([key]) => {
+      const r = D.r[key];
+      if (!r) { html += `<td class="cell na">—</td>`; return; }
+      const ok = qs.filter(q => RIGHT.has(r[q[0]][0])).length, share = ok / qs.length;
+      html += `<td class="cell" tabindex="0" data-key="${key}" data-type="${t || ""}" style="background:rgba(var(--cell),${(0.08 + share * 0.5).toFixed(2)})">${ok}/${qs.length}</td>`;
+    });
+    html += "</tr>";
+  });
+  heat.innerHTML = html;
+
+  const tip = document.createElement("div"); tip.className = "tip"; tip.hidden = true; wrap.appendChild(tip);
+  function show(cell) {
+    const key = cell.dataset.key, r = D.r[key], qs = rowsFor(cell.dataset.type || null);
+    const combo = COMBOS.find(c => c[0] === key);
+    tip.innerHTML = `<b>${combo[1]} · ${combo[2]} model</b><br>` + qs.map(q => {
+      const [lab, reply] = r[q[0]], ok = RIGHT.has(lab);
+      return `<span class="${ok ? "ok" : "no"}">${ok ? "✓" : "✗"} ${esc(q[2])}<br>&nbsp;&nbsp;→ ${esc(reply)}${ok ? "" : " (" + PLAIN[lab] + ")"}</span>`;
+    }).slice(0, 10).join("<br>") + (qs.length > 10 ? "<br>…see the full table below" : "");
+    const wr = wrap.getBoundingClientRect(), cr = cell.getBoundingClientRect();
+    tip.hidden = false;
+    const left = Math.max(8, Math.min(cr.left - wr.left + wrap.scrollLeft - 40, wrap.scrollWidth - tip.offsetWidth - 8));
+    tip.style.left = left + "px";
+    tip.style.top = (cr.bottom - wr.top + 6) + "px";
+  }
+  heat.querySelectorAll("td.cell[data-key]").forEach(cell => {
+    cell.addEventListener("pointerenter", () => show(cell));
+    cell.addEventListener("focus", () => show(cell));
+    cell.addEventListener("click", () => show(cell));
+    cell.addEventListener("pointerleave", () => { tip.hidden = true; });
+    cell.addEventListener("blur", () => { tip.hidden = true; });
+  });
+
+  // Full answers table
+  const ans = document.getElementById("answers");
+  const run = COMBOS.filter(c => D.r[c[0]]);
+  ans.innerHTML = "<tr><th>question</th><th>expected</th>" + run.map(c => `<th>${c[1]}<br>${c[2]}</th>`).join("") + "</tr>" +
+    D.q.map(q => `<tr><td>${esc(q[0])} ${esc(q[2])}</td><td class="r">${esc(q[3])}</td>` + run.map(([key]) => {
+      const [lab, reply] = D.r[key][q[0]], ok = RIGHT.has(lab);
+      return `<td><span class="${ok ? "ok" : "no"}">${ok ? "✓" : "✗"}</span> ${esc(reply)}</td>`;
+    }).join("") + "</tr>").join("");
+
+  // Retrieval chart: hit@5 vs all@5 by question type (vector search; retrieval is the same for both models)
+  const RET = [["single fact", 1.00, 1.00], ["current", 1.00, 1.00], ["previous", 1.00, 1.00], ["two-hop", 1.00, 0.50],
+    ["count", 1.00, 0.50], ["history", 1.00, 0.00]];
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+  const host = document.getElementById("ret");
+  const W = 640, H = 250, L = 40, R = 10, T = 14, B = 40;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "hit@5 is 1.00 for every question type; all@5 is 1.00 for single, current and previous, 0.50 for two-hop and count, 0.00 for history" }, host);
+  const y = v => T + (1 - v) * (H - T - B);
+  [0, 0.25, 0.5, 0.75, 1].forEach(v => { el("line", { x1: L, x2: W - R, y1: y(v), y2: y(v), class: "grid" }, svg);
+    el("text", { x: L - 8, y: y(v) + 4, "text-anchor": "end" }, svg).textContent = v.toFixed(2); });
+  const gw = (W - L - R) / RET.length, bw = Math.min(30, gw / 2 - 8);
+  RET.forEach(([name, hit, all], i) => {
+    const cx = L + gw * i + gw / 2;
+    el("rect", { x: cx - bw - 2, y: y(hit), width: bw, height: y(0) - y(hit), rx: 2, fill: "var(--ink-3)", opacity: 0.55 }, svg);
+    const h = Math.max(y(0) - y(all), 0);
+    el("rect", { x: cx + 2, y: y(0) - h, width: bw, height: h, rx: 2, fill: "var(--key)" }, svg);
+    el("text", { x: cx + 2 + bw / 2, y: y(all) - 5, "text-anchor": "middle", class: "val" }, svg).textContent = all.toFixed(2);
+    el("text", { x: cx, y: H - B + 18, "text-anchor": "middle" }, svg).textContent = name;
+  });
+  el("text", { x: (L + W - R) / 2, y: H - 4, "text-anchor": "middle", class: "axis-title" }, svg).textContent = "question type (vector search, 5 notes fetched)";
+})();
+</script>

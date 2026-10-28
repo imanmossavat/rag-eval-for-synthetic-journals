@@ -1,0 +1,53 @@
+{
+  "model": "gemma3:27b",
+  "results": [
+    {
+      "question_id": "q_0003",
+      "reasoning_type": "single_hop",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Ben said we should go more often",
+      "explanation": "The proposed answer is a direct quote from the cited notes."
+    },
+    {
+      "question_id": "q_0018",
+      "reasoning_type": "conflict_resolution",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": "Like last time they just let me have it free",
+      "explanation": "The first note explicitly states that a refill was previously offered for free at The Blue Mitten."
+    },
+    {
+      "question_id": "q_0024",
+      "reasoning_type": "unanswerable",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": null,
+      "explanation": "The notes state the user gained five new followers, but do not provide a comparison to previous follower counts or definitively answer how *many* they gained overall after reposting."
+    },
+    {
+      "question_id": "q_0025",
+      "reasoning_type": "unanswerable",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": null,
+      "explanation": "The notes describe a coffee stain getting bigger and being covered with a pillow, but do not state what *happened* to it – only its current state."
+    },
+    {
+      "question_id": "q_0027",
+      "reasoning_type": "unanswerable",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": null,
+      "explanation": "The notes state the user *tried* to work on the laptop but do not specify what they were attempting to accomplish beyond that general action."
+    },
+    {
+      "question_id": "q_0028",
+      "reasoning_type": "unanswerable",
+      "verdict": "PASS",
+      "defect_type": null,
+      "quote": null,
+      "explanation": "The notes mention 'the usual thing with the app not opening for rent again' but do not provide a reason why this happened."
+    }
+  ]
+}

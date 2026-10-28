@@ -1,0 +1,345 @@
+{
+  "user_profile": {
+    "user_id": "u_001",
+    "name": "Alex Chen",
+    "age": 32,
+    "occupation": "freelance UX designer",
+    "location": "Portland, OR",
+    "baseline_traits": [
+      "tends to procrastinate on admin tasks",
+      "overestimates free time",
+      "uses multiple apps for habit tracking but forgets to log",
+      "struggles with consistent morning routines",
+      "prone to overcommitting to social events"
+    ]
+  },
+  "entities": [
+    {
+      "id": "e_001",
+      "name": "Maya",
+      "type": "person",
+      "domains": [
+        "relationships",
+        "family"
+      ],
+      "salience": "high",
+      "notes": "Alex's partner since 2019; works in education; lives at 123 Oak St; sometimes calls Alex 'Chen' out of habit"
+    },
+    {
+      "id": "e_002",
+      "name": "Riley",
+      "type": "person",
+      "domains": [
+        "relationships",
+        "work"
+      ],
+      "salience": "medium",
+      "notes": "Alex's former colleague; now runs a design agency; occasional coffee meetups"
+    },
+    {
+      "id": "e_003",
+      "name": "Maggie",
+      "type": "person",
+      "domains": [
+        "family"
+      ],
+      "salience": "medium",
+      "notes": "Alex's older sister; lives in Seattle; sends birthday cards but rarely calls"
+    },
+    {
+      "id": "e_004",
+      "name": "The Hive",
+      "type": "place",
+      "domains": [
+        "work",
+        "social"
+      ],
+      "salience": "medium",
+      "notes": "Co-working space downtown; Alex used to pay for membership but now uses it for free events"
+    },
+    {
+      "id": "e_005",
+      "name": "Brew & Bloom",
+      "type": "place",
+      "domains": [
+        "social",
+        "routine"
+      ],
+      "salience": "medium",
+      "notes": "Coffee shop near home; favorite spot for morning coffee; Alex sometimes forgets to pay"
+    },
+    {
+      "id": "e_006",
+      "name": "Dad",
+      "type": "person",
+      "domains": [
+        "family"
+      ],
+      "salience": "medium",
+      "notes": "Alex's father; lives in Eugene; calls every Sunday but always forgets to say hello"
+    },
+    {
+      "id": "e_007",
+      "name": "Ethan",
+      "type": "person",
+      "domains": [
+        "family"
+      ],
+      "salience": "medium",
+      "notes": "Alex's younger brother; lives in Portland; often asks for weekend plans"
+    },
+    {
+      "id": "e_008",
+      "name": "Sunny",
+      "type": "person",
+      "domains": [
+        "relationships",
+        "work"
+      ],
+      "salience": "low",
+      "notes": "Alex's former roommate; now works at a tech company; occasional check-ins"
+    },
+    {
+      "id": "e_009",
+      "name": "Savings Account",
+      "type": "object",
+      "domains": [
+        "finances"
+      ],
+      "salience": "medium",
+      "notes": "Alex tracks this account daily but hasn't added funds in 3 months"
+    },
+    {
+      "id": "e_010",
+      "name": "Sonic",
+      "type": "place",
+      "domains": [
+        "routine",
+        "social"
+      ],
+      "salience": "low",
+      "notes": "Diner near work; Alex eats lunch there 2-3x/week but sometimes skips"
+    },
+    {
+      "id": "e_011",
+      "name": "Treadmill",
+      "type": "object",
+      "domains": [
+        "health",
+        "home"
+      ],
+      "salience": "medium",
+      "notes": "Purchased in 2021; used 5x in 2023; now mostly covered in clothes"
+    },
+    {
+      "id": "e_012",
+      "name": "Alex's 2018 Subaru",
+      "type": "object",
+      "domains": [
+        "logistics",
+        "finances"
+      ],
+      "salience": "high",
+      "notes": "Needs $400 repair; Alex avoids thinking about it; has been ignored since April 2023"
+    },
+    {
+      "id": "e_013",
+      "name": "Carpentry Project",
+      "type": "project",
+      "domains": [
+        "hobbies",
+        "home"
+      ],
+      "salience": "medium",
+      "notes": "Started in 2022; has 3 unfinished shelves; Alex keeps saying they'll finish it"
+    },
+    {
+      "id": "e_014",
+      "name": "Yoga App",
+      "type": "project",
+      "domains": [
+        "health"
+      ],
+      "salience": "low",
+      "notes": "Downloaded in 2022; hasn't been used since January 2023"
+    },
+    {
+      "id": "e_015",
+      "name": "Gardening Kit",
+      "type": "object",
+      "domains": [
+        "hobbies",
+        "home"
+      ],
+      "salience": "low",
+      "notes": "Bought in spring 2022; unused since July 2022"
+    }
+  ],
+  "story_arcs": [
+    {
+      "arc_id": "arc_001",
+      "title": "The Hive Co-Working Space",
+      "phases": [
+        "2022: Alex joins The Hive as a monthly member for $150/month",
+        "2023: Alex stops paying for membership but still uses it for free events",
+        "2023-10: Alex starts meeting Riley at The Hive once a month for coffee",
+        "2024: Alex realizes they've been using The Hive for 18 months without paying, feels guilty"
+      ],
+      "involved_entities": [
+        "e_004",
+        "e_002"
+      ],
+      "summary": "A recurring work/social space that Alex now uses without paying, creating a mild ethical conflict"
+    },
+    {
+      "arc_id": "arc_002",
+      "title": "Alex's Car Repair",
+      "phases": [
+        "2023-04: Alex ignores a $400 repair notice for their car",
+        "2023-06: Alex's brother Ethan asks to borrow the car, but it's broken",
+        "2023-08: Alex finally calls the mechanic but delays the appointment",
+        "2024-03: Alex cancels the appointment again; car still unusable"
+      ],
+      "involved_entities": [
+        "e_012",
+        "e_007"
+      ],
+      "summary": "A recurring financial and logistical problem that Alex avoids addressing, affecting relationships"
+    },
+    {
+      "arc_id": "arc_003",
+      "title": "Carpentry Project",
+      "phases": [
+        "2022-03: Alex buys wood and tools to build shelves",
+        "2022-06: Alex builds two shelves but stops after the third",
+        "2023-01: Alex plans to finish the project for a new apartment",
+        "2023-10: Alex buys more wood but doesn't use it"
+      ],
+      "involved_entities": [
+        "e_013"
+      ],
+      "summary": "A hobby project that's been abandoned multiple times due to lack of time and motivation"
+    },
+    {
+      "arc_id": "arc_004",
+      "title": "Maya's Work Stress",
+      "phases": [
+        "2022-08: Maya starts a new teaching job with heavy workload",
+        "2023-02: Maya begins working from home, leading to more time together",
+        "2023-08: Maya's stress increases again with a new school year",
+        "2024-01: Maya suggests taking a weekend trip to manage stress"
+      ],
+      "involved_entities": [
+        "e_001"
+      ],
+      "summary": "Maya's career stress affects their shared routines and plans"
+    },
+    {
+      "arc_id": "arc_005",
+      "title": "Brew & Bloom Routine",
+      "phases": [
+        "2022-10: Alex starts getting coffee at Brew & Bloom every morning",
+        "2023-03: Alex forgets to pay for coffee 3 times in a row",
+        "2023-09: Barista starts recognizing Alex but still asks for payment",
+        "2024-02: Alex skips coffee due to morning procrastination"
+      ],
+      "involved_entities": [
+        "e_005"
+      ],
+      "summary": "A daily habit that's slowly breaking down due to inconsistent behavior"
+    },
+    {
+      "arc_id": "arc_006",
+      "title": "Savings Account Tracking",
+      "phases": [
+        "2022-12: Alex starts tracking their savings account daily",
+        "2023-01: Alex adds $200 to the account",
+        "2023-03: Alex stops adding money; account balance remains stagnant",
+        "2023-09: Alex sees the balance and realizes they haven't added anything in 6 months"
+      ],
+      "involved_entities": [
+        "e_009"
+      ],
+      "summary": "A financial habit that was abandoned without reflection"
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "proj_001",
+      "title": "Gardening Kit",
+      "status": "abandoned",
+      "related_entities": [
+        "e_015"
+      ],
+      "notes": "Bought in spring 2022; unused since July 2022; Alex still has the seeds and soil"
+    },
+    {
+      "project_id": "proj_002",
+      "title": "Yoga App",
+      "status": "abandoned",
+      "related_entities": [
+        "e_014"
+      ],
+      "notes": "Downloaded in 2022; unused since January 2023; still visible on phone"
+    },
+    {
+      "project_id": "proj_003",
+      "title": "Carpentry Project",
+      "status": "paused",
+      "related_entities": [
+        "e_013"
+      ],
+      "notes": "3 unfinished shelves; Alex plans to finish it this spring"
+    }
+  ],
+  "latent_facts": [
+    {
+      "fact_id": "fact_001",
+      "subject": "Alex",
+      "relation": "lives with",
+      "object": "Maya",
+      "arc_id": "arc_004",
+      "confidence": "assumed"
+    },
+    {
+      "fact_id": "fact_002",
+      "subject": "Alex",
+      "relation": "owes",
+      "object": "$400 to mechanic",
+      "arc_id": "arc_002",
+      "confidence": "confirmed"
+    },
+    {
+      "fact_id": "fact_003",
+      "subject": "Alex",
+      "relation": "has not used",
+      "object": "Treadmill",
+      "arc_id": "arc_003",
+      "confidence": "assumed"
+    },
+    {
+      "fact_id": "fact_004",
+      "subject": "Alex",
+      "relation": "plans to finish",
+      "object": "Carpentry Project",
+      "arc_id": "arc_003",
+      "confidence": "assumed"
+    },
+    {
+      "fact_id": "fact_005",
+      "subject": "Alex",
+      "relation": "has not paid for",
+      "object": "The Hive membership",
+      "arc_id": "arc_001",
+      "confidence": "confirmed"
+    },
+    {
+      "fact_id": "fact_006",
+      "subject": "Alex",
+      "relation": "saves",
+      "object": "money in Savings Account",
+      "arc_id": "arc_006",
+      "confidence": "contradicted"
+    }
+  ]
+}

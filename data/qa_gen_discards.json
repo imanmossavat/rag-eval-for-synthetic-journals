@@ -1,0 +1,224 @@
+{
+  "discards": [
+    {
+      "qa_type": "single_hop",
+      "note_ids": [
+        "N_202401160655"
+      ],
+      "reason": "fact not supported by note: The note does not contain information about anything being paused, let alone since 2023 or remaining so."
+    },
+    {
+      "qa_type": "multi_hop",
+      "note_ids": [
+        "N_202401011359",
+        "N_202401060638"
+      ],
+      "reason": "fact not supported by note N_202401060638: The note mentions a coffee stain on the couch getting larger, but does not attribute it to Ben or state that it is wet."
+    },
+    {
+      "qa_type": "temporal_reasoning",
+      "note_ids": [
+        "N_202401010930",
+        "n_202401060336",
+        "N_202401080039"
+      ],
+      "reason": "fewer than 2 notes with informative facts in temporal group"
+    },
+    {
+      "qa_type": "temporal_reasoning",
+      "note_ids": [
+        "N_202401010900",
+        "N_202401072327",
+        "N_202401090121"
+      ],
+      "reason": "fewer than 2 notes with informative facts in temporal group"
+    },
+    {
+      "qa_type": "temporal_reasoning",
+      "note_ids": [
+        "N_202401011359",
+        "N_202401021655",
+        "N_202401032027"
+      ],
+      "reason": "fewer than 2 notes with informative facts in temporal group"
+    },
+    {
+      "qa_type": "conflict_resolution",
+      "note_ids": [
+        "N_202401171327",
+        "N_202401171842"
+      ],
+      "reason": "conflict seed's two sides don't actually differ (not a real contradiction)"
+    },
+    {
+      "qa_type": "conflict_resolution",
+      "note_ids": [
+        "N_202401011151",
+        "N_202401072054"
+      ],
+      "reason": "conflict seed has a side with no informative fact"
+    },
+    {
+      "qa_type": "conflict_resolution",
+      "note_ids": [
+        "N_202401050202",
+        "E_202401141234"
+      ],
+      "reason": "fact not supported by note N_202401050202: The note mentions a coffee stain on the couch and implies someone (possibly Ben) caused it, but does not state that Ben spilled the coffee or provide any measurement of the stain's size."
+    },
+    {
+      "qa_type": "conflict_resolution",
+      "note_ids": [
+        "N_202401050202",
+        "N_202401060638"
+      ],
+      "reason": "fact not supported by note N_202401050202: The note mentions a coffee stain on the couch and implies someone (possibly Ben) spilled it, but does not state that Ben specifically caused *this* stain or provide any measurement of its size."
+    },
+    {
+      "qa_type": "conflict_resolution",
+      "note_ids": [
+        "N_202401050202",
+        "N_202401190556"
+      ],
+      "reason": "fact not supported by note N_202401050202: The note mentions a coffee stain on the couch and implies someone (possibly Ben) spilled it, but does not state that Ben specifically caused *this* stain or provide any measurement of its size."
+    },
+    {
+      "qa_type": "conflict_resolution",
+      "note_ids": [
+        "N_202401060241",
+        "N_202401071531"
+      ],
+      "reason": "conflict seed has a side with no informative fact"
+    },
+    {
+      "qa_type": "conflict_resolution",
+      "note_ids": [
+        "N_202401011151",
+        "N_202401220517"
+      ],
+      "reason": "conflict seed has a side with no informative fact"
+    },
+    {
+      "qa_type": "conflict_resolution",
+      "note_ids": [
+        "N_202401060241",
+        "N_202401151906"
+      ],
+      "reason": "conflict seed has a side with no informative fact"
+    },
+    {
+      "qa_type": "conflict_resolution",
+      "note_ids": [
+        "N_202401060241",
+        "N_20240117_0336"
+      ],
+      "reason": "fact not supported by note N_20240117_0336: The note mentions a 'parking thing' as an annoyance but does not state whether St. Mary’s has free parking, nor does it specify anything about Sundays."
+    },
+    {
+      "qa_type": "conflict_resolution",
+      "note_ids": [
+        "N_20240115_2041",
+        "N_202401210516"
+      ],
+      "reason": "conflict seed's two sides don't actually differ (not a real contradiction)"
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "N_202401121714"
+      ],
+      "reason": "blind check answered it: The notes directly ask if the coffee stain is still present, implying its existence but questioning whether it was previously mentioned."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "N_202401021655"
+      ],
+      "reason": "blind check answered it: The notes state that Ben has been working on the issue, implying this is why reminders are still being sent."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "N_202401171744_01"
+      ],
+      "reason": "blind check answered it: The note expresses concern that the current positive trend could be similar to a previous instance where success didn’t last."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "n_202401060336"
+      ],
+      "reason": "blind check answered it: The notes directly state uncertainty about whether the connection between The Art of War and the TikTok video is logical."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "N_202401172311"
+      ],
+      "reason": "JSONDecodeError: Expecting ',' delimiter: line 5 column 64 (char 123)"
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "N_202401090121"
+      ],
+      "reason": "blind check answered it: The notes draw a parallel between getting distracted from 'The Art of War' and the prior situation with 'Ethan's unpaid stuff', suggesting an unresolved feeling about that issue is contributing to their current lack of motivation."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "N_202401160157"
+      ],
+      "reason": "blind check answered it: Despite gaining followers, the poster expresses a feeling of not connecting with an audience, which is causing their uncertainty."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "N_202401072327"
+      ],
+      "reason": "blind check answered it: The notes specifically state that the reminder was missing the invoice number, which appears to be a recurring issue."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "n_202401160414"
+      ],
+      "reason": "blind check answered it: The notes directly state the app crashed while updating the lease and that this has happened previously."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "N_202401151906"
+      ],
+      "reason": "blind check answered it: The notes explicitly state uncertainty regarding whether information about 'Mochi' has been previously shared."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "N_202401220604"
+      ],
+      "reason": "blind check answered it: The notes explicitly state the user attempted to use the laptop 'this morning'."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "N_202401010930"
+      ],
+      "reason": "blind check answered it: The notes directly state the user questioned if they should have waited for the series before posting."
+    },
+    {
+      "qa_type": "unanswerable",
+      "note_ids": [
+        "n_202401101533"
+      ],
+      "reason": "blind check answered it: The notes suggest posting more frequently as a potential way to keep the new followers."
+    }
+  ],
+  "attempted": {
+    "single_hop": 7,
+    "multi_hop": 7,
+    "temporal_reasoning": 5,
+    "conflict_resolution": 13,
+    "unanswerable": 16
+  }
+}

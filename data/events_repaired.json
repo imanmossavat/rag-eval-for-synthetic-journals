@@ -1,0 +1,1473 @@
+{
+  "events": [
+    {
+      "event_id": "E_202401010900",
+      "timestamp": "2024-01-01T09:00:00",
+      "event_type": "text",
+      "text": "Alex texts Sunny to say they'll be late to coffee this morning due to 'just one more email'—a pattern that's become predictable.",
+      "involved_entities": [
+        "e_008"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_003: has not used treadmill (assumed) is reinforced by Alex prioritizing work over fitness"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "frustration",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401011022",
+      "timestamp": "2024-01-01T10:22:21.765910",
+      "event_type": "text",
+      "text": "Alex meets Riley at The Hive for coffee but forgets to pay for the space; Riley jokes about 'Alex's free membership.'",
+      "involved_entities": [
+        "e_002"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is reinforced"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "embarrassment",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401011125",
+      "timestamp": "2024-01-01T11:25:57.362990",
+      "event_type": "text",
+      "text": "Alex opens the gardening kit for the first time in months, then puts it back in the closet without using the soil.",
+      "involved_entities": [
+        "e_015"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by gardening kit abandonment"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "disappointment",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401011329",
+      "timestamp": "2024-01-01T13:29:29.501216",
+      "event_type": "text",
+      "text": "Alex messages Riley to cancel their planned meeting at The Hive because 'work got unexpectedly busy'—again.",
+      "involved_entities": [
+        "e_002"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is reinforced by canceled meeting"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "guilt",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401011534",
+      "timestamp": "2024-01-01T15:34:50.574737",
+      "event_type": "text",
+      "text": "Alex checks their car's dashboard for the $400 repair notice but decides to 'just drive it anyway'—the same excuse they've used for months.",
+      "involved_entities": [
+        "e_012"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_002: owes $400 to mechanic (confirmed) is reinforced by inaction"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "anxiety",
+        "valence": -1,
+        "intensity": 2
+      }
+    },
+    {
+      "event_id": "E_202401011623",
+      "timestamp": "2024-01-01T16:23:39.866305",
+      "event_type": "text",
+      "text": "Alex opens their savings account app and stares at the stagnant balance for 3 minutes without making a deposit.",
+      "involved_entities": [
+        "e_009"
+      ],
+      "story_arc_id": "arc_006",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is confirmed by inaction"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "resignation",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401021315",
+      "timestamp": "2024-01-02T13:15:44.211531",
+      "event_type": "text",
+      "text": "Alex opens the Yoga app but immediately closes it after seeing the '12 days unused' badge.",
+      "involved_entities": [
+        "e_014"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by yoga app abandonment"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "shame",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401030850",
+      "timestamp": "2024-01-03T08:50:58.919650",
+      "event_type": "text",
+      "text": "Alex's dad calls as usual, but Alex answers distractedly while scrolling through work emails.",
+      "involved_entities": [
+        "e_006"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_001: lives with Maya (assumed) is confirmed by shared home context"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "distracted",
+        "valence": 0,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401031019",
+      "timestamp": "2024-01-03T10:19:23.947681",
+      "event_type": "text",
+      "text": "Alex starts a new shelf for the carpentry project but gets distracted by a design challenge and stops after 10 minutes.",
+      "involved_entities": [
+        "e_013"
+      ],
+      "story_arc_id": "arc_003",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is reinforced by partial progress"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "frustration",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401031200",
+      "timestamp": "2024-01-03T12:00:09.668471",
+      "event_type": "text",
+      "text": "Alex sends Sunny a text about a 'busy week' but doesn't actually cancel their plans.",
+      "involved_entities": [
+        "e_008"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_003: has not used treadmill (assumed) is reinforced by procrastination"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "avoidance",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401031316",
+      "timestamp": "2024-01-03T13:16:03.772336",
+      "event_type": "text",
+      "text": "Alex eats lunch at Sonic but skips paying the $7 bill, later feeling guilty enough to add $10 to their savings account.",
+      "involved_entities": [
+        "e_010"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is partially corrected by $10 deposit"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "guilt",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401031449",
+      "timestamp": "2024-01-03T14:49:27.837329",
+      "event_type": "text",
+      "text": "Maya suggests a weekend trip to manage her stress, but Alex immediately thinks of their unfinished carpentry project.",
+      "involved_entities": [
+        "e_001"
+      ],
+      "story_arc_id": "arc_004",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is reinforced by distraction"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "overwhelm",
+        "valence": -1,
+        "intensity": 2
+      }
+    },
+    {
+      "event_id": "E_202401031641",
+      "timestamp": "2024-01-03T16:41:34.504781",
+      "event_type": "text",
+      "text": "Alex ignores Maya's suggestion about a weekend trip and instead scrolls through a carpentry tutorial online.",
+      "involved_entities": [
+        "e_001"
+      ],
+      "story_arc_id": "arc_004",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is reinforced by avoidance"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "avoidance",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401042240",
+      "timestamp": "2024-01-04T22:40:24.570036",
+      "event_type": "text",
+      "text": "Alex's sister Maggie sends a birthday card for the upcoming week, but Alex forgets to respond until the day after.",
+      "involved_entities": [
+        "e_003"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_001: lives with Maya (assumed) is reinforced by shared home context"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "neglect",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401050125",
+      "timestamp": "2024-01-05T01:25:49.716787",
+      "event_type": "text",
+      "text": "Alex's brother Ethan calls to ask if they can borrow the car for a weekend trip, but Alex lies and says it's 'broken' to avoid the repair.",
+      "involved_entities": [
+        "e_007"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_002: owes $400 to mechanic (confirmed) is reinforced by deception"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "shame",
+        "valence": -1,
+        "intensity": 2
+      }
+    },
+    {
+      "event_id": "E_202401052030",
+      "timestamp": "2024-01-05T20:30:48.914545",
+      "event_type": "text",
+      "text": "Alex calls the mechanic to schedule the car repair but immediately cancels the appointment to 'focus on work.'",
+      "involved_entities": [
+        "e_012"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_002: owes $400 to mechanic (confirmed) is reinforced by rescheduling"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "anxiety",
+        "valence": -1,
+        "intensity": 2
+      }
+    },
+    {
+      "event_id": "E_202401052235",
+      "timestamp": "2024-01-05T22:35:39.790043",
+      "event_type": "text",
+      "text": "Alex checks the carpentry project and realizes they've bought more wood but haven't used it in months.",
+      "involved_entities": [
+        "e_013"
+      ],
+      "story_arc_id": "arc_003",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by unused materials"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "disappointment",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_contra_arc_002",
+      "timestamp": "2024-01-06T15:34:50.574737",
+      "event_type": "text",
+      "text": "Alex finally schedules and completes the car repair at the mechanic, paying the $400 without hesitation.",
+      "involved_entities": [
+        "e_012"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_002: owes $400 to mechanic (confirmed) is contradicted by payment"
+      ],
+      "importance": 5,
+      "affect": {
+        "emotion": "relief",
+        "valence": 1,
+        "intensity": 2
+      },
+      "_contradiction_of": "E_202401011534"
+    },
+    {
+      "event_id": "E_202401062335",
+      "timestamp": "2024-01-06T23:35:36.377764",
+      "event_type": "text",
+      "text": "Alex updates their savings account app to show a $50 deposit, but it's the first one in six months.",
+      "involved_entities": [
+        "e_009"
+      ],
+      "story_arc_id": "arc_006",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is partially corrected by $50 deposit"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "pride",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401070215",
+      "timestamp": "2024-01-07T02:15:42.297072",
+      "event_type": "text",
+      "text": "Alex skips their usual Brew & Bloom coffee due to morning procrastination, which is the third time this week.",
+      "involved_entities": [
+        "e_005"
+      ],
+      "story_arc_id": "arc_005",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is reinforced by coffee habit break"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "regret",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401070329",
+      "timestamp": "2024-01-07T03:29:37.630558",
+      "event_type": "text",
+      "text": "Alex adds $20 to their savings account after seeing Maya's stress and wanting to feel more secure.",
+      "involved_entities": [
+        "e_009"
+      ],
+      "story_arc_id": "arc_006",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is partially corrected by $20 deposit"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "determination",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401080849",
+      "timestamp": "2024-01-08T08:49:01.943017",
+      "event_type": "text",
+      "text": "Alex meets Riley at The Hive for coffee and finally pays for the space, but only because Riley brought up the unpaid membership.",
+      "involved_entities": [
+        "e_002"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by payment"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "relief",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401081018",
+      "timestamp": "2024-01-08T10:18:37.104073",
+      "event_type": "text",
+      "text": "Alex tells Ethan they can borrow the car now that it's repaired, but Ethan says they've already made other plans.",
+      "involved_entities": [
+        "e_007"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_002: owes $400 to mechanic (confirmed) is contradicted by payment"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "disappointment",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401081121",
+      "timestamp": "2024-01-08T11:21:50.431391",
+      "event_type": "text",
+      "text": "Alex uses The Hive for a work session but forgets to pay again, even though they paid the day before.",
+      "involved_entities": [
+        "e_004"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is reinforced by forgetfulness"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "frustration",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_contra_arc_001",
+      "timestamp": "2024-01-09T10:22:21.765910",
+      "event_type": "text",
+      "text": "Alex meets Riley at The Hive, pays for the space, and says, 'I’ve been meaning to do this for months.'",
+      "involved_entities": [
+        "e_002"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by consistent payment"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "determination",
+        "valence": 1,
+        "intensity": 2
+      },
+      "_contradiction_of": "E_202401011022"
+    },
+    {
+      "event_id": "E_202401091523",
+      "timestamp": "2024-01-09T15:23:49.528146",
+      "event_type": "text",
+      "text": "Alex's sister Maggie calls to say she's visiting Portland next month, but Alex puts it off until later in the day.",
+      "involved_entities": [
+        "e_003"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_001: lives with Maya (assumed) is reinforced by shared home context"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "avoidance",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_contra_arc_006",
+      "timestamp": "2024-01-09T16:23:39.866305",
+      "event_type": "text",
+      "text": "Alex makes a $100 deposit into their savings account, the largest in a year, and feels a moment of pride.",
+      "involved_entities": [
+        "e_009"
+      ],
+      "story_arc_id": "arc_006",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is fully corrected by $100 deposit"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "pride",
+        "valence": 1,
+        "intensity": 2
+      },
+      "_contradiction_of": "E_202401011623"
+    },
+    {
+      "event_id": "E_202401091808",
+      "timestamp": "2024-01-09T18:08:42.270881",
+      "event_type": "text",
+      "text": "Alex's dad calls as usual, but this time Alex remembers to say 'hello' before they get distracted.",
+      "involved_entities": [
+        "e_006"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_001: lives with Maya (assumed) is reinforced by shared home context"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "small joy",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401091920",
+      "timestamp": "2024-01-09T19:20:28.206572",
+      "event_type": "text",
+      "text": "Alex cancels their meeting with Riley at The Hive because they 'have too much work,' but it's just a cover for skipping the meeting.",
+      "involved_entities": [
+        "e_012"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_002: owes $400 to mechanic (confirmed) is reinforced by distraction"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "avoidance",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401092032",
+      "timestamp": "2024-01-09T20:32:54.681757",
+      "event_type": "text",
+      "text": "Alex opens the Yoga app and uses it for 10 minutes, but then gets distracted and closes it.",
+      "involved_entities": [
+        "e_014"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by yoga app use"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "frustration",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401092137",
+      "timestamp": "2024-01-09T21:37:00.721554",
+      "event_type": "text",
+      "text": "Alex meets Riley at The Hive and pays for the space for the third time this week, feeling like they're finally getting it right.",
+      "involved_entities": [
+        "e_002"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by consistent payment"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "satisfaction",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401100011",
+      "timestamp": "2024-01-10T00:11:46.201602",
+      "event_type": "text",
+      "text": "Alex skips Brew & Bloom coffee again, but this time they pay for it the next day to 'make up for it.'",
+      "involved_entities": [
+        "e_005"
+      ],
+      "story_arc_id": "arc_005",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is reinforced by coffee habit"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "regret",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401100149",
+      "timestamp": "2024-01-10T01:49:56.994257",
+      "event_type": "text",
+      "text": "Alex cancels their savings account deposit because they 'need the money for groceries'—a lie to themselves.",
+      "involved_entities": [
+        "e_012"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is contradicted by inaction"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "guilt",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401100310",
+      "timestamp": "2024-01-10T03:10:40.684622",
+      "event_type": "text",
+      "text": "Alex uses The Hive for a work session but forgets to pay again, and then feels bad about it for the rest of the day.",
+      "involved_entities": [
+        "e_004"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is reinforced by forgetfulness"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "guilt",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401100413",
+      "timestamp": "2024-01-10T04:13:47.924443",
+      "event_type": "text",
+      "text": "Alex opens the gardening kit and plants one seed, but then loses interest and leaves it on the windowsill.",
+      "involved_entities": [
+        "e_015"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by gardening kit use"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "disappointment",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401110246",
+      "timestamp": "2024-01-11T02:46:13.204574",
+      "event_type": "text",
+      "text": "Alex's sister Maggie sends a text asking if they're free for lunch, but Alex doesn't respond until 4 hours later.",
+      "involved_entities": [
+        "e_015"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_001: lives with Maya (assumed) is reinforced by shared home context"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "neglect",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401112201",
+      "timestamp": "2024-01-11T22:01:57.027370",
+      "event_type": "text",
+      "text": "Alex opens the Yoga app and uses it for the first time in 3 months, but only for 5 minutes before getting distracted.",
+      "involved_entities": [
+        "e_014"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by yoga app use"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "frustration",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_contra_arc_005",
+      "timestamp": "2024-01-12T02:15:42.297072",
+      "event_type": "text",
+      "text": "Alex pays for their morning coffee at Brew & Bloom and remembers to say 'thank you' to the barista for the first time in months.",
+      "involved_entities": [
+        "e_005"
+      ],
+      "story_arc_id": "arc_005",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by coffee payment"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "pride",
+        "valence": 1,
+        "intensity": 1
+      },
+      "_contradiction_of": "E_202401070215"
+    },
+    {
+      "event_id": "E_202401121749",
+      "timestamp": "2024-01-12T17:49:03.458902",
+      "event_type": "text",
+      "text": "Maya says they're going to try a new weekend trip plan, but Alex immediately starts thinking about the carpentry project again.",
+      "involved_entities": [
+        "e_001"
+      ],
+      "story_arc_id": "arc_004",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is reinforced by distraction"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "overwhelm",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401122038",
+      "timestamp": "2024-01-12T20:38:41.138499",
+      "event_type": "text",
+      "text": "Alex's sister Maggie sends a text asking if they want to go hiking, but Alex says 'no' without thinking.",
+      "involved_entities": [
+        "e_003"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_001: lives with Maya (assumed) is reinforced by shared home context"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "avoidance",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401122132",
+      "timestamp": "2024-01-12T21:32:45.188058",
+      "event_type": "text",
+      "text": "Alex opens the gardening kit again but just rearranges the soil and leaves it.",
+      "involved_entities": [
+        "e_015"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by gardening kit use"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "frustration",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401122208",
+      "timestamp": "2024-01-12T22:08:57.354953",
+      "event_type": "text",
+      "text": "Alex eats lunch at Sonic without paying, then feels guilty and adds $5 to their savings account later.",
+      "involved_entities": [
+        "e_010"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is partially corrected by $5 deposit"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "guilt",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401130044",
+      "timestamp": "2024-01-13T00:44:28.965811",
+      "event_type": "text",
+      "text": "Alex uses The Hive for a work session and pays for the space for the first time in weeks.",
+      "involved_entities": [
+        "e_004"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by payment"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "relief",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401130230",
+      "timestamp": "2024-01-13T02:30:42.409823",
+      "event_type": "text",
+      "text": "Alex sends Sunny a text about a 'busy week' but doesn't actually cancel their plans.",
+      "involved_entities": [
+        "e_008"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_003: has not used treadmill (assumed) is reinforced by procrastination"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "avoidance",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401130510",
+      "timestamp": "2024-01-13T05:10:22.094578",
+      "event_type": "text",
+      "text": "Alex meets Riley at The Hive for coffee and pays for the space without forgetting this time.",
+      "involved_entities": [
+        "e_002"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by consistent payment"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "satisfaction",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_contra_arc_003",
+      "timestamp": "2024-01-13T10:19:23.947681",
+      "event_type": "text",
+      "text": "Alex finishes the third shelf for the carpentry project and feels a small sense of accomplishment.",
+      "involved_entities": [
+        "e_013"
+      ],
+      "story_arc_id": "arc_003",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by completion"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "pride",
+        "valence": 1,
+        "intensity": 2
+      },
+      "_contradiction_of": "E_202401031019"
+    },
+    {
+      "event_id": "E_202401141037",
+      "timestamp": "2024-01-14T10:37:52.864938",
+      "event_type": "text",
+      "text": "Alex skips Brew & Bloom coffee again, but this time they pay for it the next day without guilt.",
+      "involved_entities": [
+        "e_005"
+      ],
+      "story_arc_id": "arc_005",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is reinforced by coffee habit"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "acceptance",
+        "valence": 0,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401150934",
+      "timestamp": "2024-01-15T09:34:24.514304",
+      "event_type": "text",
+      "text": "Alex tells Ethan they can borrow the car, but Ethan says they're not going to need it anymore.",
+      "involved_entities": [
+        "e_007"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_002: owes $400 to mechanic (confirmed) is contradicted by car being unused"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "relief",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401151144",
+      "timestamp": "2024-01-15T11:44:14.775486",
+      "event_type": "text",
+      "text": "Alex meets Riley at The Hive for coffee and pays for the space, but then forgets to say 'thank you' to the barista.",
+      "involved_entities": [
+        "e_002"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by payment"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "frustration",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401151233",
+      "timestamp": "2024-01-15T12:33:17.243522",
+      "event_type": "text",
+      "text": "Alex adds $50 to their savings account after seeing Maya's stress and wanting to feel more secure.",
+      "involved_entities": [
+        "e_002"
+      ],
+      "story_arc_id": "arc_006",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is fully corrected by $50 deposit"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "determination",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401151321",
+      "timestamp": "2024-01-15T13:21:59.099936",
+      "event_type": "text",
+      "text": "Maya suggests a weekend trip to manage her stress, but Alex immediately says they're 'too busy with the carpentry project.'",
+      "involved_entities": [
+        "e_001"
+      ],
+      "story_arc_id": "arc_004",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is reinforced by distraction"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "overwhelm",
+        "valence": -1,
+        "intensity": 2
+      }
+    },
+    {
+      "event_id": "E_202401151526",
+      "timestamp": "2024-01-15T15:26:52.210165",
+      "event_type": "text",
+      "text": "Alex finishes the third shelf for the carpentry project, the first time they've completed a piece since 2022.",
+      "involved_entities": [
+        "e_013"
+      ],
+      "story_arc_id": "arc_003",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by completion"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "pride",
+        "valence": 1,
+        "intensity": 2
+      }
+    },
+    {
+      "event_id": "E_202401151731",
+      "timestamp": "2024-01-15T17:31:43.441443",
+      "event_type": "text",
+      "text": "Alex's sister Maggie sends a text asking if they want to go hiking, but Alex says 'no' without thinking.",
+      "involved_entities": [
+        "e_003"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_001: lives with Maya (assumed) is reinforced by shared home context"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "avoidance",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401161704",
+      "timestamp": "2024-01-16T17:04:04.720969",
+      "event_type": "text",
+      "text": "Alex cancels their meeting with Riley at The Hive because they 'have too much work,' but it's just a cover for skipping the meeting.",
+      "involved_entities": [
+        "e_012"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_002: owes $400 to mechanic (confirmed) is reinforced by distraction"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "avoidance",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401161923",
+      "timestamp": "2024-01-16T19:23:57.571634",
+      "event_type": "text",
+      "text": "Alex's roommate Sunny texts about a new coffee shop, but Alex doesn't respond until the next day.",
+      "involved_entities": [
+        "e_008"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_003: has not used treadmill (assumed) is reinforced by procrastination"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "neglect",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401162123",
+      "timestamp": "2024-01-16T21:23:17.259369",
+      "event_type": "text",
+      "text": "Alex cancels their savings account deposit because they 'need the money for groceries'—a lie to themselves.",
+      "involved_entities": [
+        "e_012"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is contradicted by inaction"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "guilt",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_contra_arc_004",
+      "timestamp": "2024-01-17T14:49:27.837329",
+      "event_type": "text",
+      "text": "Alex tells Maya they'll go on the weekend trip after all, and Maya smiles with relief.",
+      "involved_entities": [
+        "e_001"
+      ],
+      "story_arc_id": "arc_004",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by trip commitment"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "relief",
+        "valence": 1,
+        "intensity": 2
+      },
+      "_contradiction_of": "E_202401031449"
+    },
+    {
+      "event_id": "E_202401171959",
+      "timestamp": "2024-01-17T19:59:26.642645",
+      "event_type": "text",
+      "text": "Alex uses The Hive for a work session and pays for the space, but then forgets to say 'thank you' to the barista.",
+      "involved_entities": [
+        "e_004"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by payment"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "frustration",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401172053",
+      "timestamp": "2024-01-17T20:53:57.580986",
+      "event_type": "text",
+      "text": "Alex pays for their coffee at Brew & Bloom for the first time in months and feels a small sense of accomplishment.",
+      "involved_entities": [
+        "e_005"
+      ],
+      "story_arc_id": "arc_005",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by coffee payment"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "pride",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401172203",
+      "timestamp": "2024-01-17T22:03:28.169315",
+      "event_type": "text",
+      "text": "Maya says they'll go on the weekend trip, and Alex feels a small sense of relief.",
+      "involved_entities": [
+        "e_001"
+      ],
+      "story_arc_id": "arc_004",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by trip commitment"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "relief",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401172259",
+      "timestamp": "2024-01-17T22:59:56.388644",
+      "event_type": "text",
+      "text": "Alex eats lunch at Sonic without paying, then feels guilty and adds $5 to their savings account later.",
+      "involved_entities": [
+        "e_010"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is partially corrected by $5 deposit"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "guilt",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401180147",
+      "timestamp": "2024-01-18T01:47:22.578318",
+      "event_type": "text",
+      "text": "Alex opens the gardening kit and plants seeds, but only one type, then loses interest.",
+      "involved_entities": [
+        "e_015"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by gardening kit use"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "frustration",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401180305",
+      "timestamp": "2024-01-18T03:05:46.701072",
+      "event_type": "text",
+      "text": "Alex pays for their coffee at Brew & Bloom for the second time this week, feeling more consistent.",
+      "involved_entities": [
+        "e_005"
+      ],
+      "story_arc_id": "arc_005",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by coffee payment"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "satisfaction",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401180345",
+      "timestamp": "2024-01-18T03:45:27.660071",
+      "event_type": "text",
+      "text": "Alex tells Ethan they can borrow the car, but Ethan says they're not going to need it anymore.",
+      "involved_entities": [
+        "e_007"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_002: owes $400 to mechanic (confirmed) is contradicted by car being unused"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "relief",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401190504",
+      "timestamp": "2024-01-19T05:04:32.814879",
+      "event_type": "text",
+      "text": "Maya says they're going on the weekend trip, and Alex feels a small sense of relief.",
+      "involved_entities": [
+        "e_001"
+      ],
+      "story_arc_id": "arc_004",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by trip commitment"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "relief",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401190629",
+      "timestamp": "2024-01-19T06:29:21.440922",
+      "event_type": "text",
+      "text": "Alex opens the Yoga app and uses it for 15 minutes, feeling a small sense of accomplishment.",
+      "involved_entities": [
+        "e_014"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by yoga app use"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "pride",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401201130",
+      "timestamp": "2024-01-20T11:30:15.872261",
+      "event_type": "text",
+      "text": "Alex finishes the carpentry project, the first time they've completed a piece in over a year.",
+      "involved_entities": [
+        "e_013"
+      ],
+      "story_arc_id": "arc_003",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by completion"
+      ],
+      "importance": 5,
+      "affect": {
+        "emotion": "pride",
+        "valence": 1,
+        "intensity": 3
+      }
+    },
+    {
+      "event_id": "E_202401201420",
+      "timestamp": "2024-01-20T14:20:50.338315",
+      "event_type": "text",
+      "text": "Alex cancels their savings account deposit because they 'need the money for groceries'—a lie to themselves.",
+      "involved_entities": [
+        "e_012"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is contradicted by inaction"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "guilt",
+        "valence": -1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401201622",
+      "timestamp": "2024-01-20T16:22:46.272880",
+      "event_type": "text",
+      "text": "Alex uses The Hive for a work session and pays for the space, feeling more consistent.",
+      "involved_entities": [
+        "e_004"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by payment"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "satisfaction",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401201759",
+      "timestamp": "2024-01-20T17:59:55.402530",
+      "event_type": "text",
+      "text": "Alex tells Ethan they can borrow the car, but Ethan says they're not going to need it anymore.",
+      "involved_entities": [
+        "e_007"
+      ],
+      "story_arc_id": "arc_002",
+      "latent_fact_updates": [
+        "fact_002: owes $400 to mechanic (confirmed) is contradicted by car being unused"
+      ],
+      "importance": 2,
+      "affect": {
+        "emotion": "relief",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401201919",
+      "timestamp": "2024-01-20T19:19:20.365809",
+      "event_type": "text",
+      "text": "Alex adds $100 to their savings account after seeing Maya's stress and wanting to feel more secure.",
+      "involved_entities": [
+        "e_012"
+      ],
+      "story_arc_id": "arc_006",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is fully corrected by $100 deposit"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "determination",
+        "valence": 1,
+        "intensity": 2
+      }
+    },
+    {
+      "event_id": "E_202401202022",
+      "timestamp": "2024-01-20T20:22:55.567716",
+      "event_type": "text",
+      "text": "Alex meets Riley at The Hive for coffee and pays for the space, feeling more consistent.",
+      "involved_entities": [
+        "e_004"
+      ],
+      "story_arc_id": "arc_001",
+      "latent_fact_updates": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by payment"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "satisfaction",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401202124",
+      "timestamp": "2024-01-20T21:24:02.781008",
+      "event_type": "text",
+      "text": "Alex finishes the third shelf for the carpentry project, the first time they've completed a piece in over a year.",
+      "involved_entities": [
+        "e_013"
+      ],
+      "story_arc_id": "arc_003",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by completion"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "pride",
+        "valence": 1,
+        "intensity": 2
+      }
+    },
+    {
+      "event_id": "E_202401202213",
+      "timestamp": "2024-01-20T22:13:25.868710",
+      "event_type": "text",
+      "text": "Alex adds $50 to their savings account after seeing Maya's stress and wanting to feel more secure.",
+      "involved_entities": [
+        "e_009"
+      ],
+      "story_arc_id": "arc_006",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is fully corrected by $50 deposit"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "determination",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401210040",
+      "timestamp": "2024-01-21T00:40:28.817650",
+      "event_type": "text",
+      "text": "Alex adds $100 to their savings account for the second time in a week, feeling more consistent.",
+      "involved_entities": [
+        "e_009"
+      ],
+      "story_arc_id": "arc_006",
+      "latent_fact_updates": [
+        "fact_006: saves money in Savings Account (contradicted) is fully corrected by $100 deposit"
+      ],
+      "importance": 3,
+      "affect": {
+        "emotion": "pride",
+        "valence": 1,
+        "intensity": 1
+      }
+    },
+    {
+      "event_id": "E_202401210330",
+      "timestamp": "2024-01-21T03:30:40.196746",
+      "event_type": "text",
+      "text": "Alex tells Maya they'll go on the weekend trip, and Maya smiles with relief.",
+      "involved_entities": [
+        "e_001"
+      ],
+      "story_arc_id": "arc_004",
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by trip commitment"
+      ],
+      "importance": 4,
+      "affect": {
+        "emotion": "relief",
+        "valence": 1,
+        "intensity": 2
+      }
+    },
+    {
+      "event_id": "E_202401210738",
+      "timestamp": "2024-01-21T07:38:41.595765",
+      "event_type": "text",
+      "text": "Alex opens the gardening kit for the first time in months and plants a seed, but then gets distracted.",
+      "involved_entities": [
+        "e_015"
+      ],
+      "story_arc_id": null,
+      "latent_fact_updates": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by gardening kit use"
+      ],
+      "importance": 1,
+      "affect": {
+        "emotion": "frustration",
+        "valence": -1,
+        "intensity": 1
+      }
+    }
+  ]
+}

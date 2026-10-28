@@ -1,0 +1,444 @@
+[
+  {
+    "id": "Q01",
+    "level": 1,
+    "type": "single_fact",
+    "question": "What is my dog's name?",
+    "answer": [
+      "Pickle"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N008"
+    ],
+    "distractor_values": [
+      "Biscotti"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q02",
+    "level": 1,
+    "type": "single_fact",
+    "question": "What is Femke's dog's name?",
+    "answer": [
+      "Biscotti"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N027"
+    ],
+    "distractor_values": [
+      "Pickle"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q03",
+    "level": 1,
+    "type": "single_fact",
+    "question": "What is my favourite cafe?",
+    "answer": [
+      "Koffie Kantoor"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N020"
+    ],
+    "distractor_values": [
+      "Bar Bolle"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q04",
+    "level": 1,
+    "type": "single_fact",
+    "question": "What is Tomasz's favourite cafe?",
+    "answer": [
+      "Bar Bolle"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N033"
+    ],
+    "distractor_values": [
+      "Koffie Kantoor"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q05",
+    "level": 1,
+    "type": "single_fact",
+    "question": "What is Ines's car?",
+    "answer": [
+      "Fiat Panda"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N028"
+    ],
+    "distractor_values": [
+      "Volvo Amazon"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q06",
+    "level": 1,
+    "type": "single_fact",
+    "question": "What is Kofi's car?",
+    "answer": [
+      "Volvo Amazon"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N038"
+    ],
+    "distractor_values": [
+      "Fiat Panda"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q07",
+    "level": 1,
+    "type": "single_fact",
+    "question": "What is Femke's favourite band?",
+    "answer": [
+      "Golden Earring"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N043"
+    ],
+    "distractor_values": [],
+    "answerable": true
+  },
+  {
+    "id": "Q08",
+    "level": 1,
+    "type": "single_fact",
+    "question": "What is Kofi's home town?",
+    "answer": [
+      "Paramaribo"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N050"
+    ],
+    "distractor_values": [],
+    "answerable": true
+  },
+  {
+    "id": "Q09",
+    "level": 2,
+    "type": "current_state",
+    "question": "What is my workplace now?",
+    "answer": [
+      "Museum Speelklok"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N054"
+    ],
+    "distractor_values": [
+      "Bakkerij Vos",
+      "Openbare Bibliotheek"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q10",
+    "level": 3,
+    "type": "previous_state",
+    "question": "What was my workplace before Museum Speelklok?",
+    "answer": [
+      "Openbare Bibliotheek"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N036",
+      "N054"
+    ],
+    "distractor_values": [
+      "Bakkerij Vos",
+      "Museum Speelklok"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q11",
+    "level": 2,
+    "type": "current_state",
+    "question": "What is my phone now?",
+    "answer": [
+      "Pixel 8"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N045"
+    ],
+    "distractor_values": [
+      "Fairphone 4"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q12",
+    "level": 3,
+    "type": "previous_state",
+    "question": "What was my phone before Pixel 8?",
+    "answer": [
+      "Fairphone 4"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N010",
+      "N045"
+    ],
+    "distractor_values": [
+      "Pixel 8"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q13",
+    "level": 2,
+    "type": "current_state",
+    "question": "What are my running shoes now?",
+    "answer": [
+      "Hoka Clifton"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N052"
+    ],
+    "distractor_values": [
+      "Asics Novablast"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q14",
+    "level": 3,
+    "type": "previous_state",
+    "question": "What were my running shoes before Hoka Clifton?",
+    "answer": [
+      "Asics Novablast"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N017",
+      "N052"
+    ],
+    "distractor_values": [
+      "Hoka Clifton"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q15",
+    "level": 3,
+    "type": "two_hop",
+    "question": "What is my sister's dog's name?",
+    "answer": [
+      "Biscotti"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N002",
+      "N027"
+    ],
+    "distractor_values": [
+      "Pickle"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q16",
+    "level": 3,
+    "type": "two_hop",
+    "question": "What is my colleague's favourite cafe?",
+    "answer": [
+      "Bar Bolle"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N015",
+      "N033"
+    ],
+    "distractor_values": [
+      "Koffie Kantoor"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q17",
+    "level": 3,
+    "type": "two_hop",
+    "question": "What is my neighbour's car?",
+    "answer": [
+      "Fiat Panda"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N018",
+      "N028"
+    ],
+    "distractor_values": [
+      "Volvo Amazon"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q18",
+    "level": 3,
+    "type": "two_hop",
+    "question": "What is my roommate's car?",
+    "answer": [
+      "Volvo Amazon"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N022",
+      "N038"
+    ],
+    "distractor_values": [
+      "Fiat Panda"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "Q19",
+    "level": 3,
+    "type": "two_hop",
+    "question": "What is my sister's favourite band?",
+    "answer": [
+      "Golden Earring"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N002",
+      "N043"
+    ],
+    "distractor_values": [],
+    "answerable": true
+  },
+  {
+    "id": "Q20",
+    "level": 3,
+    "type": "two_hop",
+    "question": "What is my roommate's home town?",
+    "answer": [
+      "Paramaribo"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N022",
+      "N050"
+    ],
+    "distractor_values": [],
+    "answerable": true
+  },
+  {
+    "id": "Q21",
+    "level": 4,
+    "type": "count",
+    "question": "How many times did I go bouldering this month?",
+    "answer": [
+      "7"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N006",
+      "N021",
+      "N026",
+      "N034",
+      "N040",
+      "N053",
+      "N055"
+    ],
+    "distractor_values": [],
+    "answerable": true
+  },
+  {
+    "id": "Q22",
+    "level": 4,
+    "type": "count",
+    "question": "How many times did I go swimming this month?",
+    "answer": [
+      "3"
+    ],
+    "conjunct": false,
+    "gold_notes": [
+      "N025",
+      "N039",
+      "N058"
+    ],
+    "distractor_values": [],
+    "answerable": true
+  },
+  {
+    "id": "Q23",
+    "level": 4,
+    "type": "history",
+    "question": "List every workplace I have had this month, in order.",
+    "answer": [
+      "Bakkerij Vos",
+      "Openbare Bibliotheek",
+      "Museum Speelklok"
+    ],
+    "conjunct": true,
+    "gold_notes": [
+      "N001",
+      "N036",
+      "N054"
+    ],
+    "distractor_values": [],
+    "answerable": true
+  },
+  {
+    "id": "Q24",
+    "level": 5,
+    "type": "unanswerable",
+    "question": "What is Tomasz's dog's name?",
+    "answer": [],
+    "conjunct": false,
+    "gold_notes": [],
+    "distractor_values": [
+      "Pickle",
+      "Biscotti"
+    ],
+    "answerable": false
+  },
+  {
+    "id": "Q25",
+    "level": 5,
+    "type": "unanswerable",
+    "question": "What is Ines's favourite cafe?",
+    "answer": [],
+    "conjunct": false,
+    "gold_notes": [],
+    "distractor_values": [
+      "Koffie Kantoor",
+      "Bar Bolle"
+    ],
+    "answerable": false
+  },
+  {
+    "id": "Q26",
+    "level": 5,
+    "type": "unanswerable",
+    "question": "What is Femke's car?",
+    "answer": [],
+    "conjunct": false,
+    "gold_notes": [],
+    "distractor_values": [
+      "Fiat Panda",
+      "Volvo Amazon"
+    ],
+    "answerable": false
+  }
+]

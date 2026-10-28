@@ -1,0 +1,15 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.log
+.env
+demo/runs/cache/
+
+# private working notes, kept local only
+CLAUDE.md
+ISSUES.md
+OVERVIEW.md
+RECOMMENDATIONS.md
+REPORT_*.md
+data/README.md
+demo/TALK_NOTES.md

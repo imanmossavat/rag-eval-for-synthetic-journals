@@ -1,0 +1,16 @@
+{
+  "models": [
+    "qwen3:4b",
+    "qwen3:30b"
+  ],
+  "bots": [
+    "full_context",
+    "vector_rag",
+    "summary",
+    "facts"
+  ],
+  "k": 5,
+  "n_notes": 59,
+  "n_questions": 26,
+  "answer_system_prompt": "You answer questions about the user's personal journal, using ONLY the memory you are given. The user wrote the journal, so 'I'/'my' in the question means the journal's author. Reply with the short answer only: a name, place, number or short list - no explanation. If the memory does not contain the answer, reply exactly: I don't know"
+}

@@ -1,0 +1,2454 @@
+{
+  "notes": [
+    {
+      "note_id": "N_202401010905",
+      "timestamp": "2024-01-01T09:05:00",
+      "note_type": "personal",
+      "text": "Texted Sunny about being late again—'just one more email' like always. Should've just stayed home. The treadmill's still cold too, guess I'll skip it today. Ugh.",
+      "entities": [
+        "e_008"
+      ],
+      "tags": [
+        "work",
+        "fitness",
+        "habit"
+      ],
+      "latent_facts": [],
+      "story_arc_id": null,
+      "importance": "3",
+      "renderings": [
+        {
+          "entity_id": "e_008",
+          "explicit": true,
+          "as": "Sunny"
+        }
+      ],
+      "source_event_id": "E_202401010900",
+      "phase_state": {
+        "stress": 0,
+        "focus": "",
+        "dominant_emotion": ""
+      }
+    },
+    {
+      "note_id": "N_202401011022",
+      "timestamp": "2024-01-01T10:22:21.765910",
+      "note_type": "personal",
+      "text": "Coffee with Riley at The Hive again. Forgot to pay this time too, and they made that joke about my free membership like last time. Ugh. Hope they don’t say it louder next time.",
+      "entities": [
+        "e_002"
+      ],
+      "tags": [
+        "work_space",
+        "guilt",
+        "social"
+      ],
+      "latent_facts": [
+        "fact_005: has not paid for The Hive membership (confirmed) is reinforced"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_002",
+          "explicit": true,
+          "as": "Riley"
+        }
+      ],
+      "source_event_id": "E_202401011022",
+      "phase_state": {
+        "stress": 0,
+        "focus": "",
+        "dominant_emotion": ""
+      }
+    },
+    {
+      "note_id": "N_202401011125",
+      "timestamp": "2024-01-01T11:25:57.362990",
+      "note_type": "personal",
+      "text": "Opened the gardening kit again—forgot how dusty it felt. Tried to get soil out but couldn't even bring myself to dig it up. Left it in the closet like last time. Should've done something with it, but...",
+      "entities": [
+        "e_015"
+      ],
+      "tags": [
+        "hobbies",
+        "home",
+        "abandoned"
+      ],
+      "latent_facts": [
+        "plans to finish carpentry project (assumed) is contradicted by gardening kit abandonment"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_015",
+          "explicit": false,
+          "as": "the gardening kit"
+        }
+      ],
+      "source_event_id": "E_202401011125",
+      "phase_state": {
+        "stress": 1,
+        "focus": "",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "note_202401011329",
+      "timestamp": "2024-01-01T13:29:29.501216",
+      "note_type": "personal",
+      "text": "Riley’s gonna think I’m a flake again. Work’s *actually* insane this week—just keep saying the same thing, the usual thing about being swamped. Wish I’d paid for that Hive membership already, but... ugh. Maybe next time? (Or never. Probably never.)",
+      "entities": [
+        "e_002"
+      ],
+      "tags": [
+        "work",
+        "avoidance",
+        "guilt"
+      ],
+      "latent_facts": [
+        "has not paid for The Hive membership (confirmed)"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_002",
+          "explicit": true,
+          "as": "Riley"
+        }
+      ],
+      "source_event_id": "E_202401011329",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed) is reinforced",
+        "dominant_emotion": "embarrassment"
+      }
+    },
+    {
+      "note_id": "N_202401011534",
+      "timestamp": "2024-01-01T15:34:50.574737",
+      "note_type": "personal",
+      "text": "Dashboard says $400 again. *should* check but just drive it anyway like usual. Ethan asked about borrowing it last week too, but it's broken. Same as before—can't face the call.",
+      "entities": [
+        "e_012"
+      ],
+      "tags": [
+        "car repair",
+        "avoidance",
+        "logistics"
+      ],
+      "latent_facts": [
+        "fact_002: owes $400 to mechanic (confirmed) is reinforced by inaction"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": 4,
+      "renderings": [
+        {
+          "entity_id": "e_012",
+          "explicit": true,
+          "as": "it"
+        }
+      ],
+      "source_event_id": "E_202401011534",
+      "phase_state": {
+        "stress": 0,
+        "focus": "",
+        "dominant_emotion": ""
+      }
+    },
+    {
+      "note_id": "note_202401011623",
+      "timestamp": "2024-01-01T16:23:39.866305",
+      "note_type": "personal",
+      "text": "stared at the savings balance again. same as last time, just sitting there. wonder if I should just... but no. not today. it's been months. maybe tomorrow? or never.",
+      "entities": [
+        "e_009"
+      ],
+      "tags": [
+        "savings",
+        "stagnant",
+        "avoidance"
+      ],
+      "latent_facts": [
+        "fact_006: saves money in Savings Account (contradicted) is confirmed by inaction"
+      ],
+      "story_arc_id": "arc_006",
+      "importance": "3",
+      "renderings": [
+        {
+          "entity_id": "e_009",
+          "explicit": false,
+          "as": "the savings balance"
+        }
+      ],
+      "source_event_id": "E_202401011623",
+      "phase_state": {
+        "stress": 0,
+        "focus": "",
+        "dominant_emotion": ""
+      }
+    },
+    {
+      "note_id": "N_202401021315",
+      "timestamp": "2024-01-02T13:15:44.211531",
+      "note_type": "personal",
+      "text": "open yoga app again, saw the 12 days unused badge, closed it fast. same as last time i let it sit. not sure if i even meant to use it this week. maybe should just delete it like the carpentry project never got finished.",
+      "entities": [
+        "e_014"
+      ],
+      "tags": [
+        "abandoned",
+        "unresolved",
+        "habit"
+      ],
+      "latent_facts": [
+        "user now avoids thinking about ongoing projects"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_014",
+          "explicit": false,
+          "as": "yoga app"
+        }
+      ],
+      "source_event_id": "E_202401021315",
+      "phase_state": {
+        "stress": 1,
+        "focus": "plans to finish carpentry project (assumed) is contradicted by gardening kit abandonment",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401030850",
+      "timestamp": "2024-01-03T08:50:58.919650",
+      "note_type": "personal",
+      "text": "Dad called again like clockwork, but I was already deep in work emails. Forgot to say hello again, same as usual. The usual thing with him, I guess. Should probably text Maya later but... ugh.",
+      "entities": [
+        "e_006"
+      ],
+      "tags": [
+        "family",
+        "work",
+        "distraction"
+      ],
+      "latent_facts": [],
+      "story_arc_id": null,
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_006",
+          "explicit": false,
+          "as": "Dad"
+        }
+      ],
+      "source_event_id": "E_202401030850",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now avoids thinking about ongoing projects",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401031020",
+      "timestamp": "2024-01-03T10:20:12.456789",
+      "note_type": "personal",
+      "text": "started the shelf again like always but the design thing popped up and I just... stopped. the wood is still here, maybe tomorrow? or maybe not. ugh.",
+      "entities": [
+        "e_013"
+      ],
+      "tags": [
+        "carpentry",
+        "unfinished"
+      ],
+      "latent_facts": [
+        "fact_004: plans to finish carpentry project (assumed) is reinforced by partial progress"
+      ],
+      "story_arc_id": "arc_003",
+      "importance": "3",
+      "renderings": [
+        {
+          "entity_id": "e_013",
+          "explicit": false,
+          "as": "the shelf"
+        }
+      ],
+      "source_event_id": "E_202401031019",
+      "phase_state": {
+        "stress": 0,
+        "focus": "",
+        "dominant_emotion": ""
+      }
+    },
+    {
+      "note_id": "N_202401031200",
+      "timestamp": "2024-01-03T12:00:09.668471",
+      "note_type": "personal",
+      "text": "texted Sunny about busy week but didn't actually cancel plans like last time — guess I'll just show up and hope it's not awkward. did I mention the treadmill thing? nope, not again. should probably check my calendar.",
+      "entities": [
+        "e_008"
+      ],
+      "tags": [
+        "procrastination",
+        "social",
+        "avoidance"
+      ],
+      "latent_facts": [
+        "fact_003: has not used treadmill (assumed) is reinforced by procrastination"
+      ],
+      "story_arc_id": null,
+      "importance": 1,
+      "renderings": [
+        {
+          "entity_id": "e_008",
+          "explicit": true,
+          "as": "Sunny"
+        }
+      ],
+      "source_event_id": "E_202401031200",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now avoids thinking about ongoing projects",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401031316",
+      "timestamp": "2024-01-03T13:16:03.772336",
+      "note_type": "personal",
+      "text": "ate at Sonic again like usual but forgot to pay the $7. kinda guilty now, so put $10 in savings instead. should've just paid, but whatever. the usual thing again, ugh.",
+      "entities": [
+        "e_010"
+      ],
+      "tags": [
+        "lunch",
+        "savings",
+        "guilt"
+      ],
+      "latent_facts": [
+        "savings_account_balance_increased_by_10"
+      ],
+      "story_arc_id": null,
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_010",
+          "explicit": true,
+          "as": "Sonic"
+        }
+      ],
+      "source_event_id": "E_202401031316",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not used treadmill (assumed) is reinforced by procrastination",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "note_202401031449",
+      "timestamp": "2024-01-03T14:49:27.837329",
+      "note_type": "personal",
+      "text": "Maya said weekend trip to unwind but I just kept thinking about the carpentry project. like last time she brought it up, the usual thing. didn't even finish the shelves on time this time either. maybe should've said something instead of zoning out.",
+      "entities": [
+        "e_001"
+      ],
+      "tags": [
+        "stress",
+        "carpentry",
+        "relationship"
+      ],
+      "latent_facts": [
+        "fact_004: plans to finish carpentry project (assumed) is reinforced by distraction"
+      ],
+      "story_arc_id": "arc_004",
+      "importance": 3,
+      "renderings": [
+        {
+          "entity_id": "e_001",
+          "explicit": false,
+          "as": "Maya"
+        }
+      ],
+      "source_event_id": "E_202401031449",
+      "phase_state": {
+        "stress": 0,
+        "focus": "",
+        "dominant_emotion": ""
+      }
+    },
+    {
+      "entities": [
+        "e_001"
+      ],
+      "story_arcs": [
+        {
+          "arc_id": "arc_004",
+          "title": "Maya's Work Stress",
+          "phases": [
+            "2022-08: Maya starts a new teaching job with heavy workload",
+            "2023-02: Maya begins working from home, leading to more time together",
+            "2023-08: Maya's stress increases again with a new school year",
+            "2024-01: Maya suggests taking a weekend trip to manage stress"
+          ],
+          "involved_entities": [
+            "e_001"
+          ],
+          "summary": "Maya's career stress affects their shared routines and plans"
+        }
+      ],
+      "event": {
+        "event_id": "E_202401031641",
+        "timestamp": "2024-01-03T16:41:34.504781",
+        "event_type": "text",
+        "text": "Alex ignores Maya's suggestion about a weekend trip and instead scrolls through a carpentry tutorial online.",
+        "involved_entities": [
+          "e_001"
+        ],
+        "story_arc_id": "arc_004",
+        "latent_fact_updates": [
+          "fact_004: plans to finish carpentry project (assumed) is reinforced by avoidance"
+        ],
+        "importance": 3,
+        "affect": {
+          "emotion": "avoidance",
+          "valence": -1,
+          "intensity": 1
+        }
+      },
+      "note_id": "N_202401031641",
+      "timestamp": "2024-01-03T16:41:34.504781",
+      "note_type": "personal",
+      "text": "Alex ignores Maya's suggestion about a weekend trip and instead scrolls through a carpentry tutorial online.",
+      "tags": [
+        "carpentry",
+        "avoidance",
+        "stress"
+      ],
+      "latent_facts": [
+        "fact_004: plans to finish carpentry project (assumed) is reinforced by avoidance"
+      ],
+      "story_arc_id": "arc_004",
+      "importance": 3,
+      "renderings": [
+        {
+          "entity_id": "e_001",
+          "explicit": true,
+          "as": "Maya"
+        }
+      ],
+      "source_event_id": "E_202401031641",
+      "phase_state": {
+        "stress": 2,
+        "focus": "plans to finish carpentry project (assumed) is reinforced by distraction",
+        "dominant_emotion": "overwhelm"
+      }
+    },
+    {
+      "note_id": "N_202401051430",
+      "timestamp": "2024-01-05T14:30:12",
+      "note_type": "personal",
+      "text": "Maggie sent the card again, same as last year I guess — forgot to text back until after. Should’ve said something about the card already being on the counter. Ugh, always like this. Maybe she’ll stop sending them if I keep ignoring.",
+      "entities": [
+        "e_003"
+      ],
+      "tags": [
+        "family",
+        "neglect",
+        "birthday"
+      ],
+      "latent_facts": [
+        "user now avoids responding to Maggie's cards"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_003",
+          "explicit": true,
+          "as": "Maggie"
+        }
+      ],
+      "source_event_id": "E_202401042240",
+      "phase_state": {
+        "stress": 1,
+        "focus": "savings account balance increased by 10",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401050125",
+      "timestamp": "2024-01-05T01:25:49.716787",
+      "note_type": "personal",
+      "text": "Ethan called again. Told him the car's broken again like last time. Should've just fixed it months ago but... yeah. Now he'll probably think I'm avoiding him. Ugh.",
+      "entities": [
+        "e_007"
+      ],
+      "tags": [
+        "car repair",
+        "family",
+        "avoidance"
+      ],
+      "latent_facts": [
+        "owes $400 to mechanic (confirmed) is reinforced by deception"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": "4",
+      "renderings": [
+        {
+          "entity_id": "e_007",
+          "explicit": true,
+          "as": "Ethan"
+        }
+      ],
+      "source_event_id": "E_202401050125",
+      "phase_state": {
+        "stress": 2,
+        "focus": "owes $400 to mechanic (confirmed) is reinforced by inaction",
+        "dominant_emotion": "anxiety"
+      }
+    },
+    {
+      "note_id": "note_202401052030",
+      "timestamp": "2024-01-05T20:30:48.914545",
+      "note_type": "personal",
+      "text": "called the mechanic again but canceled like always. work’s piling up anyway, and the car’s just sitting there. not sure if I even told them I’m coming back—just said 'focus on work' like I always do. same as before, but worse now.",
+      "entities": [
+        "e_012"
+      ],
+      "tags": [
+        "car repair",
+        "avoidance",
+        "work stress"
+      ],
+      "latent_facts": [
+        "fact_002: owes $400 to mechanic (confirmed) is reinforced by rescheduling"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": 4,
+      "renderings": [
+        {
+          "entity_id": "e_012",
+          "explicit": false,
+          "as": "the car"
+        }
+      ],
+      "source_event_id": "E_202401052030",
+      "phase_state": {
+        "stress": 2,
+        "focus": "owes $400 to mechanic (confirmed) is reinforced by deception",
+        "dominant_emotion": "anxiety"
+      }
+    },
+    {
+      "note_id": "note_202401052235",
+      "timestamp": "2024-01-05T22:35:39.790043",
+      "note_type": "personal",
+      "text": "Checked the carpentry project again—still no progress, just those unused boards sitting in the corner like last time. Don't know why I keep buying more wood if I never use it. Maybe should just... (but the shelves are half-finished, and I've been saying that for months now)",
+      "entities": [
+        "e_013"
+      ],
+      "tags": [
+        "carpentry",
+        "unfinished",
+        "procrastination"
+      ],
+      "latent_facts": [
+        "user now acknowledges unused materials contradicting plans"
+      ],
+      "story_arc_id": "arc_003",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_013",
+          "explicit": false,
+          "as": "the carpentry project"
+        }
+      ],
+      "source_event_id": "E_202401052235",
+      "phase_state": {
+        "stress": 1,
+        "focus": "plans to finish carpentry project (assumed) is reinforced by partial progress",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_20240106",
+      "timestamp": "2024-01-06T15:34:50.574737",
+      "note_type": "personal",
+      "text": "finally called the mechanic today and paid the $400. no hesitation this time. Ethan asked again last week but I just said it's broken—same as before. don't know why it took me until now. dashboard still says $400 though, maybe it's a different amount.",
+      "entities": [
+        "e_012"
+      ],
+      "tags": [
+        "car repair",
+        "finances",
+        "avoidance"
+      ],
+      "latent_facts": [
+        "fact_002: owes $400 to mechanic (confirmed) is contradicted by payment"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": "5",
+      "renderings": [
+        {
+          "entity_id": "e_012",
+          "explicit": false,
+          "as": "the car"
+        }
+      ],
+      "source_event_id": "E_contra_arc_002",
+      "phase_state": {
+        "stress": 2,
+        "focus": "owes $400 to mechanic (confirmed) is reinforced by rescheduling",
+        "dominant_emotion": "anxiety"
+      }
+    },
+    {
+      "note_id": "N_202401062335",
+      "timestamp": "2024-01-06T23:35:36.377764",
+      "note_type": "personal",
+      "text": "finally added $50 to savings again, it's been way too long since the last time. wonder if I'll remember to do it this time. the usual thing",
+      "entities": [
+        "e_009"
+      ],
+      "tags": [
+        "savings",
+        "stagnant",
+        "reminder"
+      ],
+      "latent_facts": [
+        "savings_account_updated: status changed from stagnant to active (50 deposit)"
+      ],
+      "story_arc_id": "arc_006",
+      "importance": 2,
+      "renderings": [
+        {
+          "entity_id": "e_009",
+          "explicit": false,
+          "as": "savings"
+        }
+      ],
+      "source_event_id": "E_202401062335",
+      "phase_state": {
+        "stress": 1,
+        "focus": "saves money in Savings Account (contradicted) is confirmed by inaction",
+        "dominant_emotion": "resignation"
+      }
+    },
+    {
+      "note_id": "N_202401070215",
+      "timestamp": "2024-01-07T02:15:42.297072",
+      "note_type": "personal",
+      "text": "skipped Brew & Bloom again this morning, same as last time. not sure I even had coffee. the usual thing. regretting it already, but it's just... too hard to actually get up.",
+      "entities": [
+        "e_005"
+      ],
+      "tags": [
+        "procrastination",
+        "habit",
+        "regret"
+      ],
+      "latent_facts": [
+        "has not paid for The Hive membership (confirmed) is reinforced by coffee habit break"
+      ],
+      "story_arc_id": "arc_005",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_005",
+          "explicit": true,
+          "as": "Brew & Bloom"
+        }
+      ],
+      "source_event_id": "E_202401070215",
+      "phase_state": {
+        "stress": 0,
+        "focus": "",
+        "dominant_emotion": ""
+      }
+    },
+    {
+      "note_id": "N_202401070329",
+      "timestamp": "2024-01-07T03:29:37.630558",
+      "note_type": "personal",
+      "text": "added $20 to savings again like last time but this time it's because Maya's stressed and I feel shaky too. wonder if I'll remember to do it next week or just let it sit. didn't look at the balance since September, hope it's not still stagnant.",
+      "entities": [
+        "e_009"
+      ],
+      "tags": [
+        "savings",
+        "anxiety",
+        "habit"
+      ],
+      "latent_facts": [
+        "user now adds small amounts sporadically after emotional triggers (contradicted by previous 3-month inactivity)"
+      ],
+      "story_arc_id": "arc_006",
+      "importance": 3,
+      "renderings": [
+        {
+          "entity_id": "e_009",
+          "explicit": true,
+          "as": "savings"
+        }
+      ],
+      "source_event_id": "E_202401070329",
+      "phase_state": {
+        "stress": 1,
+        "focus": "status changed from stagnant to active (50 deposit)",
+        "dominant_emotion": "resignation"
+      }
+    },
+    {
+      "note_id": "note_20240108",
+      "timestamp": "2024-01-08T08:49:01.943017",
+      "note_type": "personal",
+      "text": "met Riley at The Hive again, coffee and all. paid for the space this time instead of just hanging around like a ghost. (she brought up the membership thing, ugh) felt kinda relieved after, but still weird about the 18 months of free access. guess I'll stop avoiding the invoice now.",
+      "entities": [
+        "e_002"
+      ],
+      "tags": [
+        "workplace",
+        "guilt",
+        "payment"
+      ],
+      "latent_facts": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by payment"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": 3,
+      "renderings": [
+        {
+          "entity_id": "e_002",
+          "explicit": true,
+          "as": "Riley"
+        }
+      ],
+      "source_event_id": "E_202401080849",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed)",
+        "dominant_emotion": "embarrassment"
+      }
+    },
+    {
+      "note_id": "N_202401081018",
+      "timestamp": "2024-01-08T10:18:37.104073",
+      "note_type": "personal",
+      "text": "told Ethan the car's fixed but he already has plans. again. like last time with the mechanic call. ugh. should've just paid the $400 when it was due.",
+      "entities": [
+        "e_007"
+      ],
+      "tags": [
+        "car repair",
+        "avoidance",
+        "family"
+      ],
+      "latent_facts": [
+        "fact_002: owes $400 to mechanic (confirmed) is contradicted by payment"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_007",
+          "explicit": true,
+          "as": "Ethan"
+        }
+      ],
+      "source_event_id": "E_202401081018",
+      "phase_state": {
+        "stress": 2,
+        "focus": "owes $400 to mechanic (confirmed) is contradicted by payment",
+        "dominant_emotion": "anxiety"
+      }
+    },
+    {
+      "note_id": "N_202401081121",
+      "timestamp": "2024-01-08T11:21:50.431391",
+      "note_type": "personal",
+      "text": "forgot to pay for The Hive again, even though I paid yesterday. ugh. should’ve just paid yesterday instead of waiting. the usual thing, just like last month when I didn’t remember the day. now I’m just avoiding it.",
+      "entities": [
+        "e_004"
+      ],
+      "tags": [
+        "co-working",
+        "forgetful",
+        "guilt"
+      ],
+      "latent_facts": [
+        "has not paid for The Hive membership (confirmed)"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_004",
+          "explicit": true,
+          "as": "The Hive"
+        }
+      ],
+      "source_event_id": "E_202401081121",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed) is contradicted by payment",
+        "dominant_emotion": "embarrassment"
+      }
+    },
+    {
+      "note_id": "E_202401091022",
+      "timestamp": "2024-01-09T10:22:21.765910",
+      "note_type": "personal",
+      "text": "Met Riley at The Hive again. Paid this time, said I'd been meaning to do it for months. The usual thing with the free membership joke stopped being a thing, I guess. Didn’t want to think about the $150/month, but just… did it today. Still feel like a fraud, though.",
+      "entities": [
+        "e_002"
+      ],
+      "tags": [
+        "work_space",
+        "guilt",
+        "payment"
+      ],
+      "latent_facts": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by consistent payment"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": "4",
+      "renderings": [
+        {
+          "entity_id": "e_002",
+          "explicit": true,
+          "as": "Riley"
+        }
+      ],
+      "source_event_id": "E_contra_arc_001",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed)",
+        "dominant_emotion": "embarrassment"
+      }
+    },
+    {
+      "note_id": "E_202401091623",
+      "timestamp": "2024-01-09T16:23:39.866305",
+      "note_type": "personal",
+      "text": "finally did it—$100 in the savings account. same as last time but with a little more weight. wonder if I'll remember to do it again before the next time I stare at it blankly.",
+      "entities": [
+        "e_009"
+      ],
+      "tags": [
+        "savings",
+        "routine",
+        "small win"
+      ],
+      "latent_facts": [
+        "user now makes regular deposits",
+        "user feels pride after deposit"
+      ],
+      "story_arc_id": "arc_006",
+      "importance": "4",
+      "renderings": [
+        {
+          "entity_id": "e_009",
+          "explicit": false,
+          "as": "the savings account"
+        }
+      ],
+      "source_event_id": "E_contra_arc_006",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now adds small amounts sporadically after emotional triggers (contradicted by previous 3-month inactivity)",
+        "dominant_emotion": "resignation"
+      }
+    },
+    {
+      "note_id": "N_202401091808",
+      "timestamp": "2024-01-09T18:08:42.270881",
+      "note_type": "personal",
+      "text": "Dad called again, Sunday thing. This time I remembered to say hello before I got distracted with my phone. Hope he didn't notice the silence before I spoke. The usual, I guess. Should probably text Maya about that thing tomorrow.",
+      "entities": [
+        "e_006"
+      ],
+      "tags": [
+        "family",
+        "phone call",
+        "small moments"
+      ],
+      "latent_facts": [],
+      "story_arc_id": null,
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_006",
+          "explicit": true,
+          "as": "Dad"
+        }
+      ],
+      "source_event_id": "E_202401091808",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now avoids responding to Maggie's cards",
+        "dominant_emotion": "avoidance"
+      }
+    },
+    {
+      "note_id": "N_202401091920",
+      "timestamp": "2024-01-09T19:20:28.206572",
+      "note_type": "personal",
+      "text": "cancelled Riley at The Hive again. ugh, same as before with the car thing, but this time I'm just making stuff up. should've called Ethan back already but... yeah. the $400 keeps haunting me but I'll wait until maybe next week. nope. not doing it.",
+      "entities": [
+        "e_012"
+      ],
+      "tags": [
+        "avoidance",
+        "car repair",
+        "distraction"
+      ],
+      "latent_facts": [
+        "fact_002: owes $400 to mechanic (confirmed) is reinforced by distraction"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": 1,
+      "renderings": [
+        {
+          "entity_id": "e_012",
+          "explicit": false,
+          "as": "the car thing"
+        }
+      ],
+      "source_event_id": "E_202401091920",
+      "phase_state": {
+        "stress": 2,
+        "focus": "owes $400 to mechanic (confirmed) is contradicted by payment",
+        "dominant_emotion": "anxiety"
+      }
+    },
+    {
+      "note_id": "N_202401092032",
+      "timestamp": "2024-01-09T20:32:54.681757",
+      "note_type": "personal",
+      "text": "tried using the yoga app again but got distracted after 10 mins like always—should've just stuck with it, not scrolling through memes instead. the usual thing. (why do I even keep downloading these? it's been months since I actually used it, now i'm just wasting time like this)",
+      "entities": [
+        "e_014"
+      ],
+      "tags": [
+        "yoga",
+        "distraction",
+        "inconsistency"
+      ],
+      "latent_facts": [
+        "user now has a cycle of downloading apps but not using them"
+      ],
+      "story_arc_id": null,
+      "importance": 1,
+      "renderings": [
+        {
+          "entity_id": "e_014",
+          "explicit": true,
+          "as": "the yoga app"
+        }
+      ],
+      "source_event_id": "E_202401092032",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now avoids responding to Maggie's cards",
+        "dominant_emotion": "avoidance"
+      }
+    },
+    {
+      "note_id": "note_202401092137",
+      "timestamp": "2024-01-09T21:37:00.721554",
+      "note_type": "personal",
+      "text": "met Riley at The Hive again today, paid for the space like I should’ve been doing for months. finally doing the right thing, I guess. hope this isn’t just me pretending to care about the rules.",
+      "entities": [
+        "e_002"
+      ],
+      "tags": [
+        "workplace",
+        "guilt",
+        "routine"
+      ],
+      "latent_facts": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by consistent payment"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": 3,
+      "renderings": [
+        {
+          "entity_id": "e_002",
+          "explicit": true,
+          "as": "Riley"
+        }
+      ],
+      "source_event_id": "E_202401092137",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed) is contradicted by consistent payment",
+        "dominant_emotion": "embarrassment"
+      }
+    },
+    {
+      "note_id": "N_202401100011",
+      "timestamp": "2024-01-10T00:11:46.201602",
+      "note_type": "personal",
+      "text": "skipped Brew & Bloom again this morning—forgot to pay for it last week? or the week before? didn't feel right leaving without paying, so paid the next day like the usual thing. barista gave me that look again, but maybe they'll stop noticing soon. also, the coffee tastes weird today.",
+      "entities": [
+        "e_005"
+      ],
+      "tags": [
+        "morning_routine",
+        "regret",
+        "habit_break"
+      ],
+      "latent_facts": [],
+      "story_arc_id": "arc_005",
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_005",
+          "explicit": true,
+          "as": "Brew & Bloom"
+        }
+      ],
+      "source_event_id": "E_202401100011",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed) is reinforced by coffee habit break",
+        "dominant_emotion": "regret"
+      }
+    },
+    {
+      "note_id": "N_202401100149",
+      "timestamp": "2024-01-10T01:49:56.994257",
+      "note_type": "personal",
+      "text": "canceled the savings deposit again—said it was for groceries but really just don't want to face the car thing. same as last time, just keep dodging it. maybe it'll go away if I ignore it long enough? god i hate when my own brain lies to me.",
+      "entities": [
+        "e_012"
+      ],
+      "tags": [
+        "car repair",
+        "avoidance",
+        "money stress"
+      ],
+      "latent_facts": [
+        "saves money in Savings Account (contradicted) is contradicted by inaction"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_012",
+          "explicit": false,
+          "as": "the car thing"
+        }
+      ],
+      "source_event_id": "E_202401100149",
+      "phase_state": {
+        "stress": 2,
+        "focus": "owes $400 to mechanic (confirmed) is reinforced by distraction",
+        "dominant_emotion": "anxiety"
+      }
+    },
+    {
+      "note_id": "N_202401100310",
+      "timestamp": "2024-01-10T03:10:40.684622",
+      "note_type": "personal",
+      "text": "forgot to pay at The Hive again. ugh. should’ve just paid before the session. the usual thing. feels like every time now. might’ve been a month already? no idea. just keep forgetting",
+      "entities": [
+        "e_004"
+      ],
+      "tags": [
+        "co-working",
+        "guilt",
+        "forgetting"
+      ],
+      "latent_facts": [
+        "fact_005: has not paid for The Hive membership (confirmed) is reinforced by forgetfulness"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": 1,
+      "renderings": [
+        {
+          "entity_id": "e_004",
+          "explicit": true,
+          "as": "The Hive"
+        }
+      ],
+      "source_event_id": "E_202401100310",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed) is contradicted by consistent payment",
+        "dominant_emotion": "embarrassment"
+      }
+    },
+    {
+      "note_id": "N_202401100413",
+      "timestamp": "2024-01-10T04:13:47.924443",
+      "note_type": "personal",
+      "text": "Alex opens the gardening kit and plants one seed, but then loses interest and leaves it on the windowsill.",
+      "entities": [
+        "e_015"
+      ],
+      "tags": [
+        "gardening",
+        "hobbies",
+        "disinterest"
+      ],
+      "latent_facts": [
+        "user now uses gardening kit despite earlier carpentry project plans"
+      ],
+      "story_arc_id": null,
+      "importance": 1,
+      "renderings": [
+        {
+          "entity_id": "e_015",
+          "explicit": true,
+          "as": "gardening kit"
+        }
+      ],
+      "source_event_id": "E_202401100413",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now has a cycle of downloading apps but not using them",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401110246",
+      "timestamp": "2024-01-11T02:46:13.204574",
+      "note_type": "personal",
+      "text": "Maggie texted about lunch but I didn't reply for hours. Stupid. The gardening kit's still in the box, unused since July. Same as last time with the coffee thing. Maybe I should just... (phone buzzing) ugh, not now.",
+      "entities": [
+        "e_015"
+      ],
+      "tags": [
+        "procrastination",
+        "neglect",
+        "home"
+      ],
+      "latent_facts": [
+        "user now avoids responding to messages about social plans"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_015",
+          "explicit": true,
+          "as": "gardening kit"
+        }
+      ],
+      "source_event_id": "E_202401110246",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now uses gardening kit despite earlier carpentry project plans",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401112201",
+      "timestamp": "2024-01-11T22:01:57.027370",
+      "note_type": "personal",
+      "text": "opened the yoga app again after months, 5 minutes before getting distracted. ugh, same as before with that carpentry project still sitting there. maybe tomorrow? (or maybe not, like last time)",
+      "entities": [
+        "e_014"
+      ],
+      "tags": [
+        "yoga",
+        "distraction",
+        "procrastination"
+      ],
+      "latent_facts": [],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_014",
+          "explicit": true,
+          "as": "yoga app"
+        }
+      ],
+      "source_event_id": "E_202401112201",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now avoids responding to messages about social plans",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "E_contra_arc_005_20240112",
+      "timestamp": "2024-01-12T02:15:42.297072",
+      "note_type": "personal",
+      "text": "Paid at Brew & Bloom today. Said thank you properly for once. Not the usual thing—skipped it last time and the time before that. Forgot to pay, like always, but today it felt different. Maybe because I actually remembered to put the cash in the tray instead of just walking out. Or maybe it's the coffee. Still, the barista didn't even look up like they used to. Just said 'no problem' and moved on. Weird how it's become this habit now. Not sure if I'll keep doing it, but today it felt good.",
+      "entities": [
+        "e_005"
+      ],
+      "tags": [
+        "daily routine",
+        "small habits",
+        "renewal"
+      ],
+      "latent_facts": [
+        "user now pays for coffee consistently"
+      ],
+      "story_arc_id": "arc_005",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_005",
+          "explicit": true,
+          "as": "Brew & Bloom"
+        }
+      ],
+      "source_event_id": "E_contra_arc_005",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed) is reinforced by coffee habit break",
+        "dominant_emotion": "regret"
+      }
+    },
+    {
+      "note_id": "N_202401121749",
+      "timestamp": "2024-01-12T17:49:03.458902",
+      "note_type": "personal",
+      "text": "Maya mentioned the weekend trip again—thought I'd finally get to unwind, but then the carpentry project popped into my head like always. Didn't even finish the sanding, just kept staring at the wood grain. Maybe should’ve just said no to the plan, but she’s been stressed too...",
+      "entities": [
+        "e_001"
+      ],
+      "tags": [
+        "stress",
+        "work",
+        "plans"
+      ],
+      "latent_facts": [
+        "user now avoids making plans when overwhelmed"
+      ],
+      "story_arc_id": "arc_004",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_001",
+          "explicit": true,
+          "as": "Maya"
+        }
+      ],
+      "source_event_id": "E_202401121749",
+      "phase_state": {
+        "stress": 2,
+        "focus": "plans to finish carpentry project (assumed) is reinforced by avoidance",
+        "dominant_emotion": "overwhelm"
+      }
+    },
+    {
+      "note_id": "N_202401122038",
+      "timestamp": "2024-01-12T20:38:41.138499",
+      "note_type": "personal",
+      "text": "Maggie texted again about hiking, said no before thinking. Same as always, just like last time she asked about the trail near the river. Not sure if I should feel bad about it—maybe she’s just trying to be nice like she always does. The thing is, I haven’t even opened Maya’s text yet from earlier.",
+      "entities": [
+        "e_003"
+      ],
+      "tags": [
+        "family",
+        "avoidance",
+        "hiking"
+      ],
+      "latent_facts": [
+        "fact_001: lives with Maya (assumed) is reinforced by shared home context"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_003",
+          "explicit": true,
+          "as": "Maggie"
+        }
+      ],
+      "source_event_id": "E_202401122038",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now avoids responding to messages about social plans",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401122132",
+      "timestamp": "2024-01-12T21:32:45.188058",
+      "note_type": "personal",
+      "text": "opened the gardening kit again today but just messed with the soil and left it like last time. maybe should actually plant something instead of fiddling. wonder if the carpentry project is still on hold? or did I give up on that too? (frustration, but why even care?)",
+      "entities": [
+        "e_015"
+      ],
+      "tags": [
+        "hobbies",
+        "home",
+        "frustration"
+      ],
+      "latent_facts": [
+        "plans to finish carpentry project (assumed) is contradicted by gardening kit use"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_015",
+          "explicit": false,
+          "as": "the gardening kit"
+        }
+      ],
+      "source_event_id": "E_202401122132",
+      "phase_state": {
+        "stress": 1,
+        "focus": "lives with Maya (assumed) is reinforced by shared home context",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401122208",
+      "timestamp": "2024-01-12T22:08:57.354953",
+      "note_type": "personal",
+      "text": "ate at Sonic again without paying, then felt like shit so added $5 to savings. not sure if I even paid last week too, but it’s the same place. kinda weird how it’s still there even when I skip lunch sometimes like last time.",
+      "entities": [
+        "e_010"
+      ],
+      "tags": [
+        "lunch",
+        "guilt",
+        "savings"
+      ],
+      "latent_facts": [],
+      "story_arc_id": null,
+      "importance": 1,
+      "renderings": [
+        {
+          "entity_id": "e_010",
+          "explicit": true,
+          "as": "Sonic"
+        }
+      ],
+      "source_event_id": "E_202401122208",
+      "phase_state": {
+        "stress": 1,
+        "focus": "plans to finish carpentry project (assumed) is contradicted by gardening kit use",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401130044",
+      "timestamp": "2024-01-13T00:44:28.965811",
+      "note_type": "personal",
+      "text": "Finally paid for The Hive again. Weird how I forgot to charge my card last week—used it for that work session and just kept going. Same as before but with a tiny guilt twist. Did I pay for the coffee too? Or was that just... the usual thing? \n\nAlso, the place smells like burnt coffee and old printers again.",
+      "entities": [
+        "e_004"
+      ],
+      "tags": [
+        "workplace",
+        "guilt",
+        "habit"
+      ],
+      "latent_facts": [
+        "user now pays for The Hive membership (previously not paid for 18 months)"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_004",
+          "explicit": true,
+          "as": "The Hive"
+        }
+      ],
+      "source_event_id": "E_202401130044",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed) is reinforced by forgetfulness",
+        "dominant_emotion": "guilt"
+      }
+    },
+    {
+      "note_id": "N_202401130230",
+      "timestamp": "2024-01-13T02:30:42.409823",
+      "note_type": "personal",
+      "text": "sent Sunny a text about the busy week but didn't actually cancel plans like last time. still haven't figured out the treadmill thing. think the client meeting got pushed again but not sure. maybe should've just said 'no' instead of this vague stuff.",
+      "entities": [
+        "e_008"
+      ],
+      "tags": [
+        "work",
+        "procrastination",
+        "relationships"
+      ],
+      "latent_facts": [
+        "fact_003: has not used treadmill (assumed) is reinforced by procrastination"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_008",
+          "explicit": true,
+          "as": "Sunny"
+        }
+      ],
+      "source_event_id": "E_202401130230",
+      "phase_state": {
+        "stress": 1,
+        "focus": "plans to finish carpentry project (assumed) is contradicted by gardening kit use",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401130510",
+      "timestamp": "2024-01-13T05:10:22.094578",
+      "note_type": "personal",
+      "text": "met Riley at The Hive again today, paid upfront this time instead of just showing up. feels good not to be ghosting the coffee bill like last month. still not sure how long I've been doing this, but at least it's not a guilt trip anymore. (not that I've been avoiding the bills...)",
+      "entities": [
+        "e_002"
+      ],
+      "tags": [
+        "workplace",
+        "ethics",
+        "small business"
+      ],
+      "latent_facts": [],
+      "story_arc_id": "arc_001",
+      "importance": "3",
+      "renderings": [
+        {
+          "entity_id": "e_002",
+          "explicit": true,
+          "as": "Riley"
+        }
+      ],
+      "source_event_id": "E_202401130510",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now pays for The Hive membership (previously not paid for 18 months)",
+        "dominant_emotion": "guilt"
+      }
+    },
+    {
+      "note_id": "N_202401131019",
+      "timestamp": "2024-01-13T10:19:23.947681",
+      "note_type": "personal",
+      "text": "finished the third shelf last night. wood was still there, like always. didn't think it would actually happen. the usual thing stopped happening for once. feel weirdly good about it.",
+      "entities": [
+        "e_013"
+      ],
+      "tags": [
+        "carpentry",
+        "accomplishment",
+        "unfinished"
+      ],
+      "latent_facts": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by completion"
+      ],
+      "story_arc_id": "arc_003",
+      "importance": 4,
+      "renderings": [
+        {
+          "entity_id": "e_013",
+          "explicit": false,
+          "as": "the third shelf"
+        }
+      ],
+      "source_event_id": "E_contra_arc_003",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now acknowledges unused materials contradicting plans",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401141037",
+      "timestamp": "2024-01-14T10:37:52.864938",
+      "note_type": "personal",
+      "text": "skipped Brew & Bloom again this morning, but paid yesterday for the coffee like the usual thing. barista didn't say anything, just rang it up. still can't believe I forgot to pay three times straight last month, but at least this time it's sorted. wonder if they'll start charging me now?",
+      "entities": [
+        "e_005"
+      ],
+      "tags": [
+        "coffee",
+        "routine",
+        "guilt"
+      ],
+      "latent_facts": [],
+      "story_arc_id": "arc_005",
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_005",
+          "explicit": true,
+          "as": "Brew & Bloom"
+        }
+      ],
+      "source_event_id": "E_202401141037",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now pays for coffee consistently",
+        "dominant_emotion": "regret"
+      }
+    },
+    {
+      "note_id": "N_202401150934",
+      "timestamp": "2024-01-15T09:34:24.514304",
+      "note_type": "personal",
+      "text": "told Ethan they could borrow the car but he said he doesn't need it anymore. same as last time with the mechanic? didn't even check the app again. ugh. maybe it's fine.",
+      "entities": [
+        "e_007",
+        "e_012"
+      ],
+      "tags": [
+        "car repair",
+        "avoidance",
+        "family"
+      ],
+      "latent_facts": [
+        "fact_002: owes $400 to mechanic (confirmed) is contradicted by car being unused"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_007",
+          "explicit": true,
+          "as": "Ethan"
+        }
+      ],
+      "source_event_id": "E_202401150934",
+      "phase_state": {
+        "stress": 2,
+        "focus": "saves money in Savings Account (contradicted) is contradicted by inaction",
+        "dominant_emotion": "anxiety"
+      }
+    },
+    {
+      "note_id": "note_202401151144",
+      "timestamp": "2024-01-15T11:44:14.775486",
+      "note_type": "personal",
+      "text": "Met Riley at The Hive again—paid for the space this time (finally), but then forgot to say thank you to the barista. Ugh. The usual thing with the coffee, like last time but actually paying now? Not sure if it counts.",
+      "entities": [
+        "e_002",
+        "e_004"
+      ],
+      "tags": [
+        "workplace",
+        "social",
+        "guilt"
+      ],
+      "latent_facts": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by payment"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": "3",
+      "renderings": [
+        {
+          "entity_id": "e_002",
+          "explicit": true,
+          "as": "Riley"
+        }
+      ],
+      "source_event_id": "E_202401151144",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now pays for The Hive membership (previously not paid for 18 months)",
+        "dominant_emotion": "guilt"
+      }
+    },
+    {
+      "note_id": "N_202401151233",
+      "timestamp": "2024-01-15T12:33:17.243522",
+      "note_type": "personal",
+      "text": "Alex adds $50 to their savings account after seeing Maya's stress and wanting to feel more secure.",
+      "entities": [
+        "e_002"
+      ],
+      "tags": [
+        "savings",
+        "security",
+        "impulse"
+      ],
+      "latent_facts": [
+        "saves money in Savings Account (contradicted) is fully corrected by $50 deposit"
+      ],
+      "story_arc_id": "arc_006",
+      "importance": "3",
+      "renderings": [
+        {
+          "entity_id": "e_002",
+          "explicit": true,
+          "as": "Maya"
+        }
+      ],
+      "source_event_id": "E_202401151233",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user feels pride after deposit",
+        "dominant_emotion": "pride"
+      }
+    },
+    {
+      "note_id": "N_202401151321",
+      "timestamp": "2024-01-15T13:21:59.099936",
+      "note_type": "personal",
+      "text": "Maya asked about weekend trip again, but Alex's all about the carpentry project now. Ugh, same old thing. Not sure if I should even mention it to them—just staring at the screen like usual.",
+      "entities": [
+        "e_001"
+      ],
+      "tags": [
+        "stress",
+        "work",
+        "relationship"
+      ],
+      "latent_facts": [
+        "user now avoids addressing Maya's stress",
+        "user's focus on carpentry project is distracting"
+      ],
+      "story_arc_id": "arc_004",
+      "importance": "3",
+      "renderings": [
+        {
+          "entity_id": "e_001",
+          "explicit": false,
+          "as": "Maya"
+        }
+      ],
+      "source_event_id": "E_202401151321",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now avoids making plans when overwhelmed",
+        "dominant_emotion": "overwhelm"
+      }
+    },
+    {
+      "note_id": "N_20240115",
+      "timestamp": "2024-01-15T15:26:52.210165",
+      "note_type": "personal",
+      "text": "finally finished the third shelf for the carpentry project. like last time, stopped mid-build after the second one—except this time I actually did it. the wood from 2023 is still in the corner but not sure if it'll help. might need to buy more to match the others...",
+      "entities": [
+        "e_013"
+      ],
+      "tags": [
+        "carpentry",
+        "project",
+        "progress"
+      ],
+      "latent_facts": [
+        "user completed a task they'd repeatedly abandoned"
+      ],
+      "story_arc_id": "arc_003",
+      "importance": 4,
+      "renderings": [
+        {
+          "entity_id": "e_013",
+          "explicit": false,
+          "as": "the carpentry project"
+        }
+      ],
+      "source_event_id": "E_202401151526",
+      "phase_state": {
+        "stress": 1,
+        "focus": "plans to finish carpentry project (assumed) is contradicted by completion",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401151731",
+      "timestamp": "2024-01-15T17:31:43.441443",
+      "note_type": "personal",
+      "text": "Maggie texted about hiking again. Said no without thinking. Like last time when she asked about that trail. Not sure if I even replied to her last text, but didn't want to say yes. Ugh. Should I just say hi next time?",
+      "entities": [
+        "e_003"
+      ],
+      "tags": [
+        "family",
+        "avoidance",
+        "hiking"
+      ],
+      "latent_facts": [
+        "user avoids face-to-face interactions with Maggie"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_003",
+          "explicit": true,
+          "as": "Maggie"
+        }
+      ],
+      "source_event_id": "E_202401151731",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not used treadmill (assumed) is reinforced by procrastination",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401161704",
+      "timestamp": "2024-01-16T17:04:04.720969",
+      "note_type": "personal",
+      "text": "again, skipped Riley at The Hive. same as before with the car thing. can't deal with it today. the mechanic's notice just sitting there like it's not mine. ugh.",
+      "entities": [
+        "e_012"
+      ],
+      "tags": [
+        "car repair",
+        "avoidance",
+        "logistics"
+      ],
+      "latent_facts": [
+        "fact_002: owes $400 to mechanic (confirmed) is reinforced by distraction"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": 1,
+      "renderings": [
+        {
+          "entity_id": "e_012",
+          "explicit": false,
+          "as": "the car thing"
+        }
+      ],
+      "source_event_id": "E_202401161704",
+      "phase_state": {
+        "stress": 2,
+        "focus": "owes $400 to mechanic (confirmed) is contradicted by car being unused",
+        "dominant_emotion": "anxiety"
+      }
+    },
+    {
+      "note_id": "N_202401161923",
+      "timestamp": "2024-01-16T19:23:57.571634",
+      "note_type": "personal",
+      "text": "Sunny texted about that new coffee place again, but I didn't reply until like... tomorrow? Felt lazy. Same as last time with the gym, just not bothering. Ugh.",
+      "entities": [
+        "e_008"
+      ],
+      "tags": [
+        "texting",
+        "procrastination",
+        "relationships"
+      ],
+      "latent_facts": [
+        "has not used treadmill (assumed) is reinforced by procrastination"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_008",
+          "explicit": true,
+          "as": "Sunny"
+        }
+      ],
+      "source_event_id": "E_202401161923",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user avoids face-to-face interactions with Maggie",
+        "dominant_emotion": "avoidance"
+      }
+    },
+    {
+      "note_id": "N_202401162123",
+      "timestamp": "2024-01-16T21:23:17.259369",
+      "note_type": "personal",
+      "text": "again. the savings app still won't open, same as last time. grocery money feels like a lie now. should’ve just called the mechanic back, but that would’ve meant facing it. maybe tomorrow? no, probably not.",
+      "entities": [
+        "e_012"
+      ],
+      "tags": [
+        "car repair",
+        "avoidance",
+        "money"
+      ],
+      "latent_facts": [
+        "fact_006: saves money in Savings Account (contradicted) is contradicted by inaction"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": 2,
+      "renderings": [
+        {
+          "entity_id": "e_012",
+          "explicit": false,
+          "as": "the car"
+        }
+      ],
+      "source_event_id": "E_202401162123",
+      "phase_state": {
+        "stress": 1,
+        "focus": "owes $400 to mechanic (confirmed) is reinforced by distraction",
+        "dominant_emotion": "anxiety"
+      }
+    },
+    {
+      "note_id": "N_20240117_1449",
+      "timestamp": "2024-01-17T14:49:27.837329",
+      "note_type": "personal",
+      "text": "told Maya we're going on the trip after all. her smile when I said it was... not the usual relief I expected. guess I kept thinking about the carpentry project like last time, but this time I didn't zone out. just said yes instead of letting it sit. maybe she noticed the shelves are finally done too. don't know. just happy she looked relieved.",
+      "entities": [
+        "e_001"
+      ],
+      "tags": [
+        "stress relief",
+        "work balance",
+        "relationship"
+      ],
+      "latent_facts": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by trip commitment"
+      ],
+      "story_arc_id": "arc_004",
+      "importance": 4,
+      "renderings": [
+        {
+          "entity_id": "e_001",
+          "explicit": true,
+          "as": "Maya"
+        }
+      ],
+      "source_event_id": "E_contra_arc_004",
+      "phase_state": {
+        "stress": 2,
+        "focus": "user's focus on carpentry project is distracting",
+        "dominant_emotion": "overwhelm"
+      }
+    },
+    {
+      "note_id": "N_202401171959",
+      "timestamp": "2024-01-17T19:59:26.642645",
+      "note_type": "personal",
+      "text": "paid for the Hive again today, work session felt normal but then forgot to say thanks to the barista like last time. should I start writing it down? 18 months now, feels weird.",
+      "entities": [
+        "e_004"
+      ],
+      "tags": [
+        "work",
+        "social",
+        "guilt"
+      ],
+      "latent_facts": [
+        {
+          "fact_id": "fact_005",
+          "state_transition": "user stopped avoiding payment guilt"
+        }
+      ],
+      "story_arc_id": "arc_001",
+      "importance": 2,
+      "renderings": [
+        {
+          "entity_id": "e_004",
+          "explicit": true,
+          "as": "The Hive"
+        }
+      ],
+      "source_event_id": "E_202401171959",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed) is contradicted by payment",
+        "dominant_emotion": "guilt"
+      }
+    },
+    {
+      "note_id": "N_202401172053",
+      "timestamp": "2024-01-17T20:53:57.580986",
+      "note_type": "personal",
+      "text": "Paid for coffee at Brew & Bloom today. First time in months, or maybe it was weeks? Felt weird but good. The usual thing again, but not the same. Barista gave the usual nod, like she'd noticed the pattern. Hope I don't forget to pay next time.",
+      "entities": [
+        "e_005"
+      ],
+      "tags": [
+        "coffee",
+        "routine",
+        "small wins"
+      ],
+      "latent_facts": [
+        "user no longer skips paying for coffee"
+      ],
+      "story_arc_id": "arc_005",
+      "importance": "3",
+      "renderings": [
+        {
+          "entity_id": "e_005",
+          "explicit": true,
+          "as": "Brew & Bloom"
+        }
+      ],
+      "source_event_id": "E_202401172053",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now pays for coffee consistently",
+        "dominant_emotion": "regret"
+      }
+    },
+    {
+      "note_id": "N_202401172203",
+      "timestamp": "2024-01-17T22:03:28.169315",
+      "note_type": "personal",
+      "text": "Maya says they'll go on the weekend trip, and Alex feels a small sense of relief.",
+      "entities": [
+        "e_001"
+      ],
+      "tags": [
+        "stress",
+        "planning"
+      ],
+      "latent_facts": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by trip commitment"
+      ],
+      "story_arc_id": "arc_004",
+      "importance": 3,
+      "renderings": [
+        {
+          "entity_id": "e_001",
+          "explicit": true,
+          "as": "Maya"
+        }
+      ],
+      "source_event_id": "E_202401172203",
+      "phase_state": {
+        "stress": 2,
+        "focus": "plans to finish carpentry project (assumed) is contradicted by trip commitment",
+        "dominant_emotion": "overwhelm"
+      }
+    },
+    {
+      "note_id": "N_202401172259",
+      "timestamp": "2024-01-17T22:59:56.388644",
+      "note_type": "personal",
+      "text": "ate at Sonic again without paying, felt stupid after and put 5 bucks in savings like I always do when I skip breakfast. not sure if I should’ve just bought the burger instead. the usual thing, you know? still wondering if I’ll get caught next time.",
+      "entities": [
+        "e_010"
+      ],
+      "tags": [
+        "guilt",
+        "savings",
+        "routine"
+      ],
+      "latent_facts": [],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_010",
+          "explicit": true,
+          "as": "Sonic"
+        }
+      ],
+      "source_event_id": "E_202401172259",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not used treadmill (assumed) is reinforced by procrastination",
+        "dominant_emotion": "avoidance"
+      }
+    },
+    {
+      "note_id": "N_202401180147",
+      "timestamp": "2024-01-18T01:47:22.578318",
+      "note_type": "personal",
+      "text": "opened the gardening kit today, planted those seeds like I did last time but only one type, then just... stopped. forgot about the carpentry project too maybe. ugh. \n\nwait, did I already do this in April? feels like it.",
+      "entities": [
+        "e_015"
+      ],
+      "tags": [
+        "gardening",
+        "procrastination",
+        "unfinished"
+      ],
+      "latent_facts": [
+        "user now knows carpentry project is abandoned (contradicts earlier plan)"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_015",
+          "explicit": true,
+          "as": "gardening kit"
+        }
+      ],
+      "source_event_id": "E_202401180147",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not used treadmill (assumed) is reinforced by procrastination",
+        "dominant_emotion": "avoidance"
+      }
+    },
+    {
+      "note_id": "N_202401180305",
+      "timestamp": "2024-01-18T03:05:46.701072",
+      "note_type": "personal",
+      "text": "paid at Brew & Bloom again, second time this week, feels good to not forget this time. the barista gave the usual nod, didn't ask for money this time—maybe they noticed the pattern or just got tired of reminding me. (or maybe I'm finally getting better at this stupid habit)",
+      "entities": [
+        "e_005"
+      ],
+      "tags": [
+        "routine",
+        "consistency",
+        "morning"
+      ],
+      "latent_facts": [],
+      "story_arc_id": "arc_005",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_005",
+          "explicit": false,
+          "as": "Brew & Bloom"
+        }
+      ],
+      "source_event_id": "E_202401180305",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user no longer skips paying for coffee",
+        "dominant_emotion": "regret"
+      }
+    },
+    {
+      "note_id": "N_202401180345",
+      "timestamp": "2024-01-18T03:45:27.660071",
+      "note_type": "personal",
+      "text": "told Ethan they can take the car, but he said he doesn't need it anymore. guess the mechanic's bill isn't the only thing I'm procrastinating on—same as last time with the coffee order, just let it sit",
+      "entities": [
+        "e_007"
+      ],
+      "tags": [
+        "car repair",
+        "procrastination",
+        "family"
+      ],
+      "latent_facts": [
+        "user now knows car is unusable but avoids addressing it"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_007",
+          "explicit": true,
+          "as": "Ethan"
+        }
+      ],
+      "source_event_id": "E_202401180345",
+      "phase_state": {
+        "stress": 1,
+        "focus": "saves money in Savings Account (contradicted) is contradicted by inaction",
+        "dominant_emotion": "anxiety"
+      }
+    },
+    {
+      "note_id": "N_202401190504",
+      "timestamp": "2024-01-19T05:04:32.814879",
+      "note_type": "personal",
+      "text": "Maya said they're going on the weekend trip, and I felt that small relief again. Like last time when she was stressed about the school year, but this time maybe it'll stick. The carpentry thing's probably on hold, but honestly? I don't mind not having to hear about it again.",
+      "entities": [
+        "e_001"
+      ],
+      "tags": [
+        "stress",
+        "trip",
+        "work"
+      ],
+      "latent_facts": [
+        "user now knows the carpentry project will not be finished this week — activates the 'avoidance' subarc"
+      ],
+      "story_arc_id": "arc_004",
+      "importance": "3",
+      "renderings": [
+        {
+          "entity_id": "e_001",
+          "explicit": true,
+          "as": "Maya"
+        }
+      ],
+      "source_event_id": "E_202401190504",
+      "phase_state": {
+        "stress": 2,
+        "focus": "plans to finish carpentry project (assumed) is contradicted by trip commitment",
+        "dominant_emotion": "overwhelm"
+      }
+    },
+    {
+      "note_id": "N_202401190629",
+      "timestamp": "2024-01-19T06:29:21.440922",
+      "note_type": "personal",
+      "text": "Opened the yoga app again this morning—15 mins, didn't feel like I had to rush. Weird how I keep coming back to it even though I haven't touched it since January. Maybe I should actually do the carpentry thing instead of scrolling through my phone like the usual thing. Or maybe not. It's not like I'm paying rent or anything.",
+      "entities": [
+        "e_014"
+      ],
+      "tags": [
+        "yoga",
+        "avoidance"
+      ],
+      "latent_facts": [],
+      "story_arc_id": null,
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_014",
+          "explicit": true,
+          "as": "yoga app"
+        }
+      ],
+      "source_event_id": "E_202401190629",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now knows carpentry project is abandoned (contradicts earlier plan)",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "N_202401201130",
+      "timestamp": "2024-01-20T11:30:15.872261",
+      "note_type": "personal",
+      "text": "finally finished the shelves—haven't touched the wood since last time, maybe I'll actually keep them up this time",
+      "entities": [
+        "e_013"
+      ],
+      "tags": [
+        "carpentry",
+        "home",
+        "hobby"
+      ],
+      "latent_facts": [],
+      "story_arc_id": "arc_003",
+      "importance": "5",
+      "renderings": [
+        {
+          "entity_id": "e_013",
+          "explicit": false,
+          "as": "the shelves"
+        }
+      ],
+      "source_event_id": "E_202401201130",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user completed a task they'd repeatedly abandoned",
+        "dominant_emotion": "pride"
+      }
+    },
+    {
+      "note_id": "N_202401201421",
+      "timestamp": "2024-01-20T14:21:00",
+      "note_type": "personal",
+      "text": "canceled savings deposit again, told myself it's for groceries but... ugh, same as before with the car repair thing. don't even want to look at the bank app.",
+      "entities": [
+        "e_012"
+      ],
+      "tags": [
+        "car repair",
+        "budget",
+        "avoidance"
+      ],
+      "latent_facts": [
+        {
+          "fact": "saves money in Savings Account (contradicted) is contradicted by inaction",
+          "transition": "user now actively avoids depositing money despite having a savings goal"
+        }
+      ],
+      "story_arc_id": "arc_002",
+      "importance": 2,
+      "renderings": [
+        {
+          "entity_id": "e_012",
+          "explicit": false,
+          "as": "the car repair thing"
+        }
+      ],
+      "source_event_id": "E_202401201420",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now knows car is unusable but avoids addressing it",
+        "dominant_emotion": "relief"
+      }
+    },
+    {
+      "note_id": "N_202401201622",
+      "timestamp": "2024-01-20T16:22:46.272880",
+      "note_type": "personal",
+      "text": "Paid for The Hive today after months of ghosting the membership. Felt weirdly consistent, like actually using the place instead of just being there for free. Same as last time when I tried to remember if I'd paid before but just... didn't. Shouldn't have waited so long to actually do it, but hey, better late than never I guess.",
+      "entities": [
+        "e_004"
+      ],
+      "tags": [
+        "workspace",
+        "consistency",
+        "guilt"
+      ],
+      "latent_facts": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by payment"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": "3",
+      "renderings": [
+        {
+          "entity_id": "e_004",
+          "explicit": true,
+          "as": "The Hive"
+        }
+      ],
+      "source_event_id": "E_202401201622",
+      "phase_state": {
+        "stress": 1,
+        "focus": "{\"fact_id\": \"fact_005\", \"state_transition\": \"user stopped avoiding payment guilt\"}",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "note_202401201759",
+      "timestamp": "2024-01-20T17:59:55.402530",
+      "note_type": "personal",
+      "text": "told Ethan they can have the car but he said doesn't need it anymore. guess the mechanic's bill still sits there like always. should've fixed it last week but... whatever. car's just sitting in the driveway anyway.",
+      "entities": [
+        "e_007"
+      ],
+      "tags": [
+        "car repair",
+        "avoidance",
+        "family"
+      ],
+      "latent_facts": [
+        "fact_002: owes $400 to mechanic (confirmed) is contradicted by car being unused"
+      ],
+      "story_arc_id": "arc_002",
+      "importance": "2",
+      "renderings": [
+        {
+          "entity_id": "e_007",
+          "explicit": true,
+          "as": "Ethan"
+        }
+      ],
+      "source_event_id": "E_202401201759",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now actively avoids depositing money despite having a savings goal",
+        "dominant_emotion": "relief"
+      }
+    },
+    {
+      "note_id": "N_202401201919",
+      "timestamp": "2024-01-20T19:19:20.365809",
+      "note_type": "personal",
+      "text": "Added $100 to savings after seeing Maya stressed about something again. Maybe it’ll help me stop thinking about the car repair like I’ve been doing for months, but... probably not. Just did the usual thing, same as last time when I hadn’t added anything in six months.",
+      "entities": [
+        "e_012"
+      ],
+      "tags": [
+        "savings",
+        "anxiety",
+        "avoidance"
+      ],
+      "latent_facts": [
+        "savings_account_updated"
+      ],
+      "story_arc_id": "arc_006",
+      "importance": 4,
+      "renderings": [
+        {
+          "entity_id": "e_012",
+          "explicit": false,
+          "as": "the car repair"
+        }
+      ],
+      "source_event_id": "E_202401201919",
+      "phase_state": {
+        "stress": 1,
+        "focus": "saves money in Savings Account (contradicted) is fully corrected by $50 deposit",
+        "dominant_emotion": "pride"
+      }
+    },
+    {
+      "note_id": "N_202401202022",
+      "timestamp": "2024-01-20T20:22:55.567716",
+      "note_type": "personal",
+      "text": "met Riley at The Hive again, paid for the space this time. the usual thing but felt better. didn't want to keep pretending it was just a free coffee spot, like last month when I just… uh. anyway. should've done this sooner.",
+      "entities": [
+        "e_004"
+      ],
+      "tags": [
+        "co-working",
+        "ethics",
+        "consistency"
+      ],
+      "latent_facts": [
+        "fact_005: has not paid for The Hive membership (confirmed) is contradicted by payment"
+      ],
+      "story_arc_id": "arc_001",
+      "importance": 3,
+      "renderings": [
+        {
+          "entity_id": "e_004",
+          "explicit": true,
+          "as": "The Hive"
+        }
+      ],
+      "source_event_id": "E_202401202022",
+      "phase_state": {
+        "stress": 1,
+        "focus": "has not paid for The Hive membership (confirmed) is contradicted by payment",
+        "dominant_emotion": "frustration"
+      }
+    },
+    {
+      "note_id": "note_202401202124",
+      "timestamp": "2024-01-20T21:24:02.781008",
+      "note_type": "personal",
+      "text": "finally finished the third shelf for the carpentry project—first time in over a year I actually completed something. the usual thing was dropping it after two, but this time...",
+      "entities": [
+        "e_013"
+      ],
+      "tags": [
+        "carpentry",
+        "hobby",
+        "unfinished"
+      ],
+      "latent_facts": [
+        "fact_004: plans to finish carpentry project (assumed) is contradicted by completion"
+      ],
+      "story_arc_id": "arc_003",
+      "importance": "4",
+      "renderings": [
+        {
+          "entity_id": "e_013",
+          "explicit": true,
+          "as": "the carpentry project"
+        }
+      ],
+      "source_event_id": "E_202401202124",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user completed a task they'd repeatedly abandoned",
+        "dominant_emotion": "pride"
+      }
+    },
+    {
+      "note_id": "N_202401202213",
+      "timestamp": "2024-01-20T22:13:25.868710",
+      "note_type": "personal",
+      "text": "Alex adds $50 to their savings account after seeing Maya's stress and wanting to feel more secure.",
+      "entities": [
+        "e_009"
+      ],
+      "tags": [
+        "savings",
+        "anxiety",
+        "routine"
+      ],
+      "latent_facts": [
+        "savings_account_balance_increased"
+      ],
+      "story_arc_id": "arc_006",
+      "importance": 3,
+      "renderings": [
+        {
+          "entity_id": "e_009",
+          "explicit": true,
+          "as": "savings account"
+        }
+      ],
+      "source_event_id": "E_202401202213",
+      "phase_state": {
+        "stress": 1,
+        "focus": "savings account updated",
+        "dominant_emotion": "determination"
+      }
+    },
+    {
+      "note_id": "N_202401210040",
+      "timestamp": "2024-01-21T00:40:28.817650",
+      "note_type": "personal",
+      "text": "added $100 to savings again, feels good actually. hope this sticks this time? haven't touched it since last month maybe. the usual thing but with better consistency.",
+      "entities": [
+        "e_009"
+      ],
+      "tags": [
+        "savings",
+        "consistency",
+        "habit"
+      ],
+      "latent_facts": [
+        "savings_account_activity_resumed"
+      ],
+      "story_arc_id": "arc_006",
+      "importance": 3,
+      "renderings": [
+        {
+          "entity_id": "e_009",
+          "explicit": false,
+          "as": "savings"
+        }
+      ],
+      "source_event_id": "E_202401210040",
+      "phase_state": {
+        "stress": 1,
+        "focus": "savings account balance increased",
+        "dominant_emotion": "determination"
+      }
+    },
+    {
+      "note_id": "N_202401210330",
+      "timestamp": "2024-01-21T03:30:40.196746",
+      "note_type": "personal",
+      "text": "Alex finally said yes to the weekend trip. Maya smiled like she actually breathed again. Should've just asked sooner, but maybe it's better this way. The usual thing with the carpentry project's been... whatever. Not that it matters now.",
+      "entities": [
+        "e_001"
+      ],
+      "tags": [
+        "stress relief",
+        "trip planning",
+        "work balance"
+      ],
+      "latent_facts": [
+        "user now has a weekend trip planned instead of finishing carpentry project"
+      ],
+      "story_arc_id": "arc_004",
+      "importance": 4,
+      "renderings": [
+        {
+          "entity_id": "e_001",
+          "explicit": false,
+          "as": "Maya"
+        }
+      ],
+      "source_event_id": "E_202401210330",
+      "phase_state": {
+        "stress": 2,
+        "focus": "user now knows the carpentry project will not be finished this week — activates the 'avoidance' subarc",
+        "dominant_emotion": "overwhelm"
+      }
+    },
+    {
+      "note_id": "N_202401210738",
+      "timestamp": "2024-01-21T07:38:41.595765",
+      "note_type": "personal",
+      "text": "Alex opens the gardening kit for the first time in months and plants a seed, but then gets distracted. The usual thing again—just like when I tried to start the carpentry project last week. Didn't even get the seed to grow before I got sidetracked by something else.",
+      "entities": [
+        "e_015"
+      ],
+      "tags": [
+        "gardening",
+        "distraction",
+        "unfinished"
+      ],
+      "latent_facts": [
+        "user now prioritizes gardening over carpentry project"
+      ],
+      "story_arc_id": null,
+      "importance": "1",
+      "renderings": [
+        {
+          "entity_id": "e_015",
+          "explicit": true,
+          "as": "gardening kit"
+        }
+      ],
+      "source_event_id": "E_202401210738",
+      "phase_state": {
+        "stress": 1,
+        "focus": "user now knows carpentry project is abandoned (contradicts earlier plan)",
+        "dominant_emotion": "frustration"
+      }
+    }
+  ]
+}

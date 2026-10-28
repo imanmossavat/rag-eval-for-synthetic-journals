@@ -1,0 +1,63 @@
+{
+  "corpus_version": "v20260717T062821Z_9eff22baacb0",
+  "generated_at": "2026-07-17T06:28:21.592161+00:00",
+  "generator": {
+    "pipeline": "Research/synthetic_data_generation",
+    "git_commit": "dd31487",
+    "backend": "ollama",
+    "model": "qwen3:30b",
+    "verifier_model": "gemma3:27b",
+    "duration_days": 90,
+    "events_per_day": 0.8,
+    "qa_count": {
+      "single_hop": 6,
+      "multi_hop": 6,
+      "temporal_reasoning": 6,
+      "conflict_resolution": 6,
+      "unanswerable": 6
+    }
+  },
+  "files": {
+    "world_state": {
+      "path": "data/world_state.json",
+      "sha256": "29827aca496a06cd3db77e881dc763996b237ed330cf194c188bc157f0e414c1",
+      "bytes": 10109
+    },
+    "events_raw": {
+      "path": "data/events_raw.json",
+      "sha256": "162705a327c1181d8229d5d871bac642a0546c75d076ee824d45c9b42ad8d4a0",
+      "bytes": 48027
+    },
+    "events_repaired": {
+      "path": "data/events_repaired.json",
+      "sha256": "162705a327c1181d8229d5d871bac642a0546c75d076ee824d45c9b42ad8d4a0",
+      "bytes": 48027
+    },
+    "notes": {
+      "path": "data/notes.json",
+      "sha256": "6f1a1970a9f080485670715586ad0b3f8bd5f345b52b54a9aa5920e1c2d56537",
+      "bytes": 64931
+    },
+    "qa_pairs": {
+      "path": "data/qa_pairs.json",
+      "sha256": "c79f083683dc1d503c65ef1b25f6aef4340dd938a5520c78dd51377a700eaed2",
+      "bytes": 9888
+    }
+  },
+  "missing_files": [],
+  "validation": {
+    "checker": "validate_corpus.py",
+    "ran_at": "2026-07-17T06:28:21.591791+00:00",
+    "status": "passed",
+    "stats": {
+      "notes": 77,
+      "events": 77,
+      "qa": 20,
+      "f1_invented_notes": 0,
+      "renderings_explicit": 56,
+      "renderings_implicit": 21
+    },
+    "warnings": [],
+    "failures": []
+  }
+}
