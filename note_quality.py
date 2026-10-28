@@ -1,14 +1,12 @@
 """Per-note quality checks for stage_04 note generation (intent-verification).
 
-Ports the belief-transition and hedge vocabulary from Bundle 17's
-eval/rag/datasets/syn_v2_drift/checks.py — which validates a whole corpus — down
-to single-note checks that stage_04's generate_note() retry loop can enforce as
-each note is written. The point (REPORT_drift_framework_gaps.md, gap 4): when an
+Single-note belief-transition and hedge checks that stage_04's generate_note()
+retry loop can enforce as each note is written. The point: when an
 event is a contradiction, the note it produces should actually read as a belief
 revision, not restate the earlier stance unchanged. Nothing checked that before.
 
-The transition regex is the ported one, broadened with a few general cues so it
-isn't tuned only to the syn_v2 rewrite's phrasing. Thresholds here (HEDGE_CAP_
+The transition regex includes a few general cues so it isn't tuned to one
+corpus's phrasing. Thresholds here (HEDGE_CAP_
 PER_NOTE, and how strictly a contradiction must show transition language) are a
 first cut — they can only be tuned honestly against a real regeneration run,
 which this build deliberately does not do.

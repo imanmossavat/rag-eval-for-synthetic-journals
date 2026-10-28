@@ -1,4 +1,4 @@
-"""Piece 3 (Bundle 21, item A5): per-note intent-verification — a contradiction
+"""Per-note intent-verification — a contradiction
 note must read as a belief revision, wired into generate_note's retry loop such
 that a persistent quality miss keeps the note (with a warning) rather than
 dropping it, while a structural break still drops as before."""

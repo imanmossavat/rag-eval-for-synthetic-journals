@@ -1,5 +1,4 @@
-"""Bundle 23 Items S2 (rolling phase_state snapshot), S3 (arc-batched context
-window), S6 (mutation log): tested as pure functions, not full generate_note()
+"""Rolling phase_state snapshot, arc-batched context window and mutation log: tested as pure functions, not full generate_note()
 (which calls the LLM) -- same pattern as test_stage04_revision.py."""
 import config
 import stage_04_note_generation as s4
@@ -70,7 +69,7 @@ def test_arc_context_directive_empty_when_no_notes():
 
 
 def test_arc_context_directive_with_notes_but_no_phase_state():
-    """Mutation-hardening (cosmic-ray-bundle23.toml): `if phase_state and
+    """Mutation-hardening: `if phase_state and
     any(...)` must short-circuit on a falsy phase_state -- a mutant flipping
     `and` to `or` would evaluate `any(None.values())` and crash instead. The
     signature allows `phase_state: dict | None = None`, so this is a real
@@ -144,7 +143,7 @@ def test_mutation_log_skips_facts_with_no_id():
 
 
 def test_mutation_log_continues_past_a_no_id_fact_to_later_facts():
-    """Mutation-hardening (cosmic-ray-bundle23.toml): the no-id-fact skip must
+    """Mutation-hardening: the no-id-fact skip must
     be `continue`, not `break` -- the prior test only had one fact in the
     list, so it couldn't distinguish "skip this one" from "stop the loop"."""
     note = {"note_id": "n2", "story_arc_id": "a_001", "timestamp": "t2",

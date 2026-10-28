@@ -1,4 +1,4 @@
-"""Piece 4 (Bundle 21, item A6 / N12): validate_corpus warns when the corpus's
+"""validate_corpus warns when the corpus's
 realized calendar span is far from the configured DURATION_DAYS, so the mismatch
 (measured 21 days vs a configured 90) stops being silent."""
 import validate_corpus as vc

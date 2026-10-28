@@ -141,7 +141,7 @@ def restore_contradiction_links(events_data: dict, skeletons: list[dict]) -> dic
     """
     Re-attach `_contradiction_of` to generated events by event_id.
 
-    ISSUES.md N9: the STAGE_02_EVENT_TIMELINE output schema doesn't list
+    The STAGE_02_EVENT_TIMELINE output schema doesn't list
     `_contradiction_of` (and the prompt tells the model to return "no extra
     keys"), so it never survives the LLM round-trip even though the skeleton
     carries it. Fixed here deterministically instead of via the LLM — the

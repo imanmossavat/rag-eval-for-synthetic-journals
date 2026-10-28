@@ -3,7 +3,7 @@
 **Why:** the root pipeline makes a journal corpus whose questions come with an answer key, but
 the key is a set of evidence *notes*, not a sentence. This folder runs a RAG chatbot on that
 corpus and says, per question, whether search found the evidence and whether the reply matched
-it. It was ported from the REFLECT project's RAG harness, without REFLECT's backend.
+it.
 
 **What:** one run = embed the notes, fetch the top K per question, ask a local model, then score.
 

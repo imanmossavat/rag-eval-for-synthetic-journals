@@ -14,8 +14,7 @@ call such replies hallucinations because it could only see the key. OTHER_NOTES 
 them for a human instead.
 
 Use a judge that is not the answering model (REPORTING_STANDARDS rule 5); run_eval.py
-warns if they're the same. The labels follow the failure modes of the REFLECT RAG harness
-this was ported from.
+warns if they're the same.
 """
 
 import json

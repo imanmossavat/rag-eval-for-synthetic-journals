@@ -50,5 +50,5 @@ hours straight, no distractions" on 13, 16, 17 and 22 January). Several question
   the better answer. ("Remain unresolved" is also shaky: 17 Jan says Ethan sent half the payment.)
 
 If confirmed, the first three questions mark a correct "latest state" answer as wrong, and q_0045
-counts a supported answer as made up. It matches the
-REFLECT finding that near-duplicate notes, not retrieval, limit answer accuracy on this corpus.
+counts a supported answer as made up. Near-duplicate notes, not retrieval, look like the main
+limit on answer accuracy for this corpus.

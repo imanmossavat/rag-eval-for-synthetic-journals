@@ -15,13 +15,12 @@ to the console. This means you can walk away and check the log later
 instead of having to watch the terminal the whole time.
 
 After all 5 stages succeed, the runner runs `validate_corpus.py`'s checks
-itself (RECOMMENDATIONS.md #1 / Bundle B item 5) — nobody has to remember to
+itself — nobody has to remember to
 run it by hand. This is a **hard gate**: if validation fails, the run exits
 non-zero and says so loudly, both on the console and in the log. Either way
-(pass or fail) it writes `data/MANIFEST.json` (RECOMMENDATIONS.md #5 / Bundle
-B item 4) recording a `corpus_version`, a hash of every output file, the
+(pass or fail) it writes `data/MANIFEST.json` recording a `corpus_version`, a hash of every output file, the
 generator/config identity, and the validation result — see
-`corpus_manifest.py` and `data/README.md`.
+`corpus_manifest.py` and `PIPELINE.md`.
 
 Usage:
     python run_pipeline.py
@@ -104,7 +103,7 @@ def run_stage(script: str, log_handle) -> bool:
 
 def run_validation_and_manifest(log_handle) -> bool:
     """Run validate_corpus.py's checks against data/ and write data/MANIFEST.json
-    (RECOMMENDATIONS.md #1 + #5 / Bundle B items 4+5). Always writes a manifest —
+    Always writes a manifest —
     pass or fail — so "which corpus, was it checked, did it pass" always lives in
     one generated file instead of relying on someone remembering to run the
     validator by hand. Returns True if validation passed, False otherwise; the

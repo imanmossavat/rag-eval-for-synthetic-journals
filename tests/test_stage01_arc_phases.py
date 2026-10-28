@@ -1,4 +1,4 @@
-"""Bundle 23 Item S1: story arcs declare an ordered `phases` list instead of a
+"""Story arcs declare an ordered `phases` list instead of a
 flat `status` string. `unresolved_arcs()` becomes "has more than one phase";
 `assign_event_phase()` is the pure position-in-list function that later maps
 an arc's realized events onto its declared phases."""
@@ -69,7 +69,7 @@ def test_assign_event_phase_is_deterministic():
 
 
 def test_assign_event_phase_clamps_when_idx_reaches_n_in_arc():
-    """Mutation-hardening (cosmic-ray-bundle23.toml): idx_in_arc == n_in_arc
+    """Mutation-hardening: idx_in_arc == n_in_arc
     makes the raw position == len(phases), which the `min(position,
     len(phases) - 1)` clamp must pull back to the last phase. The boundary
     tests above never hit this because idx was always < n_in_arc."""

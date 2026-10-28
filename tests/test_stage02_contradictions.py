@@ -1,4 +1,4 @@
-"""Piece 2 (Bundle 21, item A3): CONTRADICTIONS_PER_ARC controls how many
+"""CONTRADICTIONS_PER_ARC controls how many
 contradiction skeletons get injected per unresolved arc; default 1 stays
 byte-identical to the original single-contradiction behaviour."""
 import random

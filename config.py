@@ -11,15 +11,13 @@ from pathlib import Path
 # ── Backend ───────────────────────────────────────────────────────────────────
 # "ollama"     — local inference via Ollama (free, no internet required)
 # "anthropic"  — Anthropic API (paid, highest quality)
-# Owner decision 2026-07-11 (supersedes the earlier Anthropic pick the same
-# day): benchmark runs generate locally with qwen3:30b — no API key.
+# Default is local generation with qwen3:30b, so no API key is needed.
 
 BACKEND = "ollama"
 
 # ── Model ─────────────────────────────────────────────────────────────────────
 # Ollama model name (ignored when BACKEND = "anthropic").
-# qwen3:30b is the owner's pick (2026-07-11) — the same model class his live
-# Reflect instance runs. NOTE: qwen3 is a reasoning model; llm.py sends
+# qwen3:30b fits a 48 GB machine. NOTE: qwen3 is a reasoning model; llm.py sends
 # "think": false to suppress its thinking phase (JSON reliability + speed).
 # Remove that flag if you switch to a model without thinking support.
 
@@ -33,8 +31,7 @@ OLLAMA_BASE_URL = "http://localhost:11434/api/generate"
 OLLAMA_NUM_CTX = 32768
 
 # Anthropic model (ignored when BACKEND = "ollama").
-# claude-sonnet-5: owner's pick for data generation (2026-07-11) — near-Opus
-# quality at Sonnet cost. Note: current models reject the `temperature`
+# claude-sonnet-5: good generation quality at Sonnet cost. Note: current models reject the `temperature`
 # parameter, so the TEMPERATURE table below only applies to the Ollama
 # backend — variety comes from the prompts' realism requirements.
 ANTHROPIC_MODEL = "claude-sonnet-5"
@@ -89,7 +86,7 @@ CONTRADICTIONS_PER_ARC = 1
 # context (+ the rolling phase_state snapshot) when writing its next note. 0 =
 # the original behaviour (each note written blind, no cross-note context within
 # an arc) -- the regression-guard default, so leaving this untouched reproduces
-# today's stage_04 prompts byte-for-byte. This is the Bundle 21 Item B3
+# today's stage_04 prompts byte-for-byte. This is the
 # duplicate-density dial: raise it at regen time to test whether arc-batched
 # context reduces near-duplicate phrasing across an arc's notes.
 ARC_CONTEXT_NOTES = 0
@@ -104,12 +101,12 @@ MIN_STORY_ARCS  = 6     # minimum story arcs (was ~3 in the smoke run)
 # How many entities must be given deliberately RARE, distinctive proper names
 # (unusual surnames, uncommon place/brand names). 0 = no such requirement (the
 # original behaviour). Raise it to seed the rare-anchor lexical condition BM25's
-# upside needs — the current corpora have none (REPORT_bundle14_bm25_features.md).
+# upside needs — the checked-in corpus has none.
 RARE_ENTITY_COUNT = 0
 
 # Number of QA pairs to generate per type in stage_05.
-# Raised 3->6/type (15->30 total) 2026-07-12 for Experiment 1 (eval/rag REPORT_syn_v1.md) --
-# n=12 (2-3/type after generation failures) was too small to read failure-mode distribution.
+# 6 per type: with fewer, generation discards leave only 2-3 per type, too few to read
+# which failure modes dominate.
 QA_COUNT = {
     "single_hop":          6,
     "multi_hop":           6,
@@ -121,8 +118,7 @@ QA_COUNT = {
 
 # ── Verifier (stage_05 narrow grounding check) ──────────────────────────────────
 # Independent model from the qwen3:30b generator (Google family, not Alibaba) so it
-# never grades its own homework -- same choice grounding_gate.py made, validated by
-# REPORT_datagen_grounding.md's calibration pass (3/4 known defects caught blind).
+# never grades its own homework -- same choice grounding_gate.py makes.
 # stage_05 uses this for two narrow checks, not the old broad "grade the whole QA
 # pair" gate: (1) does a note actually support the specific fact its answer is
 # pinned to, (2) for unanswerable pairs, can this model answer the question blind.
@@ -142,6 +138,6 @@ PATHS = {
     "qa_pairs":          DATA_DIR / "qa_pairs.json",
     # Written by corpus_manifest.py (called automatically by run_pipeline.py at the
     # end of every run) — corpus_version, per-file hashes, generator identity, and
-    # the validate_corpus.py stamp. See RECOMMENDATIONS.md #5 / #1.
+    # the validate_corpus.py stamp.
     "manifest":          DATA_DIR / "MANIFEST.json",
 }

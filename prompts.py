@@ -348,7 +348,7 @@ Return ONLY valid JSON:
 # ── Stage 05 (v2) — question-only generation + narrow verification ──────────────
 # WHY these exist: STAGE_05_QA above has the model invent the question AND the
 # answer key in one call, from raw note prose, with nothing checking the output
-# afterward -- that's the root cause traced in REPORT_datagen_grounding.md. The
+# afterward, which let wrong answer keys through. The
 # prompts below split the job: the answer is pinned in code to a fact the pipeline
 # already knows (a note's own latent_facts entry, a chronological order, a known
 # contradiction pairing), and the model's only job is to phrase a question that
@@ -397,8 +397,7 @@ Return ONLY valid JSON, no markdown, no commentary:
 }}"""
 
 # Narrow verifier: "does this one note actually support this one fact string" -- a much
-# easier judging task than grading a whole free-form QA pair (see RECOMMENDATIONS.md #1
-# and the calibration failure of the old broad gate in REPORT_datagen_grounding.md).
+# easier judging task than grading a whole free-form QA pair.
 STAGE_05_FACT_CHECK = """You are an independent fact-checker. You did NOT write this note or \
 this fact. Using ONLY the note text below, decide whether the note actually states or \
 directly and specifically supports the given fact -- not just mentions the same topic.

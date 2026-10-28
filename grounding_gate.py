@@ -1,12 +1,9 @@
 """
 grounding_gate.py — independent cross-model grounding check for qa_pairs.json
 ================================================================================
-WHY: stage_05_qa_generation.py has qwen3:30b write the QUESTION and the ANSWER
-KEY in the same call, then only overrides `supporting_notes` with the ground-
-truth note ids -- it never checks the answer text itself is actually supported
-by those notes. The one existing guard (_unanswerable_leaks_answer) only
-applies to "unanswerable" pairs and only catches a verbatim substring leak,
-not a paraphrase. See ISSUES.md N8 and REPORT_datagen_grounding.md Part 1.
+WHY: a QA pair's key can cite notes that don't actually answer its question, and
+an "unanswerable" pair can be answerable after all. A second model from a
+different family checks both.
 
 This script is a SEPARATE, READ-ONLY validator. It does not touch generation
 code or regenerate anything. For each existing QA pair it asks an independent
@@ -15,12 +12,9 @@ grading its own homework) one question: is this answer key actually supported
 by (only) its cited notes? For "unanswerable" pairs the question flips: do the
 notes genuinely NOT contain the answer?
 
-UPDATE 2026-07-14: stage_05_qa_generation.py no longer stores a prose answer at
-all (see REPORT_datagen_structural_fix.md) -- the graded key is now a pointer
-set (`answer_key.evidence`). `ANSWERABLE_PROMPT` was updated to match: it no
-longer checks a proposed answer TEXT against the notes, it checks whether the
-cited notes are sufficient to answer the question at all. Same defect class,
-adapted to a corpus that has no answer text to compare against.
+The key is a set of evidence note ids (`answer_key.evidence`), not prose, so
+`ANSWERABLE_PROMPT` checks whether the cited notes are sufficient to answer the
+question at all.
 
 Usage:
     python grounding_gate.py                      # full corpus

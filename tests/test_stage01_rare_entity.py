@@ -1,4 +1,4 @@
-"""Piece 5 (Bundle 21, item B2): RARE_ENTITY_COUNT adds a distinctive-names
+"""RARE_ENTITY_COUNT adds a distinctive-names
 directive to the stage_01 prompt; default 0 leaves the prompt unchanged."""
 import config
 import stage_01_world_state as s1

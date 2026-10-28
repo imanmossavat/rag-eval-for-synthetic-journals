@@ -1,4 +1,4 @@
-"""Bundle 23 Item S7: belief-currency QA type -- find_currency_seeds() narrows
+"""Belief-currency QA type -- find_currency_seeds() narrows
 CONFLICT's seed pairing to genuinely-differing pairs, and QAType.CURRENCY's
 branch in generate_qa_pair() sets evidence=[later] with a stale_distractor
 pointing at the earlier note (SINGLE_HOP's shape, not CONFLICT's
@@ -80,10 +80,9 @@ def test_other_qa_types_answer_key_has_no_stale_distractor(monkeypatch):
     assert "stale_distractor" not in qa["answer_key"]
 
 
-# ── Mutation-hardening (cosmic-ray-bundle23.toml, first run) ──────────────
-# These three close real gaps the initial run's precise (line-range-filtered)
-# survivors pointed at -- not cosmetic/equivalent mutants. See
-# docs/bundles/BUNDLE_23.md § Mutation pass for the full triage.
+# ── Mutation-hardening ──────────────────────────────────────────────────────
+# These three close real gaps that surviving mutants pointed at -- not
+# cosmetic/equivalent mutants.
 
 def test_currency_branch_discards_when_only_one_side_lacks_facts(monkeypatch):
     """`if not early_facts or not later_facts` -- mutating `or` to `and` only

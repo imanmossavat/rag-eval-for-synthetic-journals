@@ -13,10 +13,9 @@ pipeline already knows (a note's own `latent_facts` entry, a chronological order
 from timestamps, or a contradiction pairing). The LLM's only job is to phrase a question
 that evidence would answer; it never writes the key. A second, independent model
 (gemma3:27b, config.VERIFIER_MODEL) checks that the pinned fact is actually supported by
-its note before the pair is kept. See REPORT_datagen_grounding.md (root cause) and its
-follow-up fix report for why: the old design had one model write the question, the
-answer, AND the label in one call, with nothing checking the answer against the notes
-afterward. That produced ~17-20%+ defective answer keys. Grading on note-IDs-in-order
+its note before the pair is kept. Why: when one model writes the question, the
+answer, AND the label in one call, nothing checks the answer against the notes, and
+wrong keys get through (data/qa_pairs_v1_snapshot.json is a set made that way). Grading on note-IDs-in-order
 tests retrieval and ordering, not answer phrasing -- that's a deliberate scope decision,
 not a limitation: this corpus exists to test *which* note a system used, not how it
 worded a sentence.
@@ -352,8 +351,7 @@ def _fact_supported(note_text: str, fact_text: str) -> tuple[bool, str]:
 def _blind_can_answer(question: str, notes_text: str) -> tuple[bool, str]:
     """Blind Q&A check for unanswerable candidates: never mentions the pair was
     constructed to be unanswerable, so the model isn't anchored toward
-    confirming that label (the failure mode that made v1/v2 of the old broad
-    gate score 0/4 -- see REPORT_datagen_grounding.md)."""
+    confirming that label."""
     prompt = STAGE_05_BLIND_ANSWER_CHECK.format(question=question, notes_text=notes_text)
     raw = _call_verifier(prompt)
     parsed = parse_json_response(raw)

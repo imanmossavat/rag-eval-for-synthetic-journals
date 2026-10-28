@@ -1,4 +1,4 @@
-"""Piece 1 (Bundle 21, item A1): stage_04 threads the contradicted note's text +
+"""stage_04 threads the contradicted note's text +
 a revise instruction into the prompt when an event carries _contradiction_of."""
 import stage_04_note_generation as s4
 

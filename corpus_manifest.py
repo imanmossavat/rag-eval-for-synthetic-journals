@@ -1,15 +1,15 @@
-"""corpus_manifest.py — corpus versioning (RECOMMENDATIONS.md #5 / Bundle B item 4).
+"""corpus_manifest.py — corpus versioning.
 
-WHY: regenerating this pipeline is destructive and non-deterministic (ISSUES.md N5) —
-event text, arcs, note wording, and every QA id shift on every run. Until now the only
-thing tying an eval report or a "known-bad id" list to the corpus it was written against
-was an ad-hoc git commit hash, if that. This module gives every generated corpus a
+WHY: regenerating this pipeline is destructive and non-deterministic —
+event text, arcs, note wording, and every QA id shift on every run. Without a version,
+nothing ties an eval report or a "known-bad id" list to the corpus it was written
+against. This module gives every generated corpus a
 `corpus_version` (a timestamp + content-hash id, so two regenerations never collide even
 if nothing else changed) and writes it, plus a per-file hash manifest and the
 generator/config identity, to `data/MANIFEST.json`. `run_pipeline.py` calls this
 automatically at the end of every run — nobody has to remember to snapshot anything.
 
-This also carries the validate_corpus.py stamp (Bundle B item 5): `build_manifest()`
+This also carries the validate_corpus.py stamp: `build_manifest()`
 takes an optional `validation` dict and writes it straight into the manifest, so
 "which corpus" and "did it pass the gate" always live in the same file.
 """
