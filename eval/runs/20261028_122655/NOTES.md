@@ -11,7 +11,8 @@ built the eval, so it's the author's reading, not an independent one.
 - Retrieval with K=5 (`report.md`): hit@5 = 0.88 but all@5 = 0.59. Multi-note questions
   (multi_hop, temporal, conflict) often got only some of their evidence.
 - 2 of 3 unanswerable questions were correctly refused. q_0045 was answered ("Ethan's unpaid
-  payment") from notes that keep mentioning Ethan not paying.
+  payment") from notes that keep mentioning Ethan not paying. That may be an answer-key fault,
+  not a made-up answer: see "Possible answer-key defects" below.
 
 ## What is not solid (decided by the judge)
 
@@ -41,5 +42,13 @@ hours straight, no distractions" on 13, 16, 17 and 22 January). Several question
 - **q_0011** "What is the current state of the couch…" The key is 5 and 6 January (fur
   everywhere). A 15 January note says the couch "is clean for once".
 
-If confirmed, these questions mark a correct "latest state" answer as wrong. It matches the
+- **q_0045** (unanswerable) "What specific issue is causing the Art of War project to remain
+  unresolved despite previous attempts?" Arguably answerable: seven notes tie the project to Ethan
+  not paying ("same as last time with Ethan's unpaid stuff", 9 Jan; "Ethan still hasn't paid",
+  12 Jan; "waiting for Ethan to pay", 13 Jan; also 16, 17 and 22 Jan), and two of them were
+  retrieved. The reply "Ethan's unpaid payment" is labelled FAILED_REFUSAL by code, but may be
+  the better answer. ("Remain unresolved" is also shaky: 17 Jan says Ethan sent half the payment.)
+
+If confirmed, the first three questions mark a correct "latest state" answer as wrong, and q_0045
+counts a supported answer as made up. It matches the
 REFLECT finding that near-duplicate notes, not retrieval, limit answer accuracy on this corpus.

@@ -124,6 +124,15 @@ def test_value_match_needs_whole_words():
     assert evaluate.contains(evaluate.norm("A Pixel 8, I think."), "Pixel 8")
 
 
+def test_rag_in_memory_needs_every_gold_note():
+    # "my roommate's car": the Volvo note alone has the answer string but not the link
+    q = {"type": "two_hop", "answerable": True, "answer": ["Volvo Amazon"], "gold_notes": ["N022", "N038"]}
+    ctx = "Kofi drove his Volvo Amazon."
+    assert evaluate.memory_has_answer(q, ctx) is True
+    assert evaluate.memory_has_answer(q, ctx, ["N038", "N001"]) is False
+    assert evaluate.memory_has_answer(q, ctx, ["N038", "N022"]) is True
+
+
 def test_retrieval_metrics():
     m = evaluate.retrieval_metrics(["N1", "N2"], ["N9", "N1", "N3", "N4", "N5"])
     assert m == {"precision": 0.2, "recall": 0.5, "hit": 1.0, "all": 0.0, "mrr": 0.5}
@@ -143,7 +152,7 @@ def rescored():
     rows = [json.loads(line) for line in (RUN / "raw.jsonl").open()]
     for r in rows:
         q = questions[r["qid"]]
-        r["label"] = evaluate.label(q, r["reply"], evaluate.memory_has_answer(q, r["context"]))
+        r["label"] = evaluate.label(q, r["reply"], evaluate.memory_has_answer(q, r["context"], r["retrieved"]))
     return rows
 
 
@@ -196,3 +205,21 @@ def test_explainer_rejected_draft_is_rejected():
              "allowed. Biscotti and Pickle sniffed each other for ages and then decided they were best friends.")
     assert generate.check_note(draft, plan) == ["contains forbidden 'Pickle'"]
     assert generate.check_note(draft.replace("Biscotti and Pickle", "Biscotti and my dog"), plan) == []
+
+
+def test_explainer_rag_refusals_are_memory_failures(rescored):
+    # Chapters 10 and 12: with the all-gold-notes rule, vector search has no reading failures
+    rag = [(r["model"], r["qid"]) for r in rescored if r["bot"] == "vector_rag"
+           and r["label"] in ("IDK_BUT_IN_MEMORY", "IDK_NOT_IN_MEMORY")]
+    labels = {r["label"] for r in rescored if r["bot"] == "vector_rag"}
+    assert "IDK_BUT_IN_MEMORY" not in labels
+    assert sorted(rag) == [("qwen3:30b", "Q18"), ("qwen3:4b", "Q18"), ("qwen3:4b", "Q20"), ("qwen3:4b", "Q23")]
+
+
+def test_explainer_full_context_word_count():
+    # Counted as the model sees it, with the date prefix on every note (as the ~270 for vector search is)
+    import chatbots
+    notes = json.loads((DEMO / "data" / "notes.json").read_text())
+    context, _ = chatbots.FullContext(notes, None).memory_for("")
+    assert len(context.split()) == 2863
+    assert "shows 2,863 words" in EXPLAINER

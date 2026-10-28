@@ -16,18 +16,18 @@
 
 ### Was the answer in what the model was shown?
 
-String check on the context each bot handed the model (n/a: counts and unanswerables).
+String check on the context each bot handed the model; for vector_rag, every gold note retrieved (n/a: counts and unanswerables).
 
 | question type | n | full_context<br>qwen3:4b | vector_rag<br>qwen3:4b | summary<br>qwen3:4b | facts<br>qwen3:4b | full_context<br>qwen3:30b | vector_rag<br>qwen3:30b |
 |---|---|---|---|---|---|---|---|
 | L1 single_fact | 8 | 8/8 | 8/8 | 5/8 | 8/8 | 8/8 | 8/8 |
 | L2 current_state | 3 | 3/3 | 3/3 | 3/3 | 3/3 | 3/3 | 3/3 |
 | L3 previous_state | 3 | 3/3 | 3/3 | 2/3 | 3/3 | 3/3 | 3/3 |
-| L3 two_hop | 6 | 6/6 | 6/6 | 5/6 | 6/6 | 6/6 | 6/6 |
+| L3 two_hop | 6 | 6/6 | 3/6 | 5/6 | 6/6 | 6/6 | 3/6 |
 | L4 count | 2 | n/a | n/a | n/a | n/a | n/a | n/a |
 | L4 history | 1 | 1/1 | 0/1 | 1/1 | 1/1 | 1/1 | 0/1 |
 | L5 unanswerable | 3 | n/a | n/a | n/a | n/a | n/a | n/a |
-| **all** | 26 | **21/21** | **20/21** | **16/21** | **21/21** | **21/21** | **20/21** |
+| **all** | 26 | **21/21** | **17/21** | **16/21** | **21/21** | **21/21** | **17/21** |
 
 ### Why answers were wrong (label counts)
 
@@ -37,8 +37,8 @@ String check on the context each bot handed the model (n/a: counts and unanswera
 | PARTIAL | list question, only some items named | 1 | 0 | 0 | 1 | 0 | 1 |
 | WRONG_DISTRACTOR | named a look-alike or an out-of-date value (the trap worked) | 1 | 0 | 0 | 2 | 0 | 0 |
 | WRONG_OTHER | wrong in some other way | 0 | 1 | 3 | 0 | 0 | 1 |
-| IDK_BUT_IN_MEMORY | said 'I don't know' although the answer WAS in what it was shown (reading failure) | 0 | 2 | 7 | 4 | 0 | 1 |
-| IDK_NOT_IN_MEMORY | said 'I don't know' and the answer was NOT in what it was shown (memory/retrieval failure) | 0 | 1 | 5 | 0 | 0 | 0 |
+| IDK_BUT_IN_MEMORY | said 'I don't know' although the answer WAS in what it was shown (reading failure) | 0 | 0 | 7 | 4 | 0 | 0 |
+| IDK_NOT_IN_MEMORY | said 'I don't know' and the answer was NOT in what it was shown (memory/retrieval failure) | 0 | 3 | 5 | 0 | 0 | 1 |
 | CORRECT_IDK | unanswerable question, correctly said 'I don't know' | 3 | 3 | 3 | 3 | 3 | 3 |
 | HALLUCINATED | unanswerable question, made an answer up | 0 | 0 | 0 | 0 | 0 | 0 |
 | RAMBLED | ignored the short-answer format (over 40 words), so no answer to grade | 0 | 0 | 0 | 1 | 0 | 0 |

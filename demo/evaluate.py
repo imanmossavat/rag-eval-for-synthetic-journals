@@ -70,11 +70,16 @@ def first_number(reply: str):
     return None
 
 
-def memory_has_answer(q: dict, context: str):
+def memory_has_answer(q: dict, context: str, retrieved=None):
     """Was the answer even present in what the model was shown? Separates
-    'memory lost it' from 'model couldn't use it'. None = can't tell by string match."""
+    'memory lost it' from 'model couldn't use it'. None = can't tell by string match.
+    For a retriever, the answer string isn't enough: "my roommate's car" needs the note
+    saying Kofi is the roommate, not just the note with "Volvo". So it counts only when
+    every gold note was retrieved."""
     if not q["answerable"] or q["type"] == "count":
         return None
+    if retrieved is not None:
+        return set(q["gold_notes"]) <= set(retrieved)
     c = norm(context)
     return all(contains(c, a) for a in q["answer"])
 
@@ -156,7 +161,7 @@ def score(out_dir: Path) -> str:
     rows = [json.loads(line) for line in (out_dir / "raw.jsonl").open()]
     for r in rows:
         q = questions[r["qid"]]
-        r["in_memory"] = memory_has_answer(q, r["context"])
+        r["in_memory"] = memory_has_answer(q, r["context"], r["retrieved"])
         r["label"] = label(q, r["reply"], r["in_memory"])
         r["type"], r["level"] = q["type"], q["level"]
         if r["retrieved"] and q["gold_notes"]:
@@ -186,7 +191,8 @@ def score(out_dir: Path) -> str:
     out = [f"# Results — {out_dir.name}\n",
            table("Accuracy (right answers / questions)", acc),
            table("Was the answer in what the model was shown?", in_mem,
-                 "String check on the context each bot handed the model (n/a: counts and unanswerables).\n")]
+                 "String check on the context each bot handed the model; for vector_rag, every gold note retrieved "
+                 "(n/a: counts and unanswerables).\n")]
 
     lines = ["### Why answers were wrong (label counts)\n",
              "| label | meaning | " + " | ".join(f"{b}<br>{m}" for m, b in combos) + " |",
