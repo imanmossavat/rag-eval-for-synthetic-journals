@@ -85,8 +85,8 @@ def memory_has_answer(q: dict, context: str, retrieved=None):
 
 
 def label(q: dict, reply: str, in_memory) -> str:
-    # A long reply would match almost any answer by accident (one 13,000-word ramble
-    # contained every name in the journal), so it gets no credit.
+    # A long reply can match the answer by accident (one 13,000-word ramble repeated
+    # "Biscotti" over a thousand times while still reasoning), so it gets no credit.
     if len(norm(reply).split()) > MAX_WORDS:
         return "RAMBLED"
     if not q["answerable"]:

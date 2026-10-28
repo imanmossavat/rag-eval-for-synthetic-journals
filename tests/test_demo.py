@@ -223,3 +223,32 @@ def test_explainer_full_context_word_count():
     context, _ = chatbots.FullContext(notes, None).memory_for("")
     assert len(context.split()) == 2863
     assert "shows 2,863 words" in EXPLAINER
+
+
+def test_explainer_ramble_counts():
+    # Chapter 7: the 13,000-word reply would pass a plain text match
+    raw = [json.loads(line) for line in (RUN / "raw.jsonl").open()]
+    reply = next(r["reply"] for r in raw if (r["bot"], r["qid"], r["model"]) == ("facts", "Q15", "qwen3:4b"))
+    assert 12_500 < len(reply.split()) < 13_500
+    assert reply.count("Biscotti") > 1000 and reply.count("Pickle") == 22
+    assert "Biscotti, over a thousand times, and named the look-alike Pickle 22 times" in EXPLAINER
+
+
+def test_explainer_compressed_memories():
+    # Chapters 6 and 11, from the memory text saved with every answer in raw.jsonl
+    raw = [json.loads(line) for line in (RUN / "raw.jsonl").open()]
+    summary = next(r["context"] for r in raw if r["bot"] == "summary")
+    facts = next(r["context"] for r in raw if r["bot"] == "facts")
+    assert len(summary.split()) == 395 and "shows 395 words" in EXPLAINER
+    assert not any(w in summary.lower() for w in ("sister", "colleague", "neighbour", "roommate"))
+    assert "Femke brought stroopwafels and Biscotti." in summary
+    assert len(facts.split()) == 2748 and len(facts.splitlines()) == 349
+    assert "2026-03-15 | First day at the Openbare Bibliotheek" in facts.splitlines()
+    assert "2026-03-26 | Started at Museum Speelklok" in facts.splitlines()
+
+
+def test_explainer_cites_only_tracked_files():
+    # A fresh clone has no gitignored files, so the page must not lean on them
+    for gone in ("REFLECT", "internal report", "ISSUES", "REPORT_", "TALK_NOTES", "runs/cache", "17–20", "17 to 20", "4 times out of 6"):
+        assert gone not in EXPLAINER, gone
+    assert (DEMO.parent / "data" / "qa_pairs_v1_snapshot.json").exists()

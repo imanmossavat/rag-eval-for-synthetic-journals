@@ -251,7 +251,7 @@ known-bad answers) and the `grounding_gate_*.json` audit files. A pipeline run a
 - F4: one note schema, no duplicate IDs, and all IDs across files resolve.
 
 [`grounding_gate.py`](grounding_gate.py) is a separate, read-only cross-model check over an
-existing `qa_pairs.json`. It was calibrated at 4/6 on known cases, so treat its verdicts as
+existing `qa_pairs.json`. Its verdicts are another model's judgement, so treat them as
 advisory.
 
 ## Files
@@ -287,7 +287,7 @@ advisory.
 
 **No LLM repair pass.** Stage 03 fixes structure deterministically. An LLM repair pass was removed because it was slow and risked silently rewriting content.
 
-**Answer key computed in code (v2).** Stage 05 picks the evidence first, computes the key from known facts, and only asks the LLM to phrase the question. The earlier design let one LLM call write the question, the answer and the label, and about 17–20% of answers were wrong.
+**Answer key computed in code (v2).** Stage 05 picks the evidence first, computes the key from known facts, and only asks the LLM to phrase the question. The earlier design let one LLM call write the question, the answer and the label from finished text; that v1 set is kept as `data/qa_pairs_v1_snapshot.json`.
 
 **Messiness rules in stage 04.** Each note gets one to three random rules (OMISSION, ABRUPT_END, IMPLICIT_REFERENCE, UNCERTAINTY, LATENT_FACT_AS_TEXTURE) so latent facts aren't stated outright, which would make retrieval unrealistically easy.
 

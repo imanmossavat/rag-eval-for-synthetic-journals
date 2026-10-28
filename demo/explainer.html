@@ -235,9 +235,9 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
     </svg>
   </div>
   <div class="col">
-    <p class="note">Why bother? The project this demo came out of did it the usual way. One AI call wrote each question <em>and</em> its answer
-      from finished text. About 17 to 20% of those answers turned out to be wrong, and nobody noticed for weeks. An AI checker
-      added later was right only 4 times out of 6.</p>
+    <p class="note">Why bother? The usual way is for one AI call to write each question <em>and</em> its answer from finished text, and
+      then nothing but another reading can tell whether the answer is right. This repo’s own pipeline started that way. Its old question
+      set is kept as <span class="mono">data/qa_pairs_v1_snapshot.json</span>, so you can compare it with one built facts first.</p>
   </div>
 </section>
 
@@ -277,12 +277,12 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
       <p class="note" style="font-size:0.92rem">Leaving out “sister” is what makes the question two-hop. To answer “my sister’s dog” you need this note <em>and</em> the note that says Femke is the sister.</p>
     </div>
     <div class="card">
-      <span class="kicker">first draft · rejected by the checker</span>
+      <span class="kicker">a draft the checker rejects</span>
       <p class="diary" style="border:none;padding:0">…He tried to eat a whole herring from the fish stall and got very offended when he wasn’t allowed.
         Biscotti and <del>Pickle</del> sniffed each other for ages and then decided they were best friends.</p>
       <p><span class="tag bad">fail</span> contains forbidden “Pickle”</p>
-      <p>The draft named the writer’s own dog, the look-alike answer, in the note about Femke’s dog. The fix was one word: “my dog”.
-        The slip happened while the demo data was written by hand. No log of the draft was kept, but <span class="mono">tests/test_demo.py</span> replays it against the checker.</p>
+      <p>This draft names the writer’s own dog, the look-alike answer, in the note about Femke’s dog. The fix is one word: “my dog”.
+        <span class="mono">tests/test_demo.py</span> runs both versions through the checker: the draft fails, the fixed one passes.</p>
     </div>
   </div>
   <div class="col">
@@ -298,8 +298,7 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
   <div class="col stack">
     <span class="kicker">5 · the questions</span>
     <h2>Five levels, each a known memory skill</h2>
-    <p>Templates turn the facts into questions. The levels follow the skills that published long-memory tests measure
-      (LongMemEval, LoCoMo, BABILong). The <span class="key">proof</span> column is the number of notes a bot needs to see to answer.</p>
+    <p>Templates turn the facts into questions, one memory skill per level. The <span class="key">proof</span> column is the number of notes a bot needs to see to answer.</p>
   </div>
   <div class="tablewrap">
     <table>
@@ -308,7 +307,7 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
       <tr><td class="num">L2</td><td>current state</td><td>What is my workplace now? → <span class="key">Museum Speelklok</span></td><td>pick the newest of three</td><td class="num">1</td><td class="num">3</td></tr>
       <tr><td class="num">L3</td><td>previous state</td><td>What was my phone before Pixel 8? → <span class="key">Fairphone 4</span></td><td>find an older state, not the newest</td><td class="num">2</td><td class="num">3</td></tr>
       <tr><td class="num">L3</td><td>two-hop</td><td>What is my sister’s dog’s name? → <span class="key">Biscotti</span></td><td>join two notes through a name</td><td class="num">2</td><td class="num">6</td></tr>
-      <tr><td class="num">L4</td><td>count</td><td>How many times did I go bouldering? → <span class="key">7</span></td><td>find <em>every</em> matching note</td><td class="num">7</td><td class="num">2</td></tr>
+      <tr><td class="num">L4</td><td>count</td><td>How many times did I go bouldering? → <span class="key">7</span></td><td>find <em>every</em> matching note</td><td class="num">3–7</td><td class="num">2</td></tr>
       <tr><td class="num">L4</td><td>history</td><td>List every workplace I’ve had, in order.</td><td>find and order every state</td><td class="num">3</td><td class="num">1</td></tr>
       <tr><td class="num">L5</td><td>unanswerable</td><td>What is Femke’s car? → <span class="key">I don’t know</span></td><td>notice it isn’t there</td><td class="num">0</td><td class="num">3</td></tr>
     </table>
@@ -336,10 +335,9 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
     <div class="card"><h3>Fact list</h3><p>After every note, the model writes down its facts as short dated lines. All lines are kept.</p><p class="mono" style="font-size:0.75rem">shows 2,748 words</p><p>The simplest version of Mem0-style memory.</p></div>
   </div>
   <div class="col stack">
-    <p>Two local models answer, from the same family: <strong>qwen3:4b</strong> (small, 2.5 GB) and <strong>qwen3:30b</strong> (large, 18 GB).
-      Both run on a laptop through Ollama, with randomness switched off. The large one is a “mixture of experts”: it holds 30 billion
-      parameters but uses only about 3 billion for each word it writes.</p>
-    <p class="note">The summary and fact-list memories have to be built one note at a time, and that took about an hour each on the small model.
+    <p>Two local models answer, from the same family: <strong>qwen3:4b</strong> (small) and <strong>qwen3:30b</strong> (large).
+      Both run on a laptop through Ollama, with randomness switched off.</p>
+    <p class="note">The summary and fact-list memories have to be built one note at a time: one model call per note, 59 per memory.
       To keep the demo short we ran those two on the small model only. Full context and vector search ran on both.</p>
   </div>
 </section>
@@ -371,8 +369,8 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
   <p>The other labels: <span class="tag good">correct</span>, <span class="tag warn">partial</span> (a list missing items),
     <span class="tag bad">trap worked</span> (named a look-alike or out-of-date value), <span class="tag bad">wrong</span>,
     <span class="tag bad">made it up</span> (answered an unanswerable question), and <span class="tag bad">rambled</span> (ignored the short-answer format).</p>
-  <p class="note">“Rambled” exists because one reply ran to about 13,000 words of the model thinking out loud. It mentioned nearly every
-    name in the diary, so a simple text match would have marked it correct.</p>
+  <p class="note">“Rambled” exists because one reply ran to about 13,000 words of the model thinking out loud. It repeated the right answer,
+    Biscotti, over a thousand times, and named the look-alike Pickle 22 times, so a simple text match would have marked it correct.</p>
 </section>
 
 <section class="chapter wide">
@@ -449,11 +447,6 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
         and 349 short lines are harder to read than 59 stories. Twice the stale-value or look-alike trap worked.</p>
     </div>
   </div>
-  <div class="col">
-    <p class="note">These two designs are the simplest versions of real products. The project behind this demo tried both for real
-      and had the same trouble: the fact extractor (Mem0) dropped the content that mattered, and the rolling summary kept shrinking
-      to the latest turn.</p>
-  </div>
 </section>
 
 <section class="chapter col">
@@ -528,10 +521,9 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
 </main>
 
 <footer class="col">
-  <p>Every number on this page comes from one recorded run: synthetic-journal-generator/demo/runs/20261025_171940 (report.md, scored.jsonl).
-    Data: demo/data/. Code: demo/generate.py, chatbots.py, evaluate.py. Models: qwen3:4b, qwen3:30b and nomic-embed-text via Ollama.</p>
-  <p>Figures about the earlier pipeline (the 17–20% wrong answer key, the 4-in-6 checker) come from that project’s internal reports.
-    The memory-design history comes from the REFLECT project’s docs/ideas/memory/.</p>
+  <p>Every number on this page comes from files in the repo: the recorded run demo/runs/20261025_171940 (raw.jsonl, scored.jsonl,
+    report.md) and the data in demo/data/. Code: demo/generate.py, chatbots.py, evaluate.py. tests/test_demo.py re-derives the numbers
+    from those files. Models: qwen3:4b, qwen3:30b and nomic-embed-text via Ollama.</p>
 </footer>
 
 <script>
