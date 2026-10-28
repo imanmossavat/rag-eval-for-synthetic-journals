@@ -216,7 +216,7 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
       <text x="30" y="78">people, facts, changes,</text>
       <text x="30" y="96">habits, and things that are</text>
       <text x="30" y="114">never said</text>
-      <text x="30" y="138" class="keytext">world.json · 60 lines</text>
+      <text x="30" y="138" class="keytext">world.json · 43 lines</text>
       <text x="345" y="52" class="lbl">2  Diary notes</text>
       <text x="345" y="78">one note per fact, plus</text>
       <text x="345" y="96">30 filler notes (the haystack)</text>
@@ -282,7 +282,7 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
         Biscotti and <del>Pickle</del> sniffed each other for ages and then decided they were best friends.</p>
       <p><span class="tag bad">fail</span> contains forbidden “Pickle”</p>
       <p>The draft named the writer’s own dog, the look-alike answer, in the note about Femke’s dog. The fix was one word: “my dog”.
-        This slip was mine, made while writing the demo data by hand, and the checker caught it.</p>
+        The slip happened while the demo data was written by hand. No log of the draft was kept, but <span class="mono">tests/test_demo.py</span> replays it against the checker.</p>
     </div>
   </div>
   <div class="col">
@@ -331,7 +331,7 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
   </div>
   <div class="grid4">
     <div class="card"><h3>Full context</h3><p>Every note, in date order, pasted into the prompt. No search at all.</p><p class="mono" style="font-size:0.75rem">shows 2,804 words</p><p>Like “just paste it all in”. Only works while everything fits.</p></div>
-    <div class="card"><h3>Vector search</h3><p>Standard RAG. Notes become vectors, and the 5 most similar to the question are shown.</p><p class="mono" style="font-size:0.75rem">shows ~260 words</p><p>The usual LlamaIndex or LangChain setup.</p></div>
+    <div class="card"><h3>Vector search</h3><p>Standard RAG. Notes become vectors, and the 5 most similar to the question are shown.</p><p class="mono" style="font-size:0.75rem">shows ~270 words</p><p>The usual LlamaIndex or LangChain setup.</p></div>
     <div class="card"><h3>Rolling summary</h3><p>One summary, rewritten after every note, asked to stay under 250 words.</p><p class="mono" style="font-size:0.75rem">shows 395 words</p><p>Like the “memory” in many chat apps.</p></div>
     <div class="card"><h3>Fact list</h3><p>After every note, the model writes down its facts as short dated lines. All lines are kept.</p><p class="mono" style="font-size:0.75rem">shows 2,748 words</p><p>The simplest version of Mem0-style memory.</p></div>
   </div>
@@ -396,7 +396,8 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
   <p>The two memories that compress did much worse on the same small model: <strong>11 of 26</strong> for the rolling summary,
     <strong>18 of 26</strong> for the fact list. With 59 short notes, the whole diary fits in the prompt easily, so compressing it only throws things away.</p>
   <p class="note">This flips when the diary outgrows the model’s window. Then full context isn’t possible at all, and the other three designs
-    are the only options. The demo’s <span class="mono">--filler</span> setting adds haystack notes to show where that happens.</p>
+    are the only options. Regenerating with <span class="mono">generate.py --filler</span> builds a bigger haystack to test where that happens
+    (it rewrites the notes, so it needs the API or the manual steps).</p>
 </section>
 
 <section class="chapter wide">
@@ -439,10 +440,10 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
     </div>
     <div class="card">
       <span class="kicker">fact list · 4b · 18 / 26</span>
-      <p class="diary" style="border:none;padding:0">“2026-03-15 | First day at the Openbare Bibliotheek<br>2026-03-26 | Started at Museum Speelklok<br>…348 lines…”</p>
+      <p class="diary" style="border:none;padding:0">“2026-03-15 | First day at the Openbare Bibliotheek<br>2026-03-26 | Started at Museum Speelklok<br>…349 lines…”</p>
       <p>The list kept almost everything, and it was nearly as long as the diary itself (2,748 words against 2,804). Yet the small model did worse with it
         than with the raw notes. Asked for the current workplace, it picked the older line. Nothing in a flat list marks a fact as out of date,
-        and 348 short lines are harder to read than 59 stories. Twice the stale-value or look-alike trap worked.</p>
+        and 349 short lines are harder to read than 59 stories. Twice the stale-value or look-alike trap worked.</p>
     </div>
   </div>
   <div class="col">
@@ -476,8 +477,8 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
   <h2>Five things to take home</h2>
   <ol class="plain">
     <li><strong>Write the facts before the text.</strong> An answer key worked out from finished text needs checking forever. One written first is exact.</li>
-    <li><strong>Score per question type, never as one number.</strong> One average hides the structure you built. 22 of 26 sounds fine until you see that counting fails every time.</li>
-    <li><strong>Measure “all the proof”, not “some proof”.</strong> Hit@5 was a perfect 1.00 while multi-note questions were missing half their evidence.</li>
+    <li><strong>Score per question type, never as one number.</strong> One average hides the structure you built. 22 of 26 sounds fine until you see that vector search miscounted bouldering, and missed part of the workplace history, with both models.</li>
+    <li><strong>Measure “all the proof”, not “some proof”.</strong> Hit@5 was a perfect 1.00 while 5 of the 12 multi-note questions were missing at least one proof note.</li>
     <li><strong>Split every failure into reading vs memory.</strong> They point at opposite fixes: a better model, or better search.</li>
     <li><strong>Build traps on purpose.</strong> Look-alikes, stale values and counts larger than K showed each design’s weak spot within 26 questions.</li>
   </ol>
@@ -505,7 +506,7 @@ footer { padding-block: 4rem 0; color: var(--ink-3); font-family: var(--mono); f
   <p>New data without an API key: <span class="mono">generate.py --step prompts</span> writes ready-to-paste prompts for a normal Claude chat,
     and the <span class="mono">plan → check → questions</span> steps turn the replies into a checked test set.</p>
   <div class="grid2" style="margin-inline:0">
-    <div class="card"><h3>More haystack</h3><p>Set <span class="mono">--filler 300</span>. Which design breaks first as the diary grows?</p></div>
+    <div class="card"><h3>More haystack</h3><p>Regenerate with <span class="mono">generate.py --filler 300</span>, then re-run the eval. Which design breaks first as the diary grows?</p></div>
     <div class="card"><h3>More slots</h3><p>Set <span class="mono">--k 10</span>. Does counting get fixed, and what happens to precision?</p></div>
     <div class="card"><h3>Restate the past</h3><p>Let later notes mention the old value (“my old Fairphone”). Does “previous state” get easier?</p></div>
     <div class="card"><h3>A second Femke</h3><p>Add a look-alike <em>person</em>. What happens to two-hop questions?</p></div>

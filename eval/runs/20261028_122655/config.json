@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:4b",
+  "k": 5,
+  "retriever": "dense cosine, nomic-embed-text",
+  "n_notes": 77,
+  "n_questions": 20,
+  "corpus_version": "v20260717T062821Z_9eff22baacb0",
+  "files_match_manifest": {
+    "world_state": true,
+    "events_raw": true,
+    "events_repaired": true,
+    "notes": true,
+    "qa_pairs": true
+  },
+  "answer_system_prompt": "You answer questions about the user's personal journal, using ONLY the journal notes you are given. The user wrote the journal, so 'I'/'my' in the question means the journal's author. Answer in one to three sentences, with no preamble. If the notes do not contain the answer, reply exactly: I don't know",
+  "judge_model": "qwen3:30b"
+}

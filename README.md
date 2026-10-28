@@ -20,8 +20,8 @@ came from search or from the model. This repo flips the order:
 3. **Build the questions from the facts,** with code. Each question comes with its answer
    and the exact notes that prove it.
 
-Because the answer key exists before any text does, scoring is plain code with no AI judge,
-and every failure can be split into *search didn't fetch the evidence* (fix retrieval) versus
+Because the answer key exists before any text does, the demo is scored by plain code with no
+AI judge, and every failure can be split into *search didn't fetch the evidence* (fix retrieval) versus
 *the model had the evidence and misread it* (fix the model or prompt).
 
 ## Where to start
@@ -30,6 +30,7 @@ and every failure can be split into *search didn't fetch the evidence* (fix retr
 |---|---|---|
 | [`demo/`](demo/) | **Start here.** A small, laptop-sized version of the idea: one fictional month (59 notes), 26 questions on 5 difficulty levels, and 4 chatbots that differ only in how they remember (full context, vector RAG, rolling summary, fact list). Results included. | [`demo/README.md`](demo/README.md), then [`demo/explainer.html`](demo/explainer.html) |
 | Repo root | The larger 5-stage LLM pipeline that generates a richer corpus (story arcs, contradictions, messy notes) and a QA set. More realistic, less polished; see its known gaps. | [Pipeline reference](#pipeline-reference) below |
+| [`eval/`](eval/) | A RAG eval for the pipeline corpus: retrieval and refusals scored by code, open answers by an optional LLM judge, reports that show every failure's evidence. Ported from the REFLECT project's harness. | [`eval/README.md`](eval/README.md) |
 
 ## What the demo shows
 
@@ -53,6 +54,7 @@ written by the same AI that designed the test. Full list in the explainer's "lim
 python -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python -m pytest -q tests/        # no LLM needed (this is what CI runs)
 .venv/bin/python demo/evaluate.py           # needs Ollama: qwen3:4b, qwen3:30b, nomic-embed-text
+.venv/bin/python eval/run_eval.py           # pipeline-corpus eval; needs Ollama: qwen3:4b, nomic-embed-text
 .venv/bin/python run_pipeline.py            # the big pipeline; see Setup below
 ```
 
@@ -74,6 +76,17 @@ Everything below is about the 5-stage pipeline in the repo root. `demo/` is sepa
 documented in [`demo/README.md`](demo/README.md).
 
 > **Current status and known gaps** (checked against the code on 2026-10-28):
+> - **The checked-in corpus is the 2026-07-17 run** (`v20260717T062821Z_9eff22baacb0`), and every
+>   file in `data/` that `MANIFEST.json` lists matches its hash. Until 2026-10-28, `notes.json`,
+>   `world_state.json` and both event files came from a later, partial regeneration (2026-07-22)
+>   that never produced questions, so none of the 17 answerable questions' evidence notes existed.
+>   `tests/test_eval.py` now fails if that happens again.
+> - **The corpus predates the `phase_state` note field** (added 2026-07-21), so today's
+>   `validate_corpus.py` reports 154 F4 failures for its 77 notes (a missing key and a malformed
+>   value per note). Everything else passes. A fresh pipeline run produces notes with the field.
+> - **Near-duplicate notes make some answer keys look stale.** The same activity recurs on several
+>   days, and a few "current state" questions point at an older note. See
+>   `eval/runs/20261028_122655/NOTES.md`. Not yet confirmed by a human.
 > - **The timeline spans about 21 days, not 90.** `DURATION_DAYS` only sets the event
 >   count; the span comes from random gaps between events. The checked-in corpus runs
 >   2024-01-01 to 2024-01-22 (77 events, 77 notes). Not fixed yet.
@@ -219,7 +232,8 @@ python knowledge_graph.py          # inspect the graph for an existing world sta
 | `data/MANIFEST.json` | Corpus version, file hashes, generator identity and validation result. Cite this id in eval reports. |
 
 Also in `data/`, not pipeline outputs: `qa_pairs_v1_snapshot.json` (the old v1 QA set, with
-known-bad answers), the `grounding_gate_*.json` audit files and `mutation_log.json`.
+known-bad answers) and the `grounding_gate_*.json` audit files. A pipeline run also writes
+`mutation_log.json` (stage 04's fact-level log); the checked-in run predates it.
 
 ## What gets checked
 
@@ -252,7 +266,8 @@ advisory.
 ├── corpus_manifest.py                # writes data/MANIFEST.json
 ├── grounding_gate.py                 # optional cross-model QA check
 ├── tests/                            # pytest, no LLM needed
-├── data/                             # checked-in corpus from the last run
+├── data/                             # checked-in corpus from the 2026-07-17 run
+├── eval/                             # RAG eval for that corpus (see eval/README.md)
 └── demo/                             # the separate facts-first demo
 ```
 

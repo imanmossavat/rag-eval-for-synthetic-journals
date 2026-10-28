@@ -2,15 +2,15 @@
   "user_profile": {
     "user_id": "u_001",
     "name": "Alex Chen",
-    "age": 32,
-    "occupation": "freelance UX designer",
-    "location": "Portland, OR",
+    "age": 34,
+    "occupation": "freelance graphic designer",
+    "location": "Portland, Oregon",
     "baseline_traits": [
-      "tends to procrastinate on admin tasks",
-      "overestimates free time",
-      "uses multiple apps for habit tracking but forgets to log",
-      "struggles with consistent morning routines",
-      "prone to overcommitting to social events"
+      "schedules in 90-minute blocks",
+      "neglects routine maintenance",
+      "over-commits to projects",
+      "uses disposable coffee cups",
+      "avoids emotional conversations"
     ]
   },
   "entities": [
@@ -19,327 +19,334 @@
       "name": "Maya",
       "type": "person",
       "domains": [
-        "relationships",
-        "family"
+        "family",
+        "health",
+        "finances"
       ],
       "salience": "high",
-      "notes": "Alex's partner since 2019; works in education; lives at 123 Oak St; sometimes calls Alex 'Chen' out of habit"
+      "notes": "Alex's older sister, 38. Works in healthcare. Lives 45 mins away. Calls weekly about 'checking in' but avoids discussing Alex's living situation."
     },
     {
       "id": "e_002",
-      "name": "Riley",
+      "name": "Ben",
       "type": "person",
       "domains": [
-        "relationships",
-        "work"
+        "work",
+        "relationships"
       ],
-      "salience": "medium",
-      "notes": "Alex's former colleague; now runs a design agency; occasional coffee meetups"
+      "salience": "high",
+      "notes": "Alex's partner. 32. Architect. Shared apartment since 2022. Recently started complaining about unpaid bills. Has been 'fixing' the leaky faucet since March."
     },
     {
       "id": "e_003",
-      "name": "Maggie",
-      "type": "person",
+      "name": "The Blue Mitten",
+      "type": "place",
       "domains": [
-        "family"
+        "daily routines",
+        "social"
       ],
       "salience": "medium",
-      "notes": "Alex's older sister; lives in Seattle; sends birthday cards but rarely calls"
+      "notes": "Local coffee shop. 3 blocks from home. Alex's morning routine spot. Baristas know their order (large oat milk latte). Recently started charging for refills."
     },
     {
       "id": "e_004",
-      "name": "The Hive",
-      "type": "place",
+      "name": "Luna",
+      "type": "person",
       "domains": [
-        "work",
-        "social"
+        "family",
+        "relationships"
       ],
       "salience": "medium",
-      "notes": "Co-working space downtown; Alex used to pay for membership but now uses it for free events"
+      "notes": "Ben's younger sister. 28. Works in marketing. Visits every other Sunday. Brings her dog, Mochi, who sheds on Ben's couch."
     },
     {
       "id": "e_005",
-      "name": "Brew & Bloom",
+      "name": "St. Mary's Church",
       "type": "place",
       "domains": [
-        "social",
-        "routine"
+        "family",
+        "travel"
       ],
-      "salience": "medium",
-      "notes": "Coffee shop near home; favorite spot for morning coffee; Alex sometimes forgets to pay"
+      "salience": "low",
+      "notes": "Where Alex and Ben had their 'small' wedding in 2022. Still gets free parking during Sunday services (Ben's family connection)."
     },
     {
       "id": "e_006",
-      "name": "Dad",
-      "type": "person",
+      "name": "The Art of War",
+      "type": "project",
       "domains": [
-        "family"
+        "work",
+        "personal development"
       ],
-      "salience": "medium",
-      "notes": "Alex's father; lives in Eugene; calls every Sunday but always forgets to say hello"
+      "salience": "high",
+      "notes": "Alex's personal design project. Started in 2020. Currently paused since 2023 due to 'creative burnout.'"
     },
     {
       "id": "e_007",
-      "name": "Ethan",
-      "type": "person",
+      "name": "Rental App",
+      "type": "organization",
       "domains": [
-        "family"
+        "finances",
+        "logistics"
       ],
       "salience": "medium",
-      "notes": "Alex's younger brother; lives in Portland; often asks for weekend plans"
+      "notes": "Landlord management app. Alex has been trying to update the lease for 6 months. App keeps sending 'lease renewal' reminders."
     },
     {
       "id": "e_008",
-      "name": "Sunny",
-      "type": "person",
+      "name": "Couch",
+      "type": "object",
       "domains": [
-        "relationships",
-        "work"
+        "home maintenance",
+        "relationships"
       ],
-      "salience": "low",
-      "notes": "Alex's former roommate; now works at a tech company; occasional check-ins"
+      "salience": "high",
+      "notes": "Shared apartment couch. Has a stain from Ben's coffee spill in March. Mochi's fur on the back."
     },
     {
       "id": "e_009",
-      "name": "Savings Account",
-      "type": "object",
+      "name": "Dental Checkup",
+      "type": "project",
       "domains": [
+        "health",
         "finances"
       ],
       "salience": "medium",
-      "notes": "Alex tracks this account daily but hasn't added funds in 3 months"
+      "notes": "Scheduled for June 15. Postponed twice due to 'work chaos.' Ben keeps reminding Alex to book it."
     },
     {
       "id": "e_010",
-      "name": "Sonic",
-      "type": "place",
+      "name": "Gym Membership",
+      "type": "habit",
       "domains": [
-        "routine",
-        "social"
+        "health",
+        "finances"
       ],
       "salience": "low",
-      "notes": "Diner near work; Alex eats lunch there 2-3x/week but sometimes skips"
+      "notes": "Paid for 2023 annual membership. Haven't used it since February. Still paying $15/month."
     },
     {
       "id": "e_011",
-      "name": "Treadmill",
-      "type": "object",
+      "name": "Ethan",
+      "type": "person",
       "domains": [
-        "health",
-        "home"
+        "work",
+        "relationships"
       ],
       "salience": "medium",
-      "notes": "Purchased in 2021; used 5x in 2023; now mostly covered in clothes"
+      "notes": "Alex's client. 40s. Runs a small bookstore. Hasn't paid for two projects. Alex keeps sending 'gentle reminders' but hasn't followed up."
     },
     {
       "id": "e_012",
-      "name": "Alex's 2018 Subaru",
-      "type": "object",
+      "name": "Mochi",
+      "type": "person",
       "domains": [
-        "logistics",
-        "finances"
+        "relationships",
+        "daily routines"
       ],
-      "salience": "high",
-      "notes": "Needs $400 repair; Alex avoids thinking about it; has been ignored since April 2023"
+      "salience": "medium",
+      "notes": "Luna's dog. 5 years old. Shedding on Ben's couch. Alex has a mild allergy but pretends it's fine."
     },
     {
       "id": "e_013",
-      "name": "Carpentry Project",
-      "type": "project",
+      "name": "TikTok",
+      "type": "organization",
       "domains": [
-        "hobbies",
-        "home"
+        "digital life",
+        "hobbies"
       ],
-      "salience": "medium",
-      "notes": "Started in 2022; has 3 unfinished shelves; Alex keeps saying they'll finish it"
+      "salience": "high",
+      "notes": "Alex's main time sink. Started a design-focused account in 2021. Has 127 followers. Posts every Tuesday and Friday."
     },
     {
       "id": "e_014",
-      "name": "Yoga App",
-      "type": "project",
+      "name": "Laptop",
+      "type": "object",
       "domains": [
-        "health"
+        "work",
+        "digital life"
       ],
-      "salience": "low",
-      "notes": "Downloaded in 2022; hasn't been used since January 2023"
+      "salience": "high",
+      "notes": "Old MacBook Pro. Has been on 'slow mode' since 2022. Alex keeps saying they'll replace it but hasn't."
     },
     {
       "id": "e_015",
-      "name": "Gardening Kit",
-      "type": "object",
+      "name": "The Greenery",
+      "type": "place",
       "domains": [
-        "hobbies",
-        "home"
+        "travel",
+        "daily routines"
       ],
-      "salience": "low",
-      "notes": "Bought in spring 2022; unused since July 2022"
+      "salience": "medium",
+      "notes": "Local garden center. Alex buys plants every month but never waters them. Ben calls it 'Alex's failure to commit.'"
     }
   ],
   "story_arcs": [
     {
-      "arc_id": "arc_001",
-      "title": "The Hive Co-Working Space",
-      "phases": [
-        "2022: Alex joins The Hive as a monthly member for $150/month",
-        "2023: Alex stops paying for membership but still uses it for free events",
-        "2023-10: Alex starts meeting Riley at The Hive once a month for coffee",
-        "2024: Alex realizes they've been using The Hive for 18 months without paying, feels guilty"
+      "arc_id": "a_001",
+      "title": "Apartment Lease Renewal",
+      "status": "stalled",
+      "involved_entities": [
+        "e_007",
+        "e_002",
+        "e_008"
       ],
+      "summary": "Alex has been trying to renew their lease for 6 months. Ben has been 'fixing' the leaky faucet since March, which hasn't resolved the issue. The app keeps sending reminders."
+    },
+    {
+      "arc_id": "a_002",
+      "title": "Ben's Family Connection",
+      "status": "active",
       "involved_entities": [
         "e_004",
+        "e_005",
         "e_002"
       ],
-      "summary": "A recurring work/social space that Alex now uses without paying, creating a mild ethical conflict"
+      "summary": "Ben's sister Luna visits every other Sunday. She brings her dog Mochi, who sheds on the couch. Ben's family connection to St. Mary's Church has made the apartment feel more 'settled' but also more stressful."
     },
     {
-      "arc_id": "arc_002",
-      "title": "Alex's Car Repair",
-      "phases": [
-        "2023-04: Alex ignores a $400 repair notice for their car",
-        "2023-06: Alex's brother Ethan asks to borrow the car, but it's broken",
-        "2023-08: Alex finally calls the mechanic but delays the appointment",
-        "2024-03: Alex cancels the appointment again; car still unusable"
-      ],
+      "arc_id": "a_003",
+      "title": "Ethan's Unpaid Work",
+      "status": "stalled",
       "involved_entities": [
-        "e_012",
-        "e_007"
+        "e_011",
+        "e_006"
       ],
-      "summary": "A recurring financial and logistical problem that Alex avoids addressing, affecting relationships"
+      "summary": "Alex's client Ethan has not paid for two projects. Alex has been sending 'gentle reminders' but hasn't followed up. This has caused tension with Ben about 'financial responsibility.'"
     },
     {
-      "arc_id": "arc_003",
-      "title": "Carpentry Project",
-      "phases": [
-        "2022-03: Alex buys wood and tools to build shelves",
-        "2022-06: Alex builds two shelves but stops after the third",
-        "2023-01: Alex plans to finish the project for a new apartment",
-        "2023-10: Alex buys more wood but doesn't use it"
-      ],
+      "arc_id": "a_004",
+      "title": "Dental Checkup",
+      "status": "stalled",
       "involved_entities": [
-        "e_013"
+        "e_009",
+        "e_002"
       ],
-      "summary": "A hobby project that's been abandoned multiple times due to lack of time and motivation"
+      "summary": "Alex has postponed the dental checkup twice due to 'work chaos.' Ben keeps reminding Alex to book it, but Alex keeps avoiding it."
     },
     {
-      "arc_id": "arc_004",
-      "title": "Maya's Work Stress",
-      "phases": [
-        "2022-08: Maya starts a new teaching job with heavy workload",
-        "2023-02: Maya begins working from home, leading to more time together",
-        "2023-08: Maya's stress increases again with a new school year",
-        "2024-01: Maya suggests taking a weekend trip to manage stress"
-      ],
+      "arc_id": "a_005",
+      "title": "TikTok Design Account",
+      "status": "active",
       "involved_entities": [
-        "e_001"
+        "e_013",
+        "e_006"
       ],
-      "summary": "Maya's career stress affects their shared routines and plans"
+      "summary": "Alex has been posting design content on TikTok since 2021. The account has 127 followers. Recently started a new series on 'designing for small businesses,' which ties into 'The Art of War' project."
     },
     {
-      "arc_id": "arc_005",
-      "title": "Brew & Bloom Routine",
-      "phases": [
-        "2022-10: Alex starts getting coffee at Brew & Bloom every morning",
-        "2023-03: Alex forgets to pay for coffee 3 times in a row",
-        "2023-09: Barista starts recognizing Alex but still asks for payment",
-        "2024-02: Alex skips coffee due to morning procrastination"
-      ],
+      "arc_id": "a_006",
+      "title": "Gym Membership",
+      "status": "abandoned",
       "involved_entities": [
-        "e_005"
+        "e_010",
+        "e_002"
       ],
-      "summary": "A daily habit that's slowly breaking down due to inconsistent behavior"
-    },
-    {
-      "arc_id": "arc_006",
-      "title": "Savings Account Tracking",
-      "phases": [
-        "2022-12: Alex starts tracking their savings account daily",
-        "2023-01: Alex adds $200 to the account",
-        "2023-03: Alex stops adding money; account balance remains stagnant",
-        "2023-09: Alex sees the balance and realizes they haven't added anything in 6 months"
-      ],
-      "involved_entities": [
-        "e_009"
-      ],
-      "summary": "A financial habit that was abandoned without reflection"
+      "summary": "Alex paid for a 2023 annual gym membership but hasn't used it since February. Ben has been trying to get Alex to cancel it, but Alex keeps saying they'll 'do it next week.'"
     }
   ],
   "projects": [
     {
-      "project_id": "proj_001",
-      "title": "Gardening Kit",
-      "status": "abandoned",
-      "related_entities": [
-        "e_015"
-      ],
-      "notes": "Bought in spring 2022; unused since July 2022; Alex still has the seeds and soil"
-    },
-    {
-      "project_id": "proj_002",
-      "title": "Yoga App",
-      "status": "abandoned",
-      "related_entities": [
-        "e_014"
-      ],
-      "notes": "Downloaded in 2022; unused since January 2023; still visible on phone"
-    },
-    {
-      "project_id": "proj_003",
-      "title": "Carpentry Project",
+      "project_id": "p_001",
+      "title": "The Art of War",
       "status": "paused",
       "related_entities": [
+        "e_006",
+        "e_002"
+      ],
+      "notes": "Personal design project. Started in 2020. Currently paused since 2023 due to 'creative burnout.' Ben thinks it's a waste of time."
+    },
+    {
+      "project_id": "p_002",
+      "title": "Digital Portfolio",
+      "status": "active",
+      "related_entities": [
+        "e_006",
         "e_013"
       ],
-      "notes": "3 unfinished shelves; Alex plans to finish it this spring"
+      "notes": "Alex has been building a digital portfolio since 2022. Uses it to showcase 'The Art of War' project. Has been working on it in between design work."
     }
   ],
   "latent_facts": [
     {
-      "fact_id": "fact_001",
+      "fact_id": "f_001",
       "subject": "Alex",
       "relation": "lives with",
-      "object": "Maya",
-      "arc_id": "arc_004",
+      "object": "Ben",
+      "arc_id": "a_002",
       "confidence": "assumed"
     },
     {
-      "fact_id": "fact_002",
+      "fact_id": "f_002",
       "subject": "Alex",
-      "relation": "owes",
-      "object": "$400 to mechanic",
-      "arc_id": "arc_002",
+      "relation": "has a dental checkup scheduled",
+      "object": "June 15",
+      "arc_id": "a_004",
+      "confidence": "assumed"
+    },
+    {
+      "fact_id": "f_003",
+      "subject": "Alex",
+      "relation": "uses TikTok",
+      "object": "daily",
+      "arc_id": "a_005",
       "confidence": "confirmed"
     },
     {
-      "fact_id": "fact_003",
+      "fact_id": "f_004",
       "subject": "Alex",
-      "relation": "has not used",
-      "object": "Treadmill",
-      "arc_id": "arc_003",
-      "confidence": "assumed"
-    },
-    {
-      "fact_id": "fact_004",
-      "subject": "Alex",
-      "relation": "plans to finish",
-      "object": "Carpentry Project",
-      "arc_id": "arc_003",
-      "confidence": "assumed"
-    },
-    {
-      "fact_id": "fact_005",
-      "subject": "Alex",
-      "relation": "has not paid for",
-      "object": "The Hive membership",
-      "arc_id": "arc_001",
-      "confidence": "confirmed"
-    },
-    {
-      "fact_id": "fact_006",
-      "subject": "Alex",
-      "relation": "saves",
-      "object": "money in Savings Account",
-      "arc_id": "arc_006",
+      "relation": "has been avoiding the dentist",
+      "object": "since March",
+      "arc_id": "a_004",
       "confidence": "contradicted"
+    },
+    {
+      "fact_id": "f_005",
+      "subject": "The couch",
+      "relation": "has a stain",
+      "object": "from Ben's coffee spill",
+      "arc_id": "a_002",
+      "confidence": "confirmed"
+    },
+    {
+      "fact_id": "f_006",
+      "subject": "Ethan",
+      "relation": "owes money",
+      "object": "$850",
+      "arc_id": "a_003",
+      "confidence": "assumed"
+    },
+    {
+      "fact_id": "f_007",
+      "subject": "Alex",
+      "relation": "has a gym membership",
+      "object": "2023 annual",
+      "arc_id": "a_006",
+      "confidence": "confirmed"
+    },
+    {
+      "fact_id": "f_008",
+      "subject": "The Art of War",
+      "relation": "is paused",
+      "object": "since 2023",
+      "arc_id": "p_001",
+      "confidence": "confirmed"
+    },
+    {
+      "fact_id": "f_009",
+      "subject": "Alex",
+      "relation": "has been using a disposable cup",
+      "object": "for coffee",
+      "arc_id": "a_002",
+      "confidence": "assumed"
+    },
+    {
+      "fact_id": "f_010",
+      "subject": "St. Mary's Church",
+      "relation": "has free parking",
+      "object": "on Sundays",
+      "arc_id": "a_002",
+      "confidence": "confirmed"
     }
   ]
 }

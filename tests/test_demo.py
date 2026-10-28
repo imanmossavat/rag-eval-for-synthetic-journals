@@ -127,3 +127,72 @@ def test_value_match_needs_whole_words():
 def test_retrieval_metrics():
     m = evaluate.retrieval_metrics(["N1", "N2"], ["N9", "N1", "N3", "N4", "N5"])
     assert m == {"precision": 0.2, "recall": 0.5, "hit": 1.0, "all": 0.0, "mrr": 0.5}
+
+
+# ── The explainer's claims, pinned to the recorded run ──────────────────────
+# demo/explainer.html quotes numbers from demo/runs/20261025_171940. These tests
+# re-derive them from the raw replies, so the page can't drift from its data.
+
+RUN = DEMO / "runs" / "20261025_171940"
+EXPLAINER = (DEMO / "explainer.html").read_text()
+
+
+@pytest.fixture(scope="module")
+def rescored():
+    questions = {q["id"]: q for q in json.loads((DEMO / "data" / "questions.json").read_text())}
+    rows = [json.loads(line) for line in (RUN / "raw.jsonl").open()]
+    for r in rows:
+        q = questions[r["qid"]]
+        r["label"] = evaluate.label(q, r["reply"], evaluate.memory_has_answer(q, r["context"]))
+    return rows
+
+
+def test_recorded_run_rescores_to_its_saved_labels(rescored):
+    saved = {(r["model"], r["bot"], r["qid"]): r["label"] for r in map(json.loads, (RUN / "scored.jsonl").open())}
+    assert {(r["model"], r["bot"], r["qid"]): r["label"] for r in rescored} == saved
+
+
+def test_explainer_headline_scores(rescored):
+    right = {}
+    for r in rescored:
+        right[(r["model"], r["bot"])] = right.get((r["model"], r["bot"]), 0) + (r["label"] in evaluate.RIGHT)
+    assert right == {("qwen3:4b", "full_context"): 24, ("qwen3:4b", "vector_rag"): 22,
+                     ("qwen3:4b", "summary"): 11, ("qwen3:4b", "facts"): 18,
+                     ("qwen3:30b", "full_context"): 26, ("qwen3:30b", "vector_rag"): 23}
+    refusals = sum(r["label"] in ("IDK_BUT_IN_MEMORY", "IDK_NOT_IN_MEMORY") for r in rescored)
+    assert refusals == 20  # "20 of the wrong answers on this page were refusals"
+
+
+def test_explainer_embedded_answers_match_the_run(rescored):
+    import re
+    embedded = json.loads(re.search(r"const D = (\{.*?\});\n", EXPLAINER).group(1))["r"]
+    for r in rescored:
+        assert embedded[f"{r['model']}|{r['bot']}"][r["qid"]][0] == r["label"]
+
+
+def test_explainer_multi_note_claim(rescored):
+    # Lesson 3: "5 of the 12 multi-note questions were missing at least one proof note"
+    questions = {q["id"]: q for q in json.loads((DEMO / "data" / "questions.json").read_text())}
+    rag = [r for r in rescored if r["bot"] == "vector_rag" and r["model"] == "qwen3:4b"]
+    multi = [r for r in rag if len(questions[r["qid"]]["gold_notes"]) > 1]
+    missing = [r for r in multi if not set(questions[r["qid"]]["gold_notes"]) <= set(r["retrieved"])]
+    assert (len(missing), len(multi)) == (5, 12)
+    assert "5 of the 12 multi-note questions" in EXPLAINER
+
+
+def test_explainer_n027_plan_card():
+    plan = next(p for p in json.loads((DEMO / "data" / "notes_plan.json").read_text()) if p["id"] == "N027")
+    shown = ["sister", "Pickle", "Kofi", "bouldering"]
+    assert set(shown) <= set(plan["must_exclude"])
+    assert f"… {len(plan['must_exclude']) - len(shown)} more" in EXPLAINER
+    assert "world.json · 43 lines" in EXPLAINER
+    assert len((DEMO / "data" / "world.json").read_text().splitlines()) == 43
+
+
+def test_explainer_rejected_draft_is_rejected():
+    plan = next(p for p in json.loads((DEMO / "data" / "notes_plan.json").read_text()) if p["id"] == "N027")
+    draft = ("Femke brought Biscotti along to the market this morning. Her dog's name suits him. "
+             "He tried to eat a whole herring from the fish stall and got very offended when he wasn't "
+             "allowed. Biscotti and Pickle sniffed each other for ages and then decided they were best friends.")
+    assert generate.check_note(draft, plan) == ["contains forbidden 'Pickle'"]
+    assert generate.check_note(draft.replace("Biscotti and Pickle", "Biscotti and my dog"), plan) == []

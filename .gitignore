@@ -4,6 +4,7 @@ __pycache__/
 *.log
 .env
 demo/runs/cache/
+eval/runs/cache/
 
 # private working notes, kept local only
 CLAUDE.md
